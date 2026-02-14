@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Biografía | Manuca Gini</title>  <style>    html,body{overflow-x:hidden;}
+</style>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" href="assets/logo-candidato.png" />
+  <link rel="apple-touch-icon" href="assets/logo-candidato.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#c4001a" />
+
+  <!-- Estilos extra: cards + reveal (no debería romper tu styles.css) -->
+  <style>    :root{
+      --mg-radius: 20px;
+      --mg-border: rgba(0,0,0,.10);
+      --mg-panel: #fff;
+      --mg-shadow: 0 16px 36px rgba(0,0,0,.12);
+    }/* HERO */
+    .bioHero{
+      display:grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    @media (max-width: 900px){
+      .bioHero{ grid-template-columns: 1fr; }
+    }
+
+    .bioHeroCard{
+      border: 1px solid var(--mg-border);
+      background: var(--mg-panel);
+      border-radius: var(--mg-radius);
+      box-shadow: var(--mg-shadow);
+      padding: 18px;
+      overflow:hidden;
+    }
+
+    .kicker{
+      margin: 0 0 6px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      opacity: .8;
+      font-size: .82rem;
+    }
+
+    .bioTitle{
+      margin: 0 0 10px;
+      line-height: 1.1;
+    }
+
+    .bioLead{
+      margin: 0 0 14px;
+      opacity: .92;
+      font-size: 1.02rem;
+    }
+
+    .badges{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .badge{
+      border: 1px solid rgba(196,0,26,.22);
+      background: rgba(196,0,26,.06);
+      color: var(--redDark);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: .9rem;
+      white-space: nowrap;
+      font-weight: 900;
+    }
+
+    .heroMedia{
+      border: 1px solid var(--mg-border);
+      background: var(--mg-panel);
+      border-radius: var(--mg-radius);
+      overflow:hidden;
+      box-shadow: var(--mg-shadow);
+      min-height: 240px;
+      display:flex;
+      flex-direction: column;
+    }
+
+    .heroMedia img{
+      width: 100%;
+      height: 100%;
+      min-height: 240px;
+      object-fit: cover;
+      display:block;
+    }
+
+    .heroMedia figcaption{
+      padding: 10px 12px;
+      font-size: .9rem;
+      opacity: .85;
+    }
+
+    /* GRID DE SECCIONES */
+    .bioGrid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+
+    .bioCard{
+      grid-column: span 6;
+      border: 1px solid var(--mg-border);
+      background: var(--mg-panel);
+      border-radius: var(--mg-radius);
+      padding: 16px;
+      box-shadow: var(--mg-shadow);
+      overflow:hidden;
+    }
+
+    .bioCard.wide{ grid-column: span 12; }
+    @media (max-width: 900px){
+      .bioCard{ grid-column: span 12; }
+    }
+
+    .bioCardHead{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .bioCard h3{
+      margin: 0;
+      font-size: 1.15rem;
+    }
+
+    .bioMeta{
+      font-size: .9rem;
+      opacity: .8;
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .bioCard p{ margin: 10px 0 0; }
+
+    .cardMedia{
+      margin-top: 12px;
+      border-radius: 16px;
+      overflow:hidden;
+      border: 1px solid var(--mg-border);
+      background: #fff;
+    }
+
+    .cardMedia img{
+      width:100%;
+      height: 220px;
+      object-fit: cover;
+      display:block;
+    }
+
+    .quoteCard{
+      border: 1px solid var(--mg-border);
+      background: var(--mg-panel);
+      border-radius: var(--mg-radius);
+      padding: 18px;
+      box-shadow: var(--mg-shadow);
+    }
+
+    .quote{
+      margin: 0;
+      font-size: 1.05rem;
+      opacity: .95;
+    }
+
+    /* REVEAL (fade al scrollear) */
+    [data-reveal]{ opacity: 0; transform: translateY(14px); filter: blur(2px); }
+    [data-reveal].is-visible{ opacity: 1; transform: none; filter: none; }
+    [data-reveal]{ transition: opacity .75s ease, transform .75s ease, filter .75s ease; will-change: opacity, transform, filter; }
+    @media (prefers-reduced-motion: reduce){
+      [data-reveal]{ opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+    }
+
+    /* Centrados (textos y cuadros) */
+    .bioHeroCard,
+    .bioCard,
+    .quoteCard,
+    .heroMedia{ text-align:center; }
+
+    .bioHeroCard .bioLead,
+    .bioCard p,
+    .quote{ margin-left:auto; margin-right:auto; }
+
+    .badges{ justify-content:center; }
+
+    .bioCardHead{
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+    .bioMeta{ white-space:normal; }
+
+    /* listas legibles pero centradas como bloque */
+    ul.list{
+      display:inline-block;
+      text-align:left;
+      margin-left:auto;
+      margin-right:auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="pageLoader" id="pageLoader" aria-label="Cargando">
+    <div class="loaderBox"><div class="loaderRing" aria-hidden="true"></div><div class="loaderText">Cargando</div></div>
+  </div>
+
+  <header>
+    <div class="container topbar">
+      <a class="brand" href="index.html" aria-label="Inicio">
+        <img class="brandLogo" src="assets/logo-grande.png" alt="Manuca Gini" onerror="this.style.display='none';" />
+      </a>
+      <div class="headerRight">
+        <button class="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+        <nav aria-label="Pestañas">
+          <a href="index.html" data-page="index.html">Inicio</a>
+          <div class="hambDesktop">
+            <details class="drop">
+              <summary class="hambSummary" aria-label="Abrir menú">☰</summary>
+              <div class="dropMenu">
+                <a href="biografia.html" data-page="biografia.html">Biografía</a>
+                <a href="trayectoria.html" data-page="trayectoria.html">Trayectoria</a>
+                <a href="propuestas.html" data-page="propuestas.html">Propuestas</a>
+                <a href="noticias.html" data-page="noticias.html">Noticias</a>
+                <a href="equipo.html" data-page="equipo.html">Mi equipo</a>
+                <a href="contacto.html" data-page="contacto.html">Contacto</a>
+                <a href="padron.html" data-page="padron.html">Padrón</a>
+                <a href="info-electoral.html" data-page="info-electoral.html">Info electoral</a>
+              </div>
+            </details>
+          </div>
+          <div class="navLinks">
+            <a href="biografia.html" data-page="biografia.html">Biografía</a>
+            <a href="trayectoria.html" data-page="trayectoria.html">Trayectoria</a>
+            <a href="propuestas.html" data-page="propuestas.html">Propuestas</a>
+            <a href="noticias.html" data-page="noticias.html">Noticias</a>
+            <a href="equipo.html" data-page="equipo.html">Mi equipo</a>
+            <a href="contacto.html" data-page="contacto.html">Contacto</a>
+            <a href="padron.html" data-page="padron.html">Padrón</a>
+            <a href="info-electoral.html" data-page="info-electoral.html">Info electoral</a>
+          </div>
+        </nav>
+        <img class="candidateLogo" src="assets/logo-candidato.png" alt="Logo del candidato" onerror="this.style.display='none';" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section" style="border-top:none;">
+      <div class="bioHero">
+        <div class="bioHeroCard" data-reveal>
+          <p class="kicker">Biografía</p>
+          <h2 class="bioTitle">Enmanuel “Manuca” Gini Orué</h2>
+          <p class="bioLead">
+            Abog. Enmanuel “Manuca” Gini Orué es un piribebuyense, esposo y padre de familia, con una trayectoria de participación social, dirigencia deportiva y compromiso partidario.
+          </p>
+          <div class="badges" aria-label="Datos destacados">
+            <span class="badge">Abogado · Derecho UNA</span>
+            <span class="badge">Concejal Municipal 2010–2015</span>
+            <span class="badge">Convencional Titular · Seccional N° 218</span>
+            <span class="badge">Club 12 de Agosto · Campeón 2019</span>
+          </div>
+        </div>
+
+        <figure class="heroMedia" data-reveal>
+          <!--
+            FOTO PRINCIPAL:
+            - Reemplazá el src por tu imagen.
+            - Si no hay imagen, el onerror la oculta.
+          -->
+          <img src="assets/fotos/manuca-hero.jpg" alt="Enmanuel Gini Orué" onerror="this.closest('figure').style.display='none';" />
+          <figcaption>Podés colocar aquí una foto principal del candidato.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="bioGrid">
+        <article class="bioCard" data-reveal>
+          <div class="bioCardHead">
+            <h3>Origen y familia</h3>
+            <p class="bioMeta">Piribebuy</p>
+          </div>
+          <p>
+            Conocido como <strong>Manuca</strong> por los amigos de Piribebuy, es hijo de <strong>Carlos Darío Gini</strong>, mecánico de profesión, y de la profesora <strong>Adaluz Orué</strong>, fundadora del Instituto de Formación Docente de Piribebuy. Está <strong>felizmente casado</strong> y es padre de dos hijas: <strong>Thais Nicole</strong> y <strong>Paula Adaluz</strong>.
+          </p>
+          <div class="cardMedia">
+            <img src="assets/fotos/familia.jpg" alt="Foto familiar (opcional)" onerror="this.closest('.cardMedia').style.display='none';" />
+          </div>
+        </article>
+
+        <article class="bioCard" data-reveal>
+          <div class="bioCardHead">
+            <h3>Formación académica</h3>
+            <p class="bioMeta">Estudios</p>
+          </div>
+          <p>
+            Realizó la primaria en el <strong>Colegio Santo Domingo</strong> y cursó un año en la <strong>Escuela Maestro Fermín López</strong> (Escuela 46). Completó la secundaria en el <strong>Colegio Nacional de Piribebuy</strong>. Luego se trasladó a la capital, donde se recibió de <strong>abogado</strong> en la <strong>Facultad de Derecho de la Universidad Nacional de Asunción (UNA)</strong>.
+          </p>
+          <div class="cardMedia">
+            <img src="assets/fotos/formacion.jpg" alt="Foto de etapa educativa (opcional)" onerror="this.closest('.cardMedia').style.display='none';" />
+          </div>
+        </article>
+
+        <article class="bioCard" data-reveal>
+          <div class="bioCardHead">
+            <h3>Compromiso social y político</h3>
+            <p class="bioMeta">Participación</p>
+          </div>
+          <p>
+            Desde muy joven se involucró en actividades sociales, iniciándose en <strong>centros de estudiantes</strong>. Más adelante militó activamente dentro del <strong>Partido Colorado</strong>, lo que le permitió ocupar distintos espacios de trabajo y organización partidaria. En la Seccional Colorada <strong>"Rogelio R. Benítez"</strong> fue <strong>miembro titular</strong> y llegó a desempeñarse como <strong>Vicepresidente</strong> seccional. Actualmente es <strong>Convencional titular</strong> de la <strong>Seccional N° 218 "Rogelio R. Benítez"</strong>, manteniendo una participación activa y cercana a la ciudadanía.
+          </p>
+        </article>
+
+        <article class="bioCard" data-reveal>
+          <div class="bioCardHead">
+            <h3>Gestión y responsabilidad pública</h3>
+            <p class="bioMeta">2010–2015</p>
+          </div>
+          <p>
+            Con el acompañamiento de la ciudadanía de Piribebuy, fue electo <strong>Concejal Municipal</strong> para el periodo <strong>2010–2015</strong>. Durante ese tiempo asumió también el desafío de ser <strong>Precandidato a la Intendencia de Piribebuy</strong>, con la convicción de trabajar cerca de la gente.
+          </p>
+        </article>
+
+        <article class="bioCard" data-reveal>
+          <div class="bioCardHead">
+            <h3>Dirigencia deportiva</h3>
+            <p class="bioMeta">Club 12 de Agosto</p>
+          </div>
+          <p>
+            En lo deportivo integró la dirigencia del <strong>Club 12 de Agosto</strong>, siendo <strong>tres veces Vicepresidente</strong> y <strong>tres veces Presidente</strong>. En <strong>2019</strong> se coronó campeón del fútbol de Piribebuy como resultado del trabajo en equipo. Además, es <strong>olimpista</strong>.
+          </p>
+          <div class="cardMedia">
+            <img src="assets/fotos/deporte.jpg" alt="Foto deportiva (opcional)" onerror="this.closest('.cardMedia').style.display='none';" />
+          </div>
+        </article>
+
+        <article class="bioCard" data-reveal>
+          <div class="bioCardHead">
+            <h3>Presente y desafío 2026</h3>
+            <p class="bioMeta">Intendencia de Piribebuy</p>
+          </div>
+          <p>
+            Entiende que la participación social es un puente directo con la ciudadanía y, especialmente, con los jóvenes. De cara al <strong>2026</strong>, asume grandes desafíos y reafirma su compromiso de avanzar <strong>junto a la ciudadanía</strong>, con la bendición de <strong>Ñandejara Guazú</strong>, hacia la transformación que Piribebuy merece.
+          </p>
+        </article>
+
+        <article class="bioCard wide quoteCard" data-reveal>
+          <p class="quote">
+            “El deporte y la participación social nos conectan con la gente. Cuando la ciudadanía participa, el cambio se vuelve posible y la transformación llega a Piribebuy.”
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+    <footer class="footer">
+    <div class="container footerStack">
+      <div class="footerFollow">Síguenos</div>
+      <div class="social" aria-label="Redes sociales">
+      <a href="https://www.instagram.com/enmanuelgini/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.25-2.25a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg></a>
+      <a href="https://www.facebook.com/EnmanuelGiniIntendente/?locale=es_LA" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 22v-8h3l1-4h-4V7.5c0-1 .3-1.5 1.7-1.5H18V2.2c-.6-.1-2-.2-3.6-.2-3.2 0-5.4 2-5.4 5.6V10H6v4h3v8h4z"/></svg></a>
+      <a href="https://www.tiktok.com/@enmanuelgini" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 2h-3v13.2a3.2 3.2 0 1 1-2.4-3.1V9a6.2 6.2 0 1 0 5.4 6.1V9.2c1.2 1 2.7 1.6 4.4 1.6V7.8c-2 0-3.8-1.6-4-3.6V2z"/></svg></a>
+      </div>
+    </div>
+    <div class="footerRights">
+  © <span id="anio"></span> Enmanuel Gini Intendente.
+  <span class="dev">Desarrollo Web: Univ. Alejandro J. Villalba. Todos los derechos reservados.</span>
+
+</div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Reveal on scroll -->
+  <script>
+    (function(){
+      const els = Array.from(document.querySelectorAll('[data-reveal]'));
+      if (!els.length) return;
+
+      const show = (el) => el.classList.add('is-visible');
+
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(show);
+        return;
+      }
+
+      const io = new IntersectionObserver((entries, obs) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            show(e.target);
+            obs.unobserve(e.target);
+          }
+        }
+      }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
+</body>
+</html>

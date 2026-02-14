@@ -1,0 +1,1228 @@
+:root{
+  --pastelRed:#ffe6ea; /* rojo pastel de fondo */
+  --red:#c4001a;
+  --redDark:#8f0012;
+  --ink:#121212;
+  --muted:#666;
+  --line:#ececec;
+  --soft:#fff1f2;
+  --max:1100px;
+  --radius:18px;
+  --shadow: 0 14px 40px rgba(0,0,0,.08);
+
+  /* Logo grande sin agrandar el header (se logra con scale por transform) */
+  --logoH:62px;              /* alto “real” (layout) */
+  --logoScale:1.55;          /* tamaño visual */
+  --logoScaleCompact:1.18;   /* tamaño visual al scrollear */
+}
+
+*{ box-sizing:border-box; }
+html,body{ width:100%; overflow-x:hidden; }
+
+/* Bloquear scroll de fondo cuando haya modal (intro) */
+html.noScroll, body.noScroll{ overflow:hidden; height:100%; }
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color:var(--ink);
+  line-height:1.55;
+  background: var(--pastelRed);
+  min-height:100vh;
+  /* Sticky footer sin “saltos” ni scroll fantasma */
+  display:flex;
+  flex-direction:column;
+}
+
+/* Evitar “espacio en blanco” al desplazar horizontalmente */
+img, video, canvas{ max-width:100%; }
+.introOverlay, .thankOverlay{ overflow:hidden; }
+
+/* ✅ El header es fijo: reservamos su altura SOLO en el contenido (main),
+   así evitamos espacio extra después del footer y bugs de scroll. */
+main{
+  flex: 1 0 auto;
+  min-height:0;
+  /* Reservamos SIEMPRE el máximo alto del header (evita que tape contenido
+     cuando el header se compacta/expande o si el cálculo llega tarde) */
+  padding-top: calc(var(--headerHMax, 120px) + 6px);
+  padding-bottom: 24px;
+  transition: none;
+}
+
+/* Fondo fijo en TODAS las páginas (no se duplica al scrollear) */
+body::before{
+  content:"";
+  position:fixed;
+  inset:-12px;                 /* margen para blur sin cortar */
+  z-index:-2;
+  background: none;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  opacity:0;                 /* se ve más */
+  transform: scale(1.03);
+  filter: saturate(1.12) contrast(1.06) blur(3px);
+  will-change: transform;
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  /* difuminado rojo + velo blanco para legibilidad */
+  background:
+    radial-gradient(900px 520px at 22% 10%, rgba(196,0,26,.08), transparent 62%),
+    radial-gradient(720px 520px at 80% 35%, rgba(196,0,26,.06), transparent 60%),
+    linear-gradient(180deg, rgba(255,230,234,.98), rgba(255,230,234,.98));
+}
+
+a{ color:inherit; }
+/*
+  IMPORTANTE:
+  Antes usábamos `padding: 0 16px;` acá. Como <main> también tiene la clase
+  `.container`, ese shorthand (por especificidad de clase) pisaba el `padding-top`
+  que reservamos para el header fijo, y por eso el header terminaba tapando
+  el contenido.
+
+  Solución: el container solo define padding horizontal.
+*/
+.container{ max-width:var(--max); margin:0 auto; padding-left:16px; padding-right:16px; }
+
+/* Header */
+header{
+  position:fixed; top:0; left:0; right:0; z-index:10;
+  background:#fff;
+  background:rgba(255,255,255,.96);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom:3px solid var(--red);
+  transform: translateZ(0); /* evita parpadeos/desapariciones al scrollear */
+  overflow: visible; /* asegura que la "ventana blanca" no se recorte */
+  box-shadow: 0 8px 18px rgba(0,0,0,.06);
+}
+
+/* Barra roja superior (texto cambia por pestaña vía JS) */
+header::before{
+  content: attr(data-strip);
+  display:block;
+  background: var(--red);
+  color:#fff;
+  text-align:center;
+  font-weight:950;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-size:11px;
+  padding:8px 0;
+  border-bottom:1px solid rgba(255,255,255,.18);
+  transition: padding .25s ease, font-size .25s ease, letter-spacing .25s ease;
+  will-change: padding, font-size, letter-spacing;
+}
+
+
+header.compact::before{
+  /* al scrollear, la franja roja también se compacta un poco */
+  padding:6px 0;
+  font-size:10px;
+  letter-spacing:.12em;
+}
+
+/* sombra suave al hacer scroll */
+header.compact{
+  box-shadow: 0 10px 28px rgba(0,0,0,.10);
+}
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:8px 0;
+  /* evita que la "ventana blanca" desaparezca: mantiene altura mínima */
+  min-height:82px;
+  transition: padding .25s ease;
+  will-change: padding, min-height;
+}
+
+/* En compacto, la “ventana blanca” se achica pero no desaparece */
+header.compact .topbar{ padding:6px 0; min-height:66px; }
+
+/* ✅ LOGO MUCHO MÁS GRANDE */
+.brand{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  white-space:nowrap;
+  padding:0;
+  flex:0 0 auto;
+}
+.brandLogo{
+  height: var(--logoH);
+  width:auto;
+  max-width: 260px;
+  display:block;
+  object-fit:contain;
+  transform-origin: left center;
+  /* ✅ grande visualmente sin “inflar” el header */
+  transform: translateY(2px) scale(var(--logoScale));
+  transition: transform .26s ease, filter .26s ease;
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,.10));
+  will-change: transform;
+}
+
+/* ✅ Logo se achica al scrollear SIN cambiar el layout (evita “salto” arriba) */
+header.compact .brandLogo{
+  transform: translateY(0px) scale(var(--logoScaleCompact));
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,.10));
+}
+.headerRight{
+  flex:1 1 auto;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  justify-content:flex-end;
+}
+
+.candidateLogo{
+  width:44px; height:44px;
+  border-radius:999px;
+  object-fit:cover;
+  border:2px solid rgba(196,0,26,.22);
+  box-shadow: 0 10px 26px rgba(0,0,0,.10);
+  background:#fff;
+  flex:0 0 auto;
+}
+
+
+/* Botón menú mobile */
+.menuBtn{
+  display:none;
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:12px;
+  padding:8px 10px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+/* NAV */
+nav{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  justify-content:flex-end;
+}
+nav a{
+  text-decoration:none;
+  font-weight:850;
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid transparent;
+}
+nav a:hover{ text-decoration:underline; }
+nav a.active{
+  background: var(--soft);
+  border-color: rgba(196,0,26,.22);
+}
+
+/* Botón INICIO siempre en globo rojo */
+nav > a[data-page="index.html"]{
+  background: var(--red);
+  color:#fff;
+  border-color: rgba(255,255,255,.22);
+  box-shadow: 0 10px 22px rgba(196,0,26,.25);
+}
+nav > a[data-page="index.html"]:hover{
+  text-decoration:none;
+  background: var(--redDark);
+}
+nav > a[data-page="index.html"].active{
+  background: var(--red);
+  border-color: rgba(255,255,255,.22);
+}
+
+
+/* Desktop dropdown ☰ */
+.hambDesktop{ display:block; }
+.navLinks{ display:none; } /* mobile */
+
+.drop{ position:relative; }
+.drop > summary{
+  list-style:none;
+  cursor:pointer;
+  font-weight:900;
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid transparent;
+  user-select:none;
+}
+.drop > summary::-webkit-details-marker{ display:none; }
+.drop[open] > summary{
+  background: var(--soft);
+  border-color: rgba(196,0,26,.22);
+}
+.hambSummary{
+  font-size:20px;
+  line-height:1;
+  padding:8px 12px;
+  min-width:44px;
+  display:grid;
+  place-items:center;
+  font-weight:1000;
+}
+
+.dropMenu{
+  position:absolute;
+  right:0;
+  top:calc(100% + 10px);
+  min-width:240px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow: var(--shadow);
+  padding:8px;
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+  gap:6px;
+  z-index:9999; /* ✅ para que no “desaparezca” detrás */
+}
+.dropMenu a{
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:10px 12px;
+  text-decoration:none;
+  font-weight:850;
+  background:#fff;
+}
+.dropMenu a:hover{ border-color: rgba(196,0,26,.25); }
+
+/* Layout */
+.hero{
+  padding:22px 0;
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap:18px;
+  /* evita que el bloque izquierdo “se estire” y quede un vacío enorme */
+  align-items:start;
+}
+
+/* Evita desbordes raros dentro del grid */
+.hero > *{ min-width:0; }
+
+.banner{
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  background: rgba(255,255,255,.92);
+  padding:18px;
+}
+.kicker{ margin:0; color:var(--muted); font-weight:760; }
+
+h1{
+  margin:.35em 0 .2em;
+  font-size:42px;
+  letter-spacing:-.03em;
+  line-height:1.12;
+}
+h2{ margin:0 0 10px; letter-spacing:-.02em; }
+h3{ margin:0 0 6px; letter-spacing:-.01em; }
+
+.lead{ max-width:64ch; font-size:18px; color:#222; }
+.meta{ color:var(--muted); font-size:14px; }
+
+.actions{ display:flex; gap:10px; margin:14px 0 6px; flex-wrap:wrap; }
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  border:1px solid var(--ink);
+  padding:11px 14px;
+  border-radius:14px;
+  font-weight:950;
+}
+.btn.primary{
+  background: var(--red);
+  color:#fff;
+  border-color: transparent;
+  box-shadow: 0 12px 26px rgba(196,0,26,.20);
+}
+.btn.soft{
+  background: var(--soft);
+  border-color: rgba(196,0,26,.22);
+}
+
+/* Cards / panels */
+.card{
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background: rgba(255,255,255,.92);
+  overflow:hidden;
+}
+.cardHeader{
+  padding:16px;
+  border-bottom:1px solid var(--line);
+  background: rgba(196,0,26,.06);
+}
+.cardBody{ padding:16px; }
+
+.badge{
+  display:inline-block;
+  font-size:12px;
+  padding:4px 10px;
+  border-radius:999px;
+  background: rgba(196,0,26,.12);
+  border:1px solid rgba(196,0,26,.22);
+  color: var(--redDark);
+  font-weight:900;
+}
+
+.section{ padding:22px 0; border-top:1px solid var(--line); }
+/* títulos centrados para un look más "institucional" */
+.section > h2,
+.section > h1{ text-align:center; }
+.panel{
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  padding:16px;
+  background: rgba(255,255,255,.92);
+}
+.grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+
+.notice{
+  border:1px solid rgba(196,0,26,.22);
+  background: rgba(196,0,26,.06);
+  border-radius: var(--radius);
+  padding:12px 14px;
+  color:#2b2b2b;
+}
+.list{ margin:10px 0 0; padding-left:18px; }
+
+/* Social */
+.social{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.social a{
+  width:42px; height:42px;
+  display:grid; place-items:center;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background:#fff;
+  transition: transform .15s ease, border-color .15s ease;
+}
+.social a:hover{
+  transform: translateY(-2px);
+  border-color: rgba(196,0,26,.25);
+}
+.social svg{ width:20px; height:20px; fill: var(--redDark); }
+
+/* redes grandes en card del inicio */
+.socialInline{ justify-content:flex-start; }
+.socialInline a{ width:60px; height:60px; border-radius:18px; }
+.socialInline svg{ width:28px; height:28px; }
+
+/* Spotlight candidato (inicio) */
+.spotlight{
+  display:grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap:14px;
+  align-items:stretch;
+}
+.spotText{
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.92);
+  box-shadow: var(--shadow);
+  padding:16px;
+}
+.spotImg{
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  overflow:hidden;
+  box-shadow: var(--shadow);
+  background:#111;
+}
+.spotImg img{
+  width:100%;
+  height:100%;
+  min-height:280px;
+  object-fit:cover;
+  display:block;
+}
+
+/* Fade candidato después del intro */
+.candidateFade{
+  opacity:0;
+  transform: translateY(10px);
+}
+body.revealCandidate .candidateFade{
+  animation: candidateIn .55s ease both;
+}
+@keyframes candidateIn{
+  to{ opacity:1; transform: translateY(0); }
+}
+
+/* Contacto (form lindo) */
+/* Más aire entre "Mis redes" y el formulario */
+.redesPanel{ margin-bottom:44px; }
+.formCard{
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.92);
+  box-shadow: var(--shadow);
+  padding:16px;
+  margin-top:44px;
+}
+.formTop{
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+  gap:6px;
+  margin-bottom:12px;
+}
+.formGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.field{ display:flex; flex-direction:column; gap:6px; }
+label{
+  font-weight:900;
+  font-size:12px;
+  color:#222;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+input, textarea, select{
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:12px 12px;
+  font: inherit;
+  outline:none;
+  background:#fff;
+}
+input:focus, textarea:focus, select:focus{
+  border-color: rgba(196,0,26,.35);
+  box-shadow: 0 0 0 4px rgba(196,0,26,.10);
+}
+textarea{ min-height:120px; resize:vertical; }
+.formActions{
+  margin-top:12px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.smallNote{ color:var(--muted); font-size:13px; margin:10px 0 0; }
+
+/* Footer centrado SIEMPRE */
+.footer{
+  position:relative;
+  width:100%;
+  border-top:1px solid var(--line);
+  padding:18px 0 calc(18px + env(safe-area-inset-bottom));
+  color:var(--muted);
+  font-size:14px;
+  background: rgba(255,255,255,.92);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 -10px 24px rgba(0,0,0,.08);
+}
+.footer .footerStack{
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+  align-items:center;
+  gap:12px;
+  text-align:center;
+}
+.footerFollow{
+  font-weight:950;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  color: var(--redDark);
+}
+.footer .social{
+  justify-content:center;
+  width:100%;
+  margin:0 auto;
+}
+.footerRights{
+  width:100%;
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 16px;
+  text-align:center;
+  font-weight:800;
+  color:#444;
+  line-height:1.4;
+}
+.footerRights .dev{
+  display:block;
+  margin-top:6px;
+  font-weight:850;
+  color:#555;
+}
+
+/* Loader */
+.pageLoader{
+  position:fixed;
+  inset:0;
+  z-index:9997;
+  display:grid;
+  place-items:center;
+  background:#fff;
+  opacity:1;
+  visibility:visible;
+  transition: opacity .35s ease, visibility .35s ease;
+}
+.pageLoader.hide{ opacity:0; visibility:hidden; }
+.loaderBox{ display:grid; gap:10px; justify-items:center; text-align:center; }
+.loaderRing{
+  width:54px; height:54px;
+  border-radius:999px;
+  border:5px solid rgba(0,0,0,.10);
+  border-top-color: var(--red);
+  animation: spin .9s linear infinite;
+}
+@keyframes spin{ to{ transform: rotate(360deg); } }
+.loaderText{
+  font-weight:950;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  color: var(--redDark);
+}
+
+
+/* ✅ Transiciones más “vivas” entre pestañas (sin romper nada) */
+body.pageEnter main{ animation: mainIn .52s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes mainIn{ from{ transform: translateY(10px); } to{ transform: translateY(0); } }
+body.isLeaving main{ transform: translateY(10px); opacity:0; transition: transform .22s ease, opacity .22s ease; }
+
+/* ✅ Fade al scrollear */
+.revealItem{
+  opacity:0;
+  transform: translateY(10px);
+  transition: opacity .65s ease, transform .65s ease;
+  will-change: opacity, transform;
+}
+.revealItem.isVisible{
+  opacity:1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce){
+  .revealItem{ opacity:1 !important; transform:none !important; }
+}
+
+/* Transiciones solo en el CONTENIDO (footer siempre fijo y sin fade) */
+.pageEnter{ animation:none; }
+
+/* Intro */
+.introOverlay{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:flex;
+  /* Centrado vertical del intro */
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+  background: rgba(196,0,26,.94);
+  /* ✅ el scroll es del overlay (no del card) para evitar una “barra extra” */
+  overflow:auto;
+}
+
+/* ✅ el card sin scroll interno (la página/overlay maneja el scroll) */
+.introCard{
+  width:min(980px, 100%);
+  /* Sin margen vertical: permite centrado real (vertical) dentro del overlay */
+  margin: 0;
+  max-height:none;
+  overflow:hidden;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:0 30px 90px rgba(0,0,0,.35);
+  background:rgba(255,255,255,.06);
+  backdrop-filter: blur(10px);
+  opacity:0;
+  transform: translateX(-28px);
+  animation:introSlideIn .75s ease-out forwards;
+}
+@keyframes introSlideIn{ to { opacity:1; transform: translateX(0); } }
+
+.introGrid{
+  display:grid;
+  grid-template-columns: 1.15fr .85fr;
+  /* ✅ sin alto fijo: evita “vacíos” y separaciones exageradas */
+  min-height:unset;
+}
+.introImg{ min-height:260px; background:transparent; }
+.introImg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+.introText{
+  padding:16px 18px;
+  color:#fff;
+  text-align:center;
+  align-items:center;
+  /* ✅ layout estable (sin filas 1fr) para que el texto no quede “separado” */
+  display:flex;
+  flex-direction:column;
+  /* ✅ centrado vertical del texto */
+  justify-content:center;
+  gap:10px;
+}
+.introTop{
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0;
+  color: rgba(255,255,255,.9);
+}
+.introText h2{
+  margin:0;
+  font-size:34px;
+  letter-spacing:-.02em;
+  line-height:1.15;
+}
+.introText p{ margin:0; color: rgba(255,255,255,.86); font-size:16px; }
+.introActions{ margin-top:6px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
+.introBtn{
+  appearance:none;
+  border:1px solid rgba(255,255,255,.35);
+  background: rgba(255,255,255,.10);
+  color:#fff;
+  padding:10px 14px;
+  border-radius:14px;
+  font-weight:950;
+  cursor:pointer;
+}
+.introBtn.primary{ background:#fff; color:#111; border-color: transparent; }
+.introHint{ margin-top:4px; font-size:13px; color: rgba(255,255,255,.78); text-align:center; }
+.introOverlay.fadeOut{ animation:introFade .40s ease forwards; }
+@keyframes introFade{ to{ opacity:0; visibility:hidden; } }
+
+/* Responsive */
+@media (max-width: 920px){
+  :root{
+    --logoH:56px;
+    --logoScale:1.45;
+    --logoScaleCompact:1.12;
+  }
+
+  .hero{ grid-template-columns:1fr; }
+  h1{ font-size:34px; }
+  .grid, .grid3{ grid-template-columns:1fr; }
+  .formGrid{ grid-template-columns:1fr; }
+
+  /* ✅ MOBILE HEADER: sin "salto" y sin agrandar altura al abrir menú */
+  .topbar{
+    flex-wrap:nowrap;          /* evita que el header se vuelva gigante */
+    align-items:center;
+    padding:6px 0;
+    min-height:72px;
+  }
+  header.compact .topbar{ min-height:62px; }
+
+  .headerRight{
+    width:auto;
+    flex:0 0 auto;
+    justify-content:flex-end;
+    gap:10px;
+  }
+  .menuBtn{ display:inline-block; }
+
+  /* Mobile: ocultamos dropdown desktop */
+  .hambDesktop{ display:none; }
+
+  /* Panel de navegación (overlay): NO empuja el header */
+  nav{
+    position:fixed;
+    top: calc(var(--headerH, 120px) + 8px);
+    left:12px;
+    right:12px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:14px;
+    box-shadow: var(--shadow);
+    max-height: calc(100vh - var(--headerH, 120px) - 24px);
+    overflow:auto;
+    opacity:0;
+    transform: translateY(-8px);
+    pointer-events:none;
+    transition: opacity .2s ease, transform .2s ease;
+    z-index:9998;
+    display:block; /* siempre en el DOM; lo ocultamos con opacity */
+  }
+  nav.open{
+    opacity:1;
+    transform: translateY(0);
+    pointer-events:auto;
+  }
+
+  /* Links en columna */
+  .navLinks{ display:flex; flex-direction:column; gap:10px; width:100%; }
+
+  /* Separación visual entre el botón Inicio y el resto (evita que “se junte todo”) */
+  nav > a[data-page="index.html"]{ display:block; margin-bottom:10px; }
+
+  nav a{
+    width:100%;
+    padding:10px 12px;
+    border-radius:14px;
+    background:#fff;
+    border:1px solid var(--line);
+    box-sizing:border-box;
+    white-space:normal; /* evita recortes en pantallas muy angostas */
+  }
+
+  /* Mejor scroll dentro del panel */
+  nav{ -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+
+  /* Mantener el botón Inicio en globo rojo también dentro del panel */
+  nav > a[data-page="index.html"]{
+    background: var(--red);
+    color:#fff;
+    border-color: rgba(255,255,255,.22);
+    box-shadow: 0 10px 22px rgba(196,0,26,.25);
+  }
+
+  .spotlight{ grid-template-columns:1fr; }
+  .spotImg img{ min-height:240px; }
+
+  /* ✅ Intro en móvil: no recortar imagen */
+  .introGrid{ grid-template-columns:1fr; min-height:auto; }
+  .introImg{
+    height:auto;
+    min-height:unset;
+    padding:10px;
+  }
+  .introImg img{
+    height:auto;
+    max-height:45vh;
+    object-fit:contain;
+    background: transparent;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.18);
+    display:block;
+    width:100%;
+  }
+  .introText h2{ font-size:28px; }
+}
+
+@media (max-width: 520px){
+  :root{
+    --logoH:52px;
+    --logoScale:1.38;
+    --logoScaleCompact:1.08;
+  }
+
+  /* Botones de acciones: que entren siempre (sin recorte) */
+  .actions{ gap:8px; }
+  .actions .btn{ flex:1 1 140px; text-align:center; }
+  .actions .btn.primary{ flex-basis:100%; }
+  .btn{ white-space:normal; }
+
+  /* Timeline: un poquito más compacto en pantallas chicas */
+  .tItem{ grid-template-columns:40px 1fr; }
+  .timeline::before{ left:16px; }
+  .tYear{ max-width:40px; word-break:break-word; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Trayectoria · Timeline
+   ───────────────────────────────────────────────────────────── */
+.timeline{
+  position:relative;
+  margin-top:12px;
+}
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:36px;
+  top:0;
+  bottom:0;
+  width:2px;
+  background: linear-gradient(180deg, rgba(196,0,26,.35), rgba(196,0,26,.10));
+  border-radius:99px;
+}
+.tItem{
+  display:grid;
+  grid-template-columns:72px 1fr;
+  gap:14px;
+  align-items:start;
+  margin:0 0 14px;
+}
+/* Evita overflow horizontal en grid (clave en móvil) */
+.tItem > *{ min-width:0; }
+.tCard{ min-width:0; }
+.tMark{
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+  align-items:center;
+  gap:8px;
+  padding-top:6px;
+}
+.tDot{
+  width:16px;
+  height:16px;
+  border-radius:999px;
+  background: var(--red);
+  border:3px solid rgba(255,255,255,.92);
+  box-shadow: 0 12px 28px rgba(196,0,26,.22);
+}
+.tYear{
+  font-weight:950;
+  font-size:11px;
+  letter-spacing:.10em;
+  color: var(--redDark);
+  text-transform:uppercase;
+  text-align:center;
+  line-height:1.2;
+}
+.tCard h3{ margin-top:0; }
+
+.tHeader{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+  margin-bottom:8px;
+}
+.chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border-radius:999px;
+  padding:6px 10px;
+  font-weight:950;
+  font-size:12px;
+  border:1px solid rgba(196,0,26,.22);
+  background: rgba(196,0,26,.10);
+  color: var(--redDark);
+}
+.chip.soft{
+  background: rgba(255,255,255,.85);
+  border-color: var(--line);
+  color:#222;
+  font-weight:900;
+}
+
+/* Media / fotos opcionales */
+.tlMedia{
+  margin-top:12px;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background: rgba(0,0,0,.06);
+}
+.tlMedia img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  display:block;
+}
+.tlMediaFallback{
+  display:none;
+}
+.tlMedia.noImg{
+  padding:14px;
+  border:1px dashed rgba(196,0,26,.30);
+  background: rgba(196,0,26,.06);
+}
+.tlMedia.noImg .tlMediaFallback{
+  display:block;
+}
+
+@media (max-width: 720px){
+  .timeline::before{ left:18px; }
+  .tItem{ grid-template-columns:44px 1fr; gap:10px; }
+  .tYear{ font-size:10px; letter-spacing:.08em; }
+  .tlMedia img{ height:220px; }
+}
+
+@media (max-width: 520px){
+  /* Botones (Trayectoria / secciones) que no se “cortan” en pantallas chicas */
+  .actions{ gap:8px; }
+  .actions .btn{ flex:1 1 130px; text-align:center; white-space:normal; }
+  .actions .btn.primary{ flex-basis:100%; }
+
+  /* Timeline: más compacto */
+  .tItem{ grid-template-columns:38px 1fr; }
+  .timeline::before{ left:15px; }
+  .tDot{ width:14px; height:14px; }
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   Contacto · Modal de agradecimiento
+   ───────────────────────────────────────────────────────────── */
+.thankOverlay{
+  position:fixed;
+  inset:0;
+  z-index:9998;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+  background: rgba(196,0,26,.70);
+  backdrop-filter: blur(6px);
+}
+.thankCard{
+  width:min(560px, 100%);
+  border-radius:22px;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  box-shadow:0 28px 80px rgba(0,0,0,.30);
+  padding:18px;
+}
+.thankTop{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+}
+.thankIcon{
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  background: rgba(196,0,26,.08);
+  border:1px solid rgba(196,0,26,.20);
+  flex:0 0 auto;
+}
+.thankIcon svg{ width:22px; height:22px; fill: var(--redDark); }
+.thankCard h3{ margin:0; letter-spacing:-.01em; }
+.thankCard p{ margin:8px 0 0; color:#333; }
+.thankActions{ margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
+
+
+/* Footer fijo: nunca con fade */
+.footer.revealItem{ opacity:1 !important; transform:none !important; }
+
+
+/* ─────────────────────────────────────────────────────────────
+   Inicio · Últimas publicaciones (carrusel)
+   ───────────────────────────────────────────────────────────── */
+.postsWidget{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.carBtn{
+  width:34px;
+  height:34px;
+  border-radius:999px;
+  border:1px solid rgba(196,0,26,.22);
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 10px 22px rgba(0,0,0,.08);
+  font-weight:1000;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  user-select:none;
+}
+.carBtn:active{ transform: translateY(1px); }
+
+.postsTrack{
+  display:flex;
+  gap:14px;
+  flex:1 1 auto;
+  overflow-x:auto;
+  overflow-y:hidden;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  padding:4px 2px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width:none; /* Firefox */
+}
+.postsTrack::-webkit-scrollbar{ display:none; } /* WebKit */
+
+/* Modo carrusel: 1 tarjeta por vista (evita que se vean 2 embeds a la vez) */
+.postsTrack.singleSlide{ scroll-snap-type:x mandatory; }
+.postsTrack.singleSlide .postTile{
+  flex: 0 0 100%;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+/* En carrusel, centramos el embed y evitamos cortes raros */
+.postsTrack.singleSlide .igEmbedWrap{
+  max-width: 360px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* Simetría cuando hay 3 o menos (centrado; permite swipe si no entra) */
+.postsTrack.centered{
+  justify-content:center;
+  overflow-x:auto;
+  overflow-y:hidden;
+}
+
+.postTile{
+  scroll-snap-align:start;
+  flex: 0 0 min(360px, 92%);
+  max-width: 360px;
+  min-width: 260px;
+  border-radius:16px;
+  border:1px solid rgba(196,0,26,.18);
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 12px 30px rgba(0,0,0,.06);
+  padding:10px 10px 12px;
+  text-decoration:none;
+  overflow:hidden; /* evita que el embed se salga y rompa el layout */
+}
+.postTile:hover{ border-color: rgba(196,0,26,.35); }
+
+.pTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+.pPlat{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-weight:950;
+  font-size:11px;
+  color: var(--redDark);
+}
+.pPlat svg{
+  width:14px;
+  height:14px;
+  fill: currentColor;
+  opacity:.9;
+}
+.pDate{
+  font-size:11px;
+  color: var(--muted);
+  font-weight:800;
+}
+.pTitle{
+  margin-top:8px;
+  font-weight:950;
+  font-size:13px;
+  line-height:1.2;
+}
+
+.postTile.facebook{ background: rgba(255,255,255,.94); }
+.postTile.instagram{ background: rgba(255,255,255,.94); }
+
+/* Instagram embed dentro del carrusel */
+.postTile.embed{ padding:10px; }
+.postTile.embed{ min-width: 326px; } /* ancho mínimo recomendado por IG */
+.igEmbedWrap{
+  margin-top:10px;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  overflow:hidden;
+  border-radius:12px;
+}
+.igEmbedWrap blockquote,
+.igEmbedWrap iframe{
+  width:100% !important;
+  max-width:100% !important;
+  min-width:0 !important;
+  margin:0 auto !important;
+}
+
+/* Fuerza responsive del embed (Instagram inyecta estilos inline) */
+.instagram-media,
+.instagram-media-rendered{
+  width:100% !important;
+  max-width:100% !important;
+  min-width:0 !important;
+}
+
+@media (max-width: 520px){
+  .postTile{
+    flex-basis: 92%;
+    max-width: 92%;
+    min-width: 0;
+  }
+  .postTile.embed{ min-width: 0; }
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   Noticias (preview + listado)
+   ───────────────────────────────────────────────────────────── */
+.newsTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.newsList{
+  margin-top:12px;
+  display:grid;
+  gap:12px;
+}
+
+.newsCard .chip, .newsItem .chip{
+  background: rgba(196,0,26,.10);
+  border-color: rgba(196,0,26,.22);
+}
+
+.newsFilter{ cursor:pointer; }
+.newsFilter.active{ background: rgba(196,0,26,.12); border-color: rgba(196,0,26,.28); }
+
+
+/* Notice variants */
+.notice.success{
+  border-color: rgba(46,125,50,.25);
+  background: rgba(46,125,50,.08);
+}
+.notice.danger{
+  border-color: rgba(211,47,47,.25);
+  background: rgba(211,47,47,.08);
+}
+
+/* Padrón result layout */
+.resultHeader{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.resultBadges{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:flex-end;
+}
+.resultGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px 12px;
+  margin-top:12px;
+}
+.resultItem{
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:12px 12px;
+  background:#fff;
+}
+.resultItem .value{
+  font-weight:900;
+  margin-top:4px;
+}
+@media (max-width: 720px){
+  .resultGrid{ grid-template-columns:1fr; }
+  .resultBadges{ justify-content:flex-start; }
+}

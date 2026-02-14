@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Propuestas | Manuca Gini</title>  <style>    html,body{overflow-x:hidden;}
+</style>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" href="assets/logo-candidato.png" />
+  <link rel="apple-touch-icon" href="assets/logo-candidato.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#c4001a" />
+
+</head>
+<body>
+  <div class="pageLoader" id="pageLoader" aria-label="Cargando">
+    <div class="loaderBox"><div class="loaderRing" aria-hidden="true"></div><div class="loaderText">Cargando</div></div>
+  </div>
+
+  <header>
+    <div class="container topbar">
+      <a class="brand" href="index.html" aria-label="Inicio">
+        <img class="brandLogo" src="assets/logo-grande.png" alt="Manuca Gini" onerror="this.style.display='none';" />
+      </a>
+      <div class="headerRight">
+        <button class="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+        <nav aria-label="Pestañas">
+          <a href="index.html" data-page="index.html">Inicio</a>
+          <div class="hambDesktop">
+            <details class="drop">
+              <summary class="hambSummary" aria-label="Abrir menú">☰</summary>
+              <div class="dropMenu">
+                <a href="biografia.html" data-page="biografia.html">Biografía</a>
+                <a href="trayectoria.html" data-page="trayectoria.html">Trayectoria</a>
+                <a href="propuestas.html" data-page="propuestas.html">Propuestas</a>
+                <a href="noticias.html" data-page="noticias.html">Noticias</a>
+                <a href="equipo.html" data-page="equipo.html">Mi equipo</a>
+                <a href="contacto.html" data-page="contacto.html">Contacto</a>
+                <a href="padron.html" data-page="padron.html">Padrón</a>
+                <a href="info-electoral.html" data-page="info-electoral.html">Info electoral</a>
+              </div>
+            </details>
+          </div>
+          <div class="navLinks">
+            <a href="biografia.html" data-page="biografia.html">Biografía</a>
+            <a href="trayectoria.html" data-page="trayectoria.html">Trayectoria</a>
+            <a href="propuestas.html" data-page="propuestas.html">Propuestas</a>
+            <a href="noticias.html" data-page="noticias.html">Noticias</a>
+            <a href="equipo.html" data-page="equipo.html">Mi equipo</a>
+            <a href="contacto.html" data-page="contacto.html">Contacto</a>
+            <a href="padron.html" data-page="padron.html">Padrón</a>
+            <a href="info-electoral.html" data-page="info-electoral.html">Info electoral</a>
+          </div>
+        </nav>
+        <img class="candidateLogo" src="assets/logo-candidato.png" alt="Logo del candidato" onerror="this.style.display='none';" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section" style="border-top:none;">
+      <h2>Propuestas para Piribebuy</h2>
+
+      <div class="panel">
+        <p class="lead" style="margin:0;">
+          Un plan de trabajo <strong>por sectores</strong>, pensado desde la realidad de Piribebuy: orden, servicios,
+          obras útiles y una Municipalidad más cercana.
+        </p>
+        <p class="meta" style="margin-top:10px;">
+          Estas propuestas se irán ajustando con reuniones barriales, comisiones vecinales y organizaciones locales.
+        </p>
+
+        <div class="tHeader" style="justify-content:center; margin-top:12px;">
+          <a class="chip" href="#infra">Infraestructura</a>
+          <a class="chip" href="#servicios">Servicios</a>
+          <a class="chip" href="#ambiente">Ambiente</a>
+          <a class="chip" href="#seguridad">Seguridad</a>
+          <a class="chip" href="#juventud">Juventud</a>
+          <a class="chip" href="#turismo">Turismo</a>
+          <a class="chip" href="#deporte">Deporte</a>
+          <a class="chip" href="#transparencia">Transparencia</a>
+        </div>
+      </div>
+
+      <div class="panel" id="infra">
+        <h3>Infraestructura y movilidad</h3>
+        <ul class="list">
+          <li><strong>Plan de calles por barrios y compañías:</strong> bacheo, perfilado y mantenimiento con <em>prioridades claras</em> (escuelas, centros de salud, accesos a compañías, zonas productivas y puntos turísticos). Cronograma público + reporte de avances.</li>
+          <li><strong>Caminos rurales y accesos a compañías:</strong> mantenimiento preventivo antes de la temporada de lluvias; alcantarillas/puentes menores, ripio/estabilizado donde corresponda y reparación rápida de cortes.</li>
+          <li><strong>Drenaje pluvial y raudales:</strong> limpieza permanente de cunetas, badenes y alcantarillas; mapeo de puntos críticos y obras pequeñas (tubos, bocas de tormenta) para reducir anegamientos.</li>
+          <li><strong>Seguridad vial escolar:</strong> cruces peatonales visibles, reductores en zonas críticas, señalética, y presencia/ordenamiento en entrada y salida de escuelas.</li>
+          <li><strong>Accesos y conectividad regional:</strong> coordinación con instituciones para acompañar obras viales estratégicas (por ejemplo, el tramo Caacupé–Piribebuy) y ordenar desvíos seguros cuando haya trabajos.</li>
+          <li><strong>Veredas accesibles y orden del centro:</strong> rampas, mejoras graduales en veredas y paradas, más criterios simples para ocupación de vereda (paso libre) sin perseguir al trabajador.</li>
+        </ul>
+      </div>
+
+      <div class="panel" id="servicios">
+        <h3>Servicios municipales y atención al ciudadano</h3>
+        <ul class="list">
+          <li><strong>Ventanilla única + trámites claros:</strong> guía simple de requisitos, costos y tiempos; menos vueltas, más soluciones.</li>
+          <li><strong>Canal de reclamos con seguimiento:</strong> WhatsApp/mesa de entrada con número de ticket, plazos de respuesta y reporte mensual de lo resuelto.</li>
+          <li><strong>Recolección y limpieza con calendario real:</strong> recorridos publicados, refuerzo en fines de semana/temporadas, y control de microbasurales con limpieza y prevención.</li>
+          <li><strong>Alumbrado público:</strong> plan por barrios (priorizando zonas oscuras, paradas, accesos y plazas) con registro de reparaciones y recambio progresivo a LED.</li>
+          <li><strong>Espacios públicos en orden:</strong> plazas, paradas, cementerio, centros comunitarios y zonas turísticas con tareas programadas (barrido, poda responsable, pintura y mantenimiento).</li>
+          <li><strong>Respuesta ante tormentas:</strong> cuadrilla de atención rápida (árboles caídos, desobstrucción de desagües, señalización de riesgos) coordinada con comisiones vecinales.</li>
+        </ul>
+      </div>
+
+      <div class="panel" id="ambiente">
+        <h3>Ambiente, agua y saneamiento</h3>
+        <ul class="list">
+          <li><strong>Arroyo Piribebuy: “Agua limpia, datos claros”</strong>: monitoreo y acompañamiento a controles de calidad (desde nacientes hasta zona urbana/balneario municipal), publicación de resultados y plan de acciones ante focos de contaminación.</li>
+          <li><strong>Control de efluentes y vertidos:</strong> relevamiento de puntos críticos, denuncias con seguimiento, y coordinación con instituciones ambientales para que se cumplan las normas.</li>
+          <li><strong>Basura cero en arroyos y balnearios:</strong> contenedores, señalética, campañas y cuadrillas de limpieza (especialmente en temporada) para que los residuos no terminen en los cauces.</li>
+          <li><strong>Gestión integral de residuos:</strong> puntos limpios por etapas (plásticos, vidrio, cartón, electrónicos) y un piloto de separación simple en zonas donde sea viable.</li>
+          <li><strong>Compostaje y poda ordenada:</strong> manejo de residuos verdes (hojas, poda) para compost/abono y un punto municipal de acopio para escombros y voluminosos.</li>
+          <li><strong>Educación ambiental:</strong> campañas en escuelas y barrios + jornadas de limpieza comunitaria (mingas) para sostener el orden.</li>
+          <li><strong>Arbolado y sombra:</strong> reforestación urbana en plazas y avenidas; mantenimiento (poda responsable) y especies adecuadas.</li>
+        </ul>
+      </div>
+
+      <div class="panel" id="seguridad">
+        <h3>Seguridad y convivencia</h3>
+        <ul class="list">
+          <li><strong>Barrios más seguros:</strong> iluminación + poda + recuperación de espacios públicos (lo que más disuade hechos delictivos).</li>
+          <li><strong>Apoyo a comisiones vecinales:</strong> acompañar iniciativas comunitarias (cámaras, alarmas vecinales) con asesoría, coordinación y puntos estratégicos priorizados.</li>
+          <li><strong>Programa “Barrios organizados”:</strong> canal directo con la Municipalidad para coordinar prevención, mantener luminarias/poda en tiempo, y fortalecer redes comunitarias (cámaras/alarmas) sin improvisación.</li>
+          <li><strong>Mesa de seguridad local:</strong> articulación permanente con Policía, Fiscalía, escuelas y líderes barriales para prevención, patrullaje focalizado y acciones rápidas.</li>
+          <li><strong>Prevención de adicciones y violencia:</strong> deporte, talleres, charlas y derivación a servicios de salud/acompañamiento, trabajando con familias y referentes.</li>
+          <li><strong>Tránsito ordenado:</strong> educación vial + control en horarios críticos (entrada/salida escolar), campañas para motociclistas (casco y luces) y ordenamiento de puntos conflictivos.</li>
+        </ul>
+      </div>
+
+      <div class="panel" id="juventud">
+        <h3>Educación, juventud y empleo</h3>
+        <ul class="list">
+          <li><strong>Apoyo a estudiantes:</strong> gestión de becas y pasantías, acompañamiento a centros educativos y articulación para transporte/ayudas cuando sea posible.</li>
+          <li><strong>Capacitación y oficios:</strong> convenios para cursos (informática, emprendimiento, electricidad, mecánica básica, cocina, servicios turísticos), con certificación y cupos por barrios/compañías.</li>
+          <li><strong>Bolsa de empleo local:</strong> registro municipal de oficios (albañil, plomero, electricista, jardinería, etc.) y ferias de empleo/emprendimiento para conectar oferta y demanda.</li>
+          <li><strong>Centro juvenil (por etapas):</strong> espacio para estudio, cultura, talleres y participación; apoyo a centros de estudiantes y voluntariado.</li>
+          <li><strong>Emprendedores locales:</strong> ferias ordenadas, mentorías, información para formalización y acceso a programas/créditos existentes.</li>
+          <li><strong>Conectividad comunitaria:</strong> Wi‑Fi en plazas/espacios públicos (según factibilidad) y alfabetización digital para trámites y oportunidades.</li>
+        </ul>
+      </div>
+
+      <div class="panel" id="turismo">
+        <h3>Turismo, cultura y patrimonio</h3>
+        <ul class="list">
+          <li><strong>Piribebuy destino todo el año:</strong> agenda anual (ferias, deportes, cultura, historia) para dinamizar comercios, artesanos y emprendedores.</li>
+          <li><strong>Circuito Histórico de Piribebuy:</strong> señalética unificada, mapa simple, QR con información, puntos de bienvenida y coordinación con el sector turístico.</li>
+          <li><strong>Museos y patrimonio:</strong> potenciar visitas (familias/escuelas), mejorar horarios e información al visitante y apoyar la puesta en valor de sitios históricos.</li>
+          <li><strong>Balneario municipal y arroyos:</strong> orden y limpieza en temporada (contenedores, baños donde corresponda, reglas claras, control de residuos y prevención de microbasurales).</li>
+          <li><strong>Emprendedores y gastronomía:</strong> ferias ordenadas, promoción de productos locales y articulación con comercios para ofertas turísticas.</li>
+          <li><strong>Promoción digital:</strong> calendario actualizado, mapa de atractivos y difusión de actividades/servicios para visitantes.</li>
+        </ul>
+      </div>
+
+      <div class="panel" id="deporte">
+        <h3>Deporte y recreación</h3>
+        <ul class="list">
+          <li><strong>Plazas activas y seguras:</strong> iluminación, bancos, juegos y mantenimiento para uso familiar.</li>
+          <li><strong>Infraestructura deportiva:</strong> mejoras por etapas en canchas y espacios municipales (baños, vestuarios, iluminación y mantenimiento básico).</li>
+          <li><strong>Apoyo a clubes y comisiones:</strong> gestión de mejoras, mantenimiento de canchas y acompañamiento para eventos/torneos.</li>
+          <li><strong>Escuelas deportivas:</strong> programas municipales coordinados con clubes y entrenadores, incluyendo deportes para niñas y adolescentes.</li>
+          <li><strong>Recreación comunitaria:</strong> torneos barriales, caminatas, bicicleteadas y actividades saludables en plazas.</li>
+        </ul>
+      </div>
+
+      <div class="panel" id="transparencia">
+        <h3>Transparencia y gestión</h3>
+        <ul class="list">
+          <li><strong>Portal de transparencia:</strong> obras, compras, licitaciones y prioridades de inversión en lenguaje simple (documentos y datos disponibles para todos).</li>
+          <li><strong>Mapa de obras y mantenimiento:</strong> qué se hace, dónde, cuánto cuesta y en qué fecha, con avances actualizados.</li>
+          <li><strong>Presupuesto participativo:</strong> reuniones por barrios/compañías para priorizar pequeñas obras y seguimiento público.</li>
+          <li><strong>Gestión basada en datos:</strong> registro de reclamos, mapa de necesidades y metas por trimestre (qué se hizo, qué falta y por qué).</li>
+          <li><strong>Trámites y turnos online (por etapas):</strong> formularios y seguimiento digital para agilizar, dar transparencia y reducir filas.</li>
+        </ul>
+      </div>
+
+      <div class="actions" style="margin-top:14px;">
+        <a class="btn primary" href="contacto.html">¿Necesitás que te contactemos?</a>
+        <a class="btn soft" href="noticias.html">Ver noticias</a>
+        <a class="btn" href="index.html">Volver al inicio</a>
+      </div>
+    </section>
+  </main>
+
+    <footer class="footer">
+    <div class="container footerStack">
+      <div class="footerFollow">Síguenos</div>
+      <div class="social" aria-label="Redes sociales">
+      <a href="https://www.instagram.com/enmanuelgini/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.25-2.25a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg></a>
+      <a href="https://www.facebook.com/EnmanuelGiniIntendente/?locale=es_LA" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 22v-8h3l1-4h-4V7.5c0-1 .3-1.5 1.7-1.5H18V2.2c-.6-.1-2-.2-3.6-.2-3.2 0-5.4 2-5.4 5.6V10H6v4h3v8h4z"/></svg></a>
+      <a href="https://www.tiktok.com/@enmanuelgini" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 2h-3v13.2a3.2 3.2 0 1 1-2.4-3.1V9a6.2 6.2 0 1 0 5.4 6.1V9.2c1.2 1 2.7 1.6 4.4 1.6V7.8c-2 0-3.8-1.6-4-3.6V2z"/></svg></a>
+      </div>
+    </div>
+    <div class="footerRights">
+  © <span id="anio"></span> Enmanuel Gini Intendente.
+  <span class="dev">Desarrollo Web: Univ. Alejandro J. Villalba. Todos los derechos reservados.</span>
+
+</div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

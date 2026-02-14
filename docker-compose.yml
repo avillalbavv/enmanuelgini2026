@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  padron-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PADRON_DB_PATH=data/padron.sqlite
+      # Cambiá por tu dominio para CORS, ej: https://tudominio.com
+      - PADRON_ALLOWED_ORIGINS=*
+      - PADRON_RATE_MAX=30
+      - PADRON_RATE_WINDOW=60
+      - PADRON_CACHE_MAX=5000
+    volumes:
+      - ./data:/app/data:ro

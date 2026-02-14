@@ -1,0 +1,11 @@
+﻿.venv/
+__pycache__/
+*.pyc
+
+# No subir el DVD ni la DB
+DVD-padron2026.zip
+data/padron.sqlite
+data/*.sqlite
+
+# opcional: no subir zips de trabajo
+*.zip

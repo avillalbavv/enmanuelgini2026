@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>index.html</loc>
+  </url>
+  <url>
+    <loc>biografia.html</loc>
+  </url>
+  <url>
+    <loc>trayectoria.html</loc>
+  </url>
+  <url>
+    <loc>propuestas.html</loc>
+  </url>
+  <url>
+    <loc>noticias.html</loc>
+  </url>
+  <url>
+    <loc>equipo.html</loc>
+  </url>
+  <url>
+    <loc>contacto.html</loc>
+  </url>
+  <url>
+    <loc>padron.html</loc>
+  </url>
+  <url>
+    <loc>info-electoral.html</loc>
+  </url>
+</urlset>
