@@ -1,0 +1,71 @@
+[
+ {
+  "asistida": "1 - PARTIDO COLORADO",
+  "clase": "Lista",
+  "cod_alianza": null,
+  "cod_partido": null,
+  "codigo": "12",
+  "color": [
+   "#ff0000"
+  ],
+  "color_tipografia": [
+   "#ffffff"
+  ],
+  "id_candidatura": "12",
+  "imagenes": [
+   "default_lista"
+  ],
+  "nombre": "PARTIDO COLORADO",
+  "nombre_corto": "ANR",
+  "numero": "1",
+  "orden_absoluto": [
+   12
+  ]
+ },
+ {
+  "asistida": "2 - PARTIDO LIBERAL RADICAL AUTENTICO",
+  "clase": "Lista",
+  "cod_alianza": null,
+  "cod_partido": null,
+  "codigo": "13",
+  "color": [
+   "#002bc7"
+  ],
+  "color_tipografia": [
+   "#ffffff"
+  ],
+  "id_candidatura": "13",
+  "imagenes": [
+   "default_lista"
+  ],
+  "nombre": "PARTIDO LIBERAL RADICAL AUTENTICO",
+  "nombre_corto": "PLRA",
+  "numero": "2",
+  "orden_absoluto": [
+   13
+  ]
+ },
+ {
+  "asistida": "26 - PARTIDO FRENTE PATRIOTICO TEETE",
+  "clase": "Lista",
+  "cod_alianza": null,
+  "cod_partido": null,
+  "codigo": "14",
+  "color": [
+   "#c3db31"
+  ],
+  "color_tipografia": [
+   "#000000"
+  ],
+  "id_candidatura": "14",
+  "imagenes": [
+   "default_lista"
+  ],
+  "nombre": "PARTIDO FRENTE PATRIOTICO TEETE",
+  "nombre_corto": "PFPT",
+  "numero": "26",
+  "orden_absoluto": [
+   14
+  ]
+ }
+]

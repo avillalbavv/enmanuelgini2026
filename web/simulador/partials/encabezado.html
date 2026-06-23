@@ -1,0 +1,31 @@
+{{#voto}}
+<div id="datos_ubicacion">
+    <div class="label" id="_txt_l_eleccion">Elección: <span id="_txt_pais">ELECCIONES MUNICIPALES</span></div>
+    <div class="label" id="_txt_l_distrito">Departamento: <span id="_txt_distrito">Cordillera</span></div>
+    <div class="label" id="_txt_l_departamento">Distrito: <span id="_txt_departamento">Piribebuy</span></div>
+</div>
+{{else}}
+<!-- <p id="datos_eleccion">
+    <b id="_txt_titulo"></b> <br>
+    <span id="_txt_fecha"></span><br>
+    <span id="_txt_entidad"></span><br>
+</p> -->
+{{/voto}}
+{{#voto}}
+    <div id="contenedor_solapa"></div>
+{{/voto}}
+{{#escrutinio}}
+    <span id="_txt_escrutinio_mesa" class="titulo-escrutinio">
+    </span>
+{{/escrutinio}}
+{{#mesa}}
+    <span class="num-mesa" id="numero_mesa"></span>
+{{/mesa}}
+<div id="logo_votar">
+    <img class="logo-votar imagen-alto-contraste" src="img/logo_paraguay_blanco_negro_sin_letras.png" />
+    <img class="logo-votar" src="img/logo_votar.png" />
+</div>
+
+<div class="cinta-capacitacion">
+    <ul class="cinta"><span id="_txt_cinta_capacitacion"></span></ul>
+</div>

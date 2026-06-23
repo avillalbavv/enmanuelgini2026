@@ -1,0 +1,128 @@
+[
+ {
+  "asistida": "Licenciado Silvino Aguilera",
+  "cargo_ejecutivo": true,
+  "clase": "Candidato",
+  "cod_categoria": "INT",
+  "cod_lista": "8",
+  "codigo": "8.6",
+  "id_candidatura": "8.6",
+  "id_umv": 25,
+  "imagenes": [
+   "8.6"
+  ],
+  "nombre": "Lic. Silvino Aguilera",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   8,
+   1,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "Derlis Riveros",
+  "cargo_ejecutivo": true,
+  "clase": "Candidato",
+  "cod_categoria": "INT",
+  "cod_lista": "9",
+  "codigo": "9.7",
+  "id_candidatura": "9.7",
+  "id_umv": 26,
+  "imagenes": [
+   "9.7"
+  ],
+  "nombre": "Derlis Riveros",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   9,
+   1,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "VOTO EN BLANCO",
+  "cargo_ejecutivo": true,
+  "clase": "Blanco",
+  "cod_categoria": "INT",
+  "cod_lista": "",
+  "codigo": "BLC",
+  "id_candidatura": "BLC",
+  "id_umv": 33,
+  "imagenes": [
+   "BLC"
+  ],
+  "nombre": "VOTO EN BLANCO",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   994,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "Votos NULOS",
+  "cargo_ejecutivo": true,
+  "clase": "Especial",
+  "cod_categoria": "INT",
+  "cod_lista": "",
+  "codigo": "NUL",
+  "id_candidatura": "NUL",
+  "id_umv": 46,
+  "nombre": "Votos NULOS",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   998,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "Votos NO COMPUTADOS",
+  "cargo_ejecutivo": true,
+  "clase": "Especial",
+  "cod_categoria": "INT",
+  "cod_lista": "",
+  "codigo": "VAC",
+  "id_candidatura": "VAC",
+  "id_umv": 59,
+  "nombre": "Votos a Computar",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   1000,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ }
+]

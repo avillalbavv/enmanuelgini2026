@@ -1,0 +1,359 @@
+[
+    {
+        "codigo": "uno",
+        "bloques": [
+            {
+                "ancho": 1920,
+                "alto": 730,
+                "font_size": 55,
+                "posicion": [0, 0],
+                "wrap_lista": 40,
+                "wrap_candidato": 27,
+                "wrap_secundarios": 34
+            }
+        ]
+    },
+    {
+        "codigo": "uno_acostado",
+        "bloques": [
+            {
+                "ancho": 735,
+                "alto": 1390,
+                "font_size": 60,
+                "padding_num_lista": 50,
+                "posicion": [440, 820],
+                "rotar_bloque": true
+            }
+        ]
+    },
+    {
+        "codigo": "dos",
+        "comun":{
+            "ancho": 960,
+            "alto": 730,
+            "font_size": 55,
+            "wrap_lista": 40,
+            "wrap_candidato": 27,
+            "wrap_secundarios": 34
+        },
+        "bloques": [
+            {
+                "posicion": [0, 0]
+            },
+            {
+                "posicion": [960, 0]
+
+            }
+        ]
+    },
+    {
+        "codigo": "dos_con_cp",
+        "comun":{
+            "ancho": 640,
+            "alto": 730,
+            "font_size": 50,
+            "wrap_candidato": 20,
+            "sep_lineas_titular": 45,
+            "wrap_secundarios":20
+        },
+        "bloques": [
+            {
+                "posicion": [0, 0]
+            },
+            {
+                "posicion": [640, 0]
+            },
+            {
+                "posicion": [1280, 0],
+                "wrap_candidato": 18,
+                "nombre_template": "consulta_popular",
+                "padding_num_lista": 100,
+                "padding_cand_titular": -40,
+                "em_num_lista": 2,
+                "sep_lineas_titular": 45,
+                "em_candidato": 1
+            }
+        ]
+    },
+    {
+        "codigo": "tres",
+        "comun": {
+            "ancho": 640,
+            "alto": 730
+        },
+        "bloques": [
+            {
+                "posicion": [0, 0]
+            },
+            {
+                "posicion": [640, 0]
+            },
+            {
+                "posicion": [1280, 0]
+            }
+        ]
+    },
+    {
+        "codigo": "tres_con_cp",
+        "comun": {
+            "ancho": 640,
+            "alto": 730
+        },
+        "bloques": [
+            {
+                "posicion": [0, 0]
+            },
+            {
+                "posicion": [640, 0]
+            },
+            {
+                "posicion": [1280, 0],
+                "nombre_template": "consulta_popular",
+                "padding_num_lista": 100,
+                "padding_cand_titular": -40,
+                "em_num_lista": 2,
+                "sep_lineas_titular": 40
+            }
+        ]
+    },
+    {
+        "codigo": "cuatro",
+        "comun": {
+            "ancho": 640,
+            "alto": 730
+        },
+        "bloques": [
+            {
+                "posicion": [0, 0]
+            },
+            {
+                "posicion": [640, 0]
+            },
+            {
+                "alto": 365,
+                "posicion": [1280, 0]
+            },
+            {
+                "alto": 365,
+                "posicion": [1280, 365]
+            }
+        ]
+    },
+      {
+        "codigo": "cuatro_con_cp",
+        "comun": {
+            "ancho": 640,
+            "alto": 365
+        },
+        "bloques": [
+            {
+                "alto": 730,
+                "posicion": [0, 0]
+            },
+            {
+                "posicion": [640, 0]
+            },
+            {
+                "posicion": [640, 365]
+            },
+            {
+                "posicion": [1280, 0]
+            },
+            {
+                "posicion": [1280, 365],
+                "nombre_template": "consulta_popular",
+                "padding_num_lista": 100,
+                "padding_cand_titular": -40,
+                "em_num_lista": 2
+            }
+        ]
+    },
+    {
+        "codigo": "cinco",
+        "comun": {
+            "ancho": 640,
+            "alto": 365
+        },
+        "bloques": [
+            {
+                "alto": 730,
+                "posicion": [0, 0]
+            },
+            {
+                "posicion": [640, 0]
+            },
+            {
+                "posicion": [640, 365]
+            },
+            {
+                "posicion": [1280, 0]
+            },
+            {
+                "posicion": [1280, 365]
+            }
+        ]
+    },
+    {
+        "codigo": "cinco_con_cp",
+        "comun":{
+            "sep_lineas_lista": 30,
+            "sep_lineas_titular": 40,
+            "padding_nom_lista": 0,
+            "padding_cand_titular": 10,
+            "wrap_secundarios": 30,
+            "em_candidato": 1,
+            "em_secundarios": 0.8,
+            "wrap_lista": 40,
+            "wrap_candidato": 35
+        },
+        "bloques": [
+            {
+                "wrap_lista": 25,
+                "ancho": 580,
+                "alto": 715,
+                "posicion": [0, 0]
+            },
+            {
+                "wrap_lista": 30,
+                "ancho": 600,
+                "alto": 365,
+                "posicion": [580, 0]
+            },
+            {
+                "wrap_lista": 30,
+                "wrap_candidato": 21,
+                "ancho": 600,
+                "alto": 365,
+                "posicion": [580, 350]
+            },
+            {
+                "ancho": 730,
+                "alto": 245,
+                "posicion": [1180, 0]
+            },
+            {
+                "padding_secundarios": 15,
+                "wrap_candidato": 30,
+                "wrap_secundarios": 40,
+                "em_candidato": 0.95,
+                "em_secundarios": 0.8,
+                "ancho": 730,
+                "alto" : 260,
+                "posicion": [1180, 240]
+            },
+            {
+                "ancho": 730,
+                "alto": 215,
+                "posicion": [1180, 500],
+                "nombre_template": "consulta_popular",
+                "padding_num_lista": 50,
+                "padding_cand_titular": -20,
+                "wrap_candidato": 30,
+                "em_num_lista": 1.4,
+                "em_candidato": 0.85
+            }
+        ]
+    },
+    {
+        "codigo": "seis",
+        "bloques": [
+            {
+                "ancho": 580,
+                "alto": 730,
+                "posicion": [0, 0]
+            },
+            {
+                "ancho": 600,
+                "alto": 365,
+                "posicion": [580, 0]
+            },
+            {
+                "ancho": 600,
+                "alto": 365,
+                "posicion": [580, 350]
+            },
+            {
+                "ancho": 730,
+                "alto": 245,
+                "posicion": [1180, 0]
+            },
+            {
+                "ancho": 730,
+                "alto": 260,
+                "posicion": [1180, 240]
+            },
+            {
+                "ancho": 730,
+                "alto": 215,
+                "posicion": [1180, 500]
+            }
+        ]
+    },
+    {
+        "codigo": "supercompleta",
+        "bloques": [
+            {
+                "ancho": 1930,
+                "alto": 720,
+                "font_size": 54,
+                "posicion": [0, 0],
+                "mostrar_titulo": false,
+                "em_num_lista": 1,
+                "em_nom_lista": 1.2,
+                "padding_num_lista": 50,
+                "padding_nom_lista": -60,
+                "padding_cand_titular": 70,
+                "em_adherentes": 0.85,
+                "wrap_adherentes": 45,
+                "nombre_template": "asociacion",
+                "translate_x": 450
+            }
+        ]
+    },
+    {
+        "codigo": "fallback",
+        "comun": {
+            "ancho": 460,
+            "alto": 245,
+            "font_size_titulo": 30,
+            "alto_fondo_titulo": 26,
+            "sep_lineas_lista": 20,
+            "sep_lineas_titular": 20,
+            "padding_num_lista": 20,
+            "padding_nom_lista": 25,
+            "font_size": 30
+        },
+        "bloques": [
+            {
+                "posicion": [60, 0]
+            },
+            {
+                "posicion": [520, 0]
+            },
+            {
+                "posicion": [520, 245]
+            },
+            {
+                "posicion": [520, 490]
+            },
+            {
+                "posicion": [980, 0]
+            },
+            {
+                "posicion": [980, 245]
+            },
+            {
+                "posicion": [980, 490]
+            },
+            {
+                "posicion": [1440, 0]
+            },
+            {
+                "posicion": [1440, 245]
+            },
+            {
+                "posicion": [1440, 490]
+            }
+        ]
+    }
+]

@@ -1,0 +1,128 @@
+[
+ {
+  "asistida": "Laura Gamarra",
+  "cargo_ejecutivo": true,
+  "clase": "Candidato",
+  "cod_categoria": "INT",
+  "cod_lista": "25",
+  "codigo": "25.22",
+  "id_candidatura": "25.22",
+  "id_umv": 17,
+  "imagenes": [
+   "25.22"
+  ],
+  "nombre": "Laura Gamarra",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   25,
+   1,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "Tito C\u00e9spedes",
+  "cargo_ejecutivo": true,
+  "clase": "Candidato",
+  "cod_categoria": "INT",
+  "cod_lista": "26",
+  "codigo": "26.23",
+  "id_candidatura": "26.23",
+  "id_umv": 18,
+  "imagenes": [
+   "26.23"
+  ],
+  "nombre": "Tito C\u00e9spedes",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   26,
+   1,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "VOTO EN BLANCO",
+  "cargo_ejecutivo": true,
+  "clase": "Blanco",
+  "cod_categoria": "INT",
+  "cod_lista": "",
+  "codigo": "BLC",
+  "id_candidatura": "BLC",
+  "id_umv": 29,
+  "imagenes": [
+   "BLC"
+  ],
+  "nombre": "VOTO EN BLANCO",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   994,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "Votos NULOS",
+  "cargo_ejecutivo": true,
+  "clase": "Especial",
+  "cod_categoria": "INT",
+  "cod_lista": "",
+  "codigo": "NUL",
+  "id_candidatura": "NUL",
+  "id_umv": 42,
+  "nombre": "Votos NULOS",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   998,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "Votos NO COMPUTADOS",
+  "cargo_ejecutivo": true,
+  "clase": "Especial",
+  "cod_categoria": "INT",
+  "cod_lista": "",
+  "codigo": "VAC",
+  "id_candidatura": "VAC",
+  "id_umv": 55,
+  "nombre": "Votos a Computar",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   1000,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ }
+]

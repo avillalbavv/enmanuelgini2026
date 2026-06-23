@@ -1,0 +1,128 @@
+[
+ {
+  "asistida": "Jhon Villanueva",
+  "cargo_ejecutivo": true,
+  "clase": "Candidato",
+  "cod_categoria": "INT",
+  "cod_lista": "1",
+  "codigo": "1.0",
+  "id_candidatura": "1.0",
+  "id_umv": 1,
+  "imagenes": [
+   "1.0"
+  ],
+  "nombre": "Jhon Villanueva",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   1,
+   1,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "Kiko Acosta",
+  "cargo_ejecutivo": true,
+  "clase": "Candidato",
+  "cod_categoria": "INT",
+  "cod_lista": "2",
+  "codigo": "2.1",
+  "id_candidatura": "2.1",
+  "id_umv": 12,
+  "imagenes": [
+   "2.1"
+  ],
+  "nombre": "Kiko Acosta",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   2,
+   1,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "VOTO EN BLANCO",
+  "cargo_ejecutivo": true,
+  "clase": "Blanco",
+  "cod_categoria": "INT",
+  "cod_lista": "",
+  "codigo": "BLC",
+  "id_candidatura": "BLC",
+  "id_umv": 27,
+  "imagenes": [
+   "BLC"
+  ],
+  "nombre": "VOTO EN BLANCO",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   994,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "Votos NULOS",
+  "cargo_ejecutivo": true,
+  "clase": "Especial",
+  "cod_categoria": "INT",
+  "cod_lista": "",
+  "codigo": "NUL",
+  "id_candidatura": "NUL",
+  "id_umv": 40,
+  "nombre": "Votos NULOS",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   998,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "Votos NO COMPUTADOS",
+  "cargo_ejecutivo": true,
+  "clase": "Especial",
+  "cod_categoria": "INT",
+  "cod_lista": "",
+  "codigo": "VAC",
+  "id_candidatura": "VAC",
+  "id_umv": 53,
+  "nombre": "Votos a Computar",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   1000,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ }
+]

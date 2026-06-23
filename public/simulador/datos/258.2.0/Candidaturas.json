@@ -1,0 +1,128 @@
+[
+ {
+  "asistida": "Carlos Alberto Qui\u00f1onez",
+  "cargo_ejecutivo": true,
+  "clase": "Candidato",
+  "cod_categoria": "INT",
+  "cod_lista": "3",
+  "codigo": "3.2",
+  "id_candidatura": "3.2",
+  "id_umv": 21,
+  "imagenes": [
+   "3.2"
+  ],
+  "nombre": "Carlos Alberto Qui\u00f1onez",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   3,
+   1,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "Judith Maria Vera",
+  "cargo_ejecutivo": true,
+  "clase": "Candidato",
+  "cod_categoria": "INT",
+  "cod_lista": "4",
+  "codigo": "4.3",
+  "id_candidatura": "4.3",
+  "id_umv": 22,
+  "imagenes": [
+   "4.3"
+  ],
+  "nombre": "Judith Maria Vera",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   4,
+   1,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "VOTO EN BLANCO",
+  "cargo_ejecutivo": true,
+  "clase": "Blanco",
+  "cod_categoria": "INT",
+  "cod_lista": "",
+  "codigo": "BLC",
+  "id_candidatura": "BLC",
+  "id_umv": 31,
+  "imagenes": [
+   "BLC"
+  ],
+  "nombre": "VOTO EN BLANCO",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   994,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "Votos NULOS",
+  "cargo_ejecutivo": true,
+  "clase": "Especial",
+  "cod_categoria": "INT",
+  "cod_lista": "",
+  "codigo": "NUL",
+  "id_candidatura": "NUL",
+  "id_umv": 44,
+  "nombre": "Votos NULOS",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   998,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "Votos NO COMPUTADOS",
+  "cargo_ejecutivo": true,
+  "clase": "Especial",
+  "cod_categoria": "INT",
+  "cod_lista": "",
+  "codigo": "VAC",
+  "id_candidatura": "VAC",
+  "id_umv": 57,
+  "nombre": "Votos a Computar",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   1000,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ }
+]

@@ -1,0 +1,26 @@
+[
+ {
+  "adhiere": null,
+  "asistida": "INTENDENTE MUNICIPAL",
+  "cargo_ejecutivo": true,
+  "codigo": "INT",
+  "consulta_popular": false,
+  "id_grupo": 1,
+  "max_selecciones": 1,
+  "nombre": "INTENDENTE MUNICIPAL",
+  "posicion": 1,
+  "preferente": false
+ },
+ {
+  "adhiere": null,
+  "asistida": "CONCEJALES",
+  "cargo_ejecutivo": false,
+  "codigo": "CCO",
+  "consulta_popular": false,
+  "id_grupo": 2,
+  "max_selecciones": 1,
+  "nombre": "CONCEJALES",
+  "posicion": 2,
+  "preferente": false
+ }
+]

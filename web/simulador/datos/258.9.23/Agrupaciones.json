@@ -1,0 +1,48 @@
+[
+ {
+  "asistida": "1 - PARTIDO COLORADO",
+  "clase": "Lista",
+  "cod_alianza": null,
+  "cod_partido": null,
+  "codigo": "19",
+  "color": [
+   "#ff0000"
+  ],
+  "color_tipografia": [
+   "#ffffff"
+  ],
+  "id_candidatura": "19",
+  "imagenes": [
+   "default_lista"
+  ],
+  "nombre": "PARTIDO COLORADO",
+  "nombre_corto": "ANR",
+  "numero": "1",
+  "orden_absoluto": [
+   19
+  ]
+ },
+ {
+  "asistida": "8 - PARTIDO PATRIA QUERIDA",
+  "clase": "Lista",
+  "cod_alianza": null,
+  "cod_partido": null,
+  "codigo": "20",
+  "color": [
+   "#9adbf7"
+  ],
+  "color_tipografia": [
+   "#000000"
+  ],
+  "id_candidatura": "20",
+  "imagenes": [
+   "default_lista"
+  ],
+  "nombre": "PARTIDO PATRIA QUERIDA",
+  "nombre_corto": "PPQ",
+  "numero": "8",
+  "orden_absoluto": [
+   20
+  ]
+ }
+]

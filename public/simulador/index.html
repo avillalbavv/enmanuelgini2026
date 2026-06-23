@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Simulador del uso de la máquina de votación</title>
+        <link rel="manifest" href="manifest.json">
+        <!-- <script src="js/pwa.js"></script> -->
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/boot.css">
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/instructivo.css">
+
+        <script src="js/instructivo.js"></script>
+        <link href="img/favicon.png" rel="shortcut icon" type="image/png">
+    </head>
+    <body class="vanilla">
+        <div id="contenedor">
+            <div id="ayuda">
+                <div id="contenedor-ayuda" class="container">
+                    
+
+                    <div id="bienvenido" style="display:none;">
+                        <img class="grafico bienvenida-gini" src="img/maquina0_gini.png">
+                        <h1>Simulador del uso de la máquina de votación.</h1>
+                        <!-- <h3>Asegúrese de no tener activado el traductor automático en su navegador</h3> -->
+                        <button id="empezar" class="btn btn-success btn-lg">Comenzar</button><br>
+                        <!-- <a href="https://simuladoroficial.tsje.gov.py/simulador_offline-win32-ia32.zip" target="_blank"><button class="btn btn-primary btn-lg">Descargar versión<br> Offline (Windows)</button></a> -->
+                        <!--<a href="https://play.google.com/store/apps/details?id=py.com.simulador_oficial_nacionales_2023&pli=1" target="_blank"><button class="btn btn-primary btn-lg">Descargar desde<br> Google Play Store</button></a>
+                        -->
+                    </div>
+
+                    <div id="paso-1" class="paso" style="display:none;">
+                        <img class="grafico" src="img/boleta-troquel.png">
+                        <h1>Presentá tu <b>cédula de identidad civil</b> a los miembros de la mesa receptora de votos, quienes te entregarán el <b>boletín</b> firmado por los dos vocales.</h1>
+                        <button class="next btn btn-primary btn-lg">Continuar</button>
+                    </div>
+
+                    <div id="paso-2" class="paso" style="display:none;">
+                        <img class="grafico" src="img/maquina2_p6.png" id="maquina-boleta">
+                        <h1>Colocá el <b>boletín</b> en la ranura como lo indica la flecha.</h1>
+                    
+                        <button class="btn btn-primary btn-lg ubicacion-destino" data-id="1" id="1">Continuar</button>
+                        </div>
+                    
+
+                    <div id="paso-3" class="paso" style="display:none;">
+                        <img class="grafico" src="img/maquina_verificar_p6.png" id="maquina-verificacion">
+                        <h1>Una vez impreso el boletín, <b>verificá</b> que el registro electrónico de tu voto, coincida con la versión impresa, acercando el boletín al lector verificador.</h1>
+                        <button class="next btn btn-primary btn-lg">Continuar</button>
+                    </div>
+
+                    <div id="paso-4" class="paso" style="display:none;">
+                        <img class="grafico" src="img/dobla_voto.png"  id="maquina-verificacion">
+                        <h1><b>Doblá</b> el boletín de manera que se asegure el secreto del voto.<br><b>Entregá</b> al presidente de mesa para que lo firme.</h1>
+                        <button class="next btn btn-primary btn-lg">Continuar</button>
+                    </div>
+
+                    <div id="paso-5" class="paso" style="display:none;">
+                        <img class="grafico" src="img/info_tinta.png" id="maquina-verificacion">
+                        <h1><b>Entintate</b> el dedo índice de la mano derecha. Recibí del presidente de mesa el boletín y <b>depositalo</b> en la urna plástica. Retirá tu cédula de identidad civil.</h1>
+                        <button class="next btn btn-primary btn-lg">Continuar</button>
+                    </div>
+
+                    <div id="agradecimiento" style="display:none;">
+                        <img class="grafico" src="img/agradecimiento.png" >
+                        <h1>Gracias por utilizar el simulador para el uso de la <b>Máquina de votación.</b></h1>
+                        <button id="reset" class="btn btn-primary btn-lg">Reiniciar</button><br>
+                        <a id="volver-web" class="btn btn-default btn-lg" href="/" target="_top" style="margin-top:12px;">Volver al inicio</a>
+                    </div>
+
+                    <div id="seleccionar_ubicaciones" style="display:none;">
+                        <h1 class="ubicacion">Para iniciar el simulador seleccione el departamento en la que vota:</h1>
+                        <div class="container">
+                            <ul class="departamentos col-md-12">
+                                
+                                <li class="btn btn-default btn-lg"><input name="Representantes de Abogados para integrar el Consejo de la Magistratura" type="checkbox" />&nbsp;&nbsp;&nbsp;1</li>
+                                
+                            </ul> 
+                            <div style="text-align: center;">
+                                <button id="btn-continuar-loading" class="btn btn-primary btn-lg">
+                                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                                </button>
+                                <button id="btn-continuar" class="btn btn-primary btn-lg" onclick="comenzar_cache_offline()">Continuar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

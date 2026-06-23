@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía Completa – Conducción en Metales | Física</title>
+<style>
+  :root {
+    --azul: #1a3a6e;
+    --azulc: #2563eb;
+    --azull: #dbeafe;
+    --verde: #14532d;
+    --verdec: #16a34a;
+    --verdel: #dcfce7;
+    --rojo: #7f1d1d;
+    --rojoc: #dc2626;
+    --rojol: #fee2e2;
+    --ambar: #78350f;
+    --ambarc: #d97706;
+    --ambarl: #fef3c7;
+    --morado: #4c1d95;
+    --moradoc: #7c3aed;
+    --moradol: #ede9fe;
+    --gris1: #f8fafc;
+    --gris2: #e2e8f0;
+    --gris3: #64748b;
+    --negro: #0f172a;
+    --blanco: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--gris1);
+    color: var(--negro);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, var(--azul) 0%, #1e40af 60%, #2563eb 100%);
+    color: white;
+    padding: 2.5rem 2rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  header h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.5px; }
+  header p { font-size: 1rem; opacity: 0.85; margin-top: 0.4rem; }
+  .badge-row { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem; }
+  .badge {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.35);
+    color: white;
+    padding: 0.25rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--azul);
+    display: flex; flex-wrap: wrap; gap: 0.1rem;
+    padding: 0.4rem 1rem;
+    border-bottom: 2px solid var(--azulc);
+  }
+  nav a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.35rem 0.7rem;
+    border-radius: 4px;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  nav a:hover { background: rgba(255,255,255,0.15); color: white; }
+
+  /* MAIN */
+  main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+  /* SECTIONS */
+  .section {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+  }
+  .section-header {
+    padding: 1.2rem 1.8rem;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .sh-azul  { background: linear-gradient(90deg, var(--azul), var(--azulc)); }
+  .sh-verde { background: linear-gradient(90deg, var(--verde), var(--verdec)); }
+  .sh-rojo  { background: linear-gradient(90deg, var(--rojo), var(--rojoc)); }
+  .sh-ambar { background: linear-gradient(90deg, var(--ambar), var(--ambarc)); }
+  .sh-morado{ background: linear-gradient(90deg, var(--morado), var(--moradoc)); }
+
+  .section-body { padding: 1.6rem 1.8rem; }
+
+  /* SUBSECTIONS */
+  h2 { font-size: 1.18rem; font-weight: 800; color: var(--azul); margin: 1.8rem 0 0.7rem; border-left: 4px solid var(--azulc); padding-left: 0.7rem; }
+  h3 { font-size: 1.02rem; font-weight: 700; color: var(--negro); margin: 1.2rem 0 0.4rem; }
+  h4 { font-size: 0.95rem; font-weight: 700; color: var(--gris3); margin: 0.8rem 0 0.3rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  p { margin-bottom: 0.65rem; }
+  ul, ol { padding-left: 1.4rem; margin-bottom: 0.65rem; }
+  li { margin-bottom: 0.3rem; }
+
+  /* BOXES */
+  .box {
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    border-left: 5px solid;
+  }
+  .box-def   { background: var(--azull);   border-color: var(--azulc);  }
+  .box-form  { background: var(--moradol); border-color: var(--moradoc);}
+  .box-tip   { background: var(--verdel);  border-color: var(--verdec); }
+  .box-warn  { background: var(--rojol);   border-color: var(--rojoc);  }
+  .box-imp   { background: var(--ambarl);  border-color: var(--ambarc); }
+
+  .box-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
+    opacity: 0.7;
+  }
+
+  /* FORMULA CARD */
+  .formula-card {
+    background: var(--moradol);
+    border: 1.5px solid var(--moradoc);
+    border-radius: 10px;
+    padding: 1rem 1.3rem;
+    margin: 1rem 0;
+    font-family: 'Courier New', monospace;
+  }
+  .formula-name { font-family: 'Segoe UI', sans-serif; font-weight: 700; color: var(--moradoc); font-size: 0.9rem; margin-bottom: 0.4rem; }
+  .formula-eq { font-size: 1.05rem; font-weight: 700; color: var(--morado); margin: 0.3rem 0; }
+  .formula-vars { font-family: 'Segoe UI', sans-serif; font-size: 0.83rem; color: var(--gris3); margin-top: 0.4rem; }
+
+  /* STEP BOX */
+  .steps { counter-reset: step-counter; }
+  .step {
+    display: flex;
+    gap: 0.8rem;
+    margin: 0.6rem 0;
+    align-items: flex-start;
+  }
+  .step-num {
+    background: var(--azulc);
+    color: white;
+    font-weight: 800;
+    font-size: 0.82rem;
+    min-width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .step-body { flex: 1; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+  th { background: var(--azul); color: white; padding: 0.55rem 0.8rem; text-align: left; font-weight: 700; }
+  td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--gris2); }
+  tr:nth-child(even) td { background: var(--gris1); }
+  tr:hover td { background: var(--azull); }
+
+  /* GRID */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+  @media(max-width:700px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+  /* MINI CARD */
+  .card {
+    background: var(--gris1);
+    border: 1.5px solid var(--gris2);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+  }
+  .card h4 { margin-top: 0; }
+
+  /* HIGHLIGHT */
+  .hl-azul   { background: var(--azull);   color: var(--azul);   padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 700; }
+  .hl-verde  { background: var(--verdel);  color: var(--verde);  padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 700; }
+  .hl-rojo   { background: var(--rojol);   color: var(--rojo);   padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 700; }
+  .hl-ambar  { background: var(--ambarl);  color: var(--ambar);  padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 700; }
+  .hl-morado { background: var(--moradol); color: var(--morado); padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 700; }
+
+  /* SEPARATOR */
+  hr { border: none; border-top: 2px solid var(--gris2); margin: 1.5rem 0; }
+
+  /* MATH INLINE */
+  code { background: var(--moradol); color: var(--morado); padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.92em; font-family: 'Courier New', monospace; font-weight: 700; }
+
+  /* COLLAPSIBLE (pure CSS) */
+  details { margin: 0.5rem 0; }
+  summary {
+    cursor: pointer;
+    padding: 0.6rem 1rem;
+    background: var(--gris2);
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '▼'; font-size: 0.7rem; transition: transform 0.2s; }
+  details[open] summary::after { transform: rotate(180deg); }
+  details > *:not(summary) { padding: 0.8rem 1rem; }
+
+  /* EXERCISE BOX */
+  .ex-box {
+    border: 1.5px solid var(--ambarc);
+    border-radius: 8px;
+    margin: 1rem 0;
+    overflow: hidden;
+  }
+  .ex-header {
+    background: var(--ambarc);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    font-size: 0.88rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .ex-body { padding: 0.9rem 1rem; background: #fffbeb; }
+
+  /* TOC */
+  .toc { columns: 2; column-gap: 1.5rem; }
+  .toc a { display: block; color: var(--azulc); text-decoration: none; font-size: 0.85rem; padding: 0.2rem 0; font-weight: 600; }
+  .toc a:hover { text-decoration: underline; }
+  @media(max-width:600px){ .toc { columns: 1; } }
+
+  /* CHECKLIST */
+  .checklist li { list-style: none; padding-left: 1.5rem; position: relative; }
+  .checklist li::before { content: '☐'; position: absolute; left: 0; color: var(--azulc); font-size: 1.1rem; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>⚡ Conducción en Metales — Guía de Estudio Completa</h1>
+  <p>Universidad Nacional de Asunción · Facultad Politécnica · Física</p>
+  <div class="badge-row">
+    <span class="badge">Modelo de Drude</span>
+    <span class="badge">Electrón Libre Cuántico</span>
+    <span class="badge">Fermi-Dirac</span>
+    <span class="badge">Bandas de Energía</span>
+    <span class="badge">Emisión Termoiónica</span>
+    <span class="badge">Campos Aceleradores</span>
+  </div>
+</header>
+
+<nav>
+  <a href="#teoria">📖 Teoría</a>
+  <a href="#drude">Drude</a>
+  <a href="#quantico">Electrón Libre</a>
+  <a href="#fermi">Fermi-Dirac</a>
+  <a href="#energia-fermi">E. Fermi</a>
+  <a href="#bandas">Bandas</a>
+  <a href="#conductores">Cond/Semicon</a>
+  <a href="#termoionica">Termoiónica</a>
+  <a href="#formulario">📐 Formulario</a>
+  <a href="#ejercicios">🧮 Ejercicios</a>
+  <a href="#estrategias">🎯 Estrategias</a>
+  <a href="#errores">⚠️ Errores</a>
+</nav>
+
+<main>
+
+<!-- ===================== ÍNDICE ===================== -->
+<div class="section">
+  <div class="section-header sh-azul">📋 Índice de Contenidos</div>
+  <div class="section-body">
+    <div class="toc">
+      <a href="#drude">1. Modelo de Drude (Clásico)</a>
+      <a href="#quantico">2. Modelo del Electrón Libre Cuántico</a>
+      <a href="#densidad-estados">3. Función Densidad de Estados g(E)</a>
+      <a href="#fermi">4. Función de Distribución de Fermi-Dirac</a>
+      <a href="#energia-fermi">5. Cálculo de la Energía de Fermi</a>
+      <a href="#bandas">6. Teoría de Bandas de Energía</a>
+      <a href="#conductores">7. Aislantes, Semiconductores y Conductores</a>
+      <a href="#termoionica">8. Emisión Termoiónica y Función de Trabajo</a>
+      <a href="#campos">9. Corriente con Campos Aceleradores (Efecto Schottky)</a>
+      <a href="#formulario">10. Formulario Definitivo</a>
+      <a href="#ejercicios">11. Tipos de Ejercicios y Métodos</a>
+      <a href="#estrategias">12. Estrategias de Examen</a>
+      <a href="#errores">13. Errores Comunes</a>
+      <a href="#trucos">14. Trucos y Atajos</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SECCIÓN TEORÍA ===================== -->
+<div id="teoria" class="section">
+  <div class="section-header sh-azul">📖 RESUMEN TEÓRICO COMPLETO</div>
+  <div class="section-body">
+    <p>Este material cubre los tres modelos para explicar la conducción eléctrica en metales, progresando desde el modelo más simple (clásico) hasta el más completo (bandas de energía).</p>
+    <div class="box box-imp">
+      <div class="box-label">⚡ Idea central</div>
+      Los metales conducen la electricidad porque tienen electrones que se pueden mover libremente. El objetivo de cada modelo es explicar <em>por qué</em> se mueven así y <em>predecir</em> propiedades como la conductividad σ, la energía de los electrones, etc.
+    </div>
+  </div>
+</div>
+
+<!-- =================== DRUDE =================== -->
+<div id="drude" class="section">
+  <div class="section-header sh-azul">1 — Modelo de Drude (Clásico, ~1900)</div>
+  <div class="section-body">
+
+    <h2>¿Qué propone el modelo?</h2>
+    <div class="box box-def">
+      <div class="box-label">📘 Definición</div>
+      El modelo de Drude (desarrollado en 1897–1900 tras el descubrimiento del electrón) aplica mecánica clásica a los electrones en un metal. Cada átomo del metal cede sus electrones de valencia, formando un <strong>"gas clásico de electrones"</strong> que flota entre los iones positivos de la red cristalina.
+    </div>
+
+    <h3>Hipótesis del modelo</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>Iones positivos</h4>
+        <p>Quedan fijos (esencialmente estáticos), distribuidos regularmente en la red.</p>
+      </div>
+      <div class="card">
+        <h4>Gas clásico de electrones</h4>
+        <p>Los electrones de valencia vagan libremente, obedecen la estadística de Maxwell-Boltzmann y colisionan elásticamente con los iones.</p>
+      </div>
+    </div>
+
+    <h2>Movimiento de los electrones</h2>
+    <p><strong>Sin campo eléctrico:</strong> los electrones tienen <em>agitación térmica</em> (movimiento aleatorio) con velocidad promedio neta = 0.</p>
+    <p><strong>Con campo eléctrico ε:</strong> aparece un movimiento neto de arrastre (drift) con velocidad promedio:</p>
+
+    <div class="formula-card">
+      <div class="formula-name">Velocidad de arrastre (drift velocity)</div>
+      <div class="formula-eq">v_a = −(eε/mₑ)·τ</div>
+      <div class="formula-vars">
+        e = carga del electrón (1.6×10⁻¹⁹ C) | ε = campo eléctrico (V/m) |
+        mₑ = masa del electrón (9.11×10⁻³¹ kg) | τ = tiempo libre medio (s)
+      </div>
+    </div>
+
+    <div class="box box-tip">
+      <div class="box-label">💡 Intuición</div>
+      Imaginá los electrones como pelotas de billar que se mueven en zigzag. Sin campo, van para todos lados y no hay corriente neta. Con campo eléctrico, ganan un pequeño empuje adicional en una dirección → corriente eléctrica. La velocidad de arrastre suele ser ~10⁻⁵ a 10⁻⁴ m/s, ¡mucho menor que la velocidad térmica ~10⁵ m/s!
+    </div>
+
+    <h2>Velocidad térmica</h2>
+    <div class="formula-card">
+      <div class="formula-name">Velocidad térmica (equipartición de energía)</div>
+      <div class="formula-eq">E = (3/2)k_B·T = (1/2)mₑ·v_T²  →  v_T = √(3k_B·T / mₑ)</div>
+      <div class="formula-vars">
+        k_B = 1.38×10⁻²³ J/K (constante de Boltzmann) | T = temperatura en Kelvin |
+        A T = 300 K: v_T ≈ 10⁵ m/s
+      </div>
+    </div>
+
+    <h2>Densidad de corriente y Ley de Ohm</h2>
+    <p>La densidad de corriente J (A/m²) se relaciona con la velocidad de arrastre:</p>
+    <div class="formula-card">
+      <div class="formula-name">Densidad de corriente</div>
+      <div class="formula-eq">J = n·(-e)·v_a = (ne²τ/mₑ)·ε = σ·ε</div>
+      <div class="formula-vars">
+        n = densidad de electrones libres (e⁻/m³) | σ = conductividad eléctrica (Ω⁻¹m⁻¹)
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-name">Conductividad eléctrica de Drude</div>
+      <div class="formula-eq">σ = ne²τ / mₑ</div>
+    </div>
+
+    <h2>Dependencia de σ con la temperatura (Drude)</h2>
+    <p>El tiempo libre medio τ = L₀/v_T (donde L₀ = recorrido libre medio). Sustituyendo v_T:</p>
+    <div class="formula-card">
+      <div class="formula-name">Conductividad vs temperatura (Drude)</div>
+      <div class="formula-eq">σ = (ne²L₀ / √(3k_B·mₑ)) · T^(−1/2)</div>
+      <div class="formula-vars">σ ∝ T^(−1/2) según Drude</div>
+    </div>
+
+    <h2>Aciertos y Fallos del Modelo de Drude</h2>
+    <div class="grid-2">
+      <div class="box box-tip" style="margin:0">
+        <div class="box-label">✅ Aciertos</div>
+        <ul>
+          <li>Explica cualitativamente la <strong>Ley de Ohm</strong> (J ∝ ε)</li>
+          <li>Explica que la conductividad <strong>disminuye al aumentar T</strong></li>
+          <li>Base conceptual para modelos más complejos</li>
+        </ul>
+      </div>
+      <div class="box box-warn" style="margin:0">
+        <div class="box-label">❌ Fallos</div>
+        <ul>
+          <li>Predice σ ∝ T^(−1/2) pero experimentalmente σ ∝ T^(−1)</li>
+          <li>Solo aplica a metales (conductores), no explica semiconductores ni aislantes</li>
+          <li>No puede predecir capacidades caloríficas correctas</li>
+          <li>Necesita corrección cuántica → Modelo de Sommerfeld</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== ELECTRÓN LIBRE CUÁNTICO =================== -->
+<div id="quantico" class="section">
+  <div class="section-header sh-azul">2 — Modelo Cuántico del Electrón Libre (Sommerfeld)</div>
+  <div class="section-body">
+
+    <div class="box box-def">
+      <div class="box-label">📘 Idea fundamental</div>
+      Sommerfeld mantuvo la idea del "gas de electrones libres" de Drude, pero reemplazó la mecánica clásica por mecánica cuántica. Los electrones son <strong>entes cuánticos</strong> que obedecen el <strong>principio de exclusión de Pauli</strong> → el gas de electrones es un <strong>gas cuántico o gas de Fermi</strong>.
+    </div>
+
+    <h2>Dos cambios clave respecto a Drude</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h4>1. Electrones = entes cuánticos</h4>
+        <p>No son "bolitas clásicas". Tienen dualidad onda-partícula y se describen con funciones de onda ψ(x).</p>
+      </div>
+      <div class="card">
+        <h4>2. Principio de exclusión de Pauli</h4>
+        <p>Dos electrones NO pueden ocupar el mismo estado cuántico (misma energía + mismo espín). Esto limita fuertemente cómo se distribuyen.</p>
+      </div>
+    </div>
+
+    <div class="box box-tip">
+      <div class="box-label">💡 Consecuencia enorme del Principio de Pauli</div>
+      En un gas clásico, todos los electrones podrían tener energía ≈ 0 a T = 0 K. En un gas cuántico de Fermi, como hay un máximo de 2 electrones por estado (uno con espín ↑ y otro ↓), los electrones deben "apilarse" en energía. ¡El electrón más energético en un metal a 0 K puede tener ~5 eV de energía cinética, equivalente a ~58,000 K en términos clásicos!
+    </div>
+
+    <h2>Ecuación de Schrödinger (base matemática)</h2>
+    <p>Los electrones en el metal se modelan como partículas en una caja cúbica de lado L (el sólido). La ecuación de Schrödinger da la energía:</p>
+    <div class="formula-card">
+      <div class="formula-name">Energía cuantizada de un electrón en caja cúbica</div>
+      <div class="formula-eq">E(nₓ,n_y,nz) = (ħ²π²/2mₑL²)·(nₓ²+n_y²+nz²) = (nₓ²+n_y²+nz²)·E₀</div>
+      <div class="formula-vars">
+        nₓ, n_y, nz = números cuánticos (enteros positivos) |
+        E₀ = ħ²π²/(2mₑL²) = energía mínima |
+        ħ = h/(2π) = constante de Planck reducida
+      </div>
+    </div>
+
+    <h2>Análisis estadístico: g(E) y f(E)</h2>
+    <p>Como n ~ 10²⁵ e⁻/m³, es imposible estudiar cada electrón individualmente. Usamos estadística. Necesitamos dos funciones:</p>
+    <div class="grid-2">
+      <div class="box box-def" style="margin:0">
+        <div class="box-label">g(E) — Densidad de estados</div>
+        <p>Dice cuántos estados (sitios disponibles) hay en un intervalo de energía dE alrededor de E.</p>
+        <p><strong>Piénsalo como:</strong> habitaciones disponibles en un hotel, sin importar si están ocupadas.</p>
+      </div>
+      <div class="box box-def" style="margin:0">
+        <div class="box-label">f(E) — Función de distribución</div>
+        <p>Dice la <em>probabilidad</em> de que un estado con energía E esté ocupado por un electrón.</p>
+        <p><strong>Piénsalo como:</strong> fracción de habitaciones del hotel que están efectivamente ocupadas.</p>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-name">Número de partículas en intervalo [E, E+dE]</div>
+      <div class="formula-eq">dN(E) = g(E) · f(E) · dE</div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== DENSIDAD DE ESTADOS =================== -->
+<div id="densidad-estados" class="section">
+  <div class="section-header sh-azul">3 — Función Densidad de Estados g(E)</div>
+  <div class="section-body">
+
+    <div class="box box-def">
+      <div class="box-label">📘 Definición formal</div>
+      g(E)·dE = número de estados cuánticos del sistema cuya energía está entre E y E+dE.
+    </div>
+
+    <h2>Derivación intuitiva</h2>
+    <p>Tomando en cuenta que cada nivel energético tiene degeneración (varios estados con la misma energía) y que el espín agrega un factor 2, se puede demostrar que:</p>
+
+    <div class="formula-card">
+      <div class="formula-name">Función densidad de estados (con espín)</div>
+      <div class="formula-eq">g(E) = [8π·V·(2mₑ³)^(1/2) / h³] · E^(1/2)</div>
+      <div class="formula-vars">
+        V = volumen del sólido (m³) | mₑ = 9.11×10⁻³¹ kg | h = 6.626×10⁻³⁴ J·s |
+        E = energía (J) | g(E) tiene unidades de J⁻¹ (o eV⁻¹ si se convierte)
+      </div>
+    </div>
+
+    <div class="box box-imp">
+      <div class="box-label">⚠️ Forma clave para recordar</div>
+      <p><code>g(E) ∝ E^(1/2)</code> → La densidad de estados crece con la raíz cuadrada de la energía. Hay más estados disponibles a energías altas que bajas.</p>
+    </div>
+
+    <h3>Forma simplificada usada en ejercicios</h3>
+    <div class="formula-card">
+      <div class="formula-name">Densidad de estados por unidad de volumen (sin V)</div>
+      <div class="formula-eq">n(E) = g(E)/V = [8π√2·mₑ^(3/2) / h³] · E^(1/2)</div>
+    </div>
+
+    <div class="box box-tip">
+      <div class="box-label">💡 Intuición gráfica</div>
+      Si graficás g(E) vs E, obtenés una parábola que arranca del cero. A energía 0 → g(0) = 0. A energías más altas → más estados disponibles. Es como si los pisos superiores de un edificio tuvieran más habitaciones.
+    </div>
+  </div>
+</div>
+
+<!-- =================== FERMI-DIRAC =================== -->
+<div id="fermi" class="section">
+  <div class="section-header sh-morado">4 — Función de Distribución de Fermi-Dirac f_FD(E)</div>
+  <div class="section-body">
+
+    <div class="box box-def">
+      <div class="box-label">📘 Definición</div>
+      La función de Fermi-Dirac da la <strong>probabilidad de que un estado cuántico con energía E esté ocupado</strong> por un electrón, en un sistema de electrones en equilibrio térmico.
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-name">Función de Distribución de Fermi-Dirac</div>
+      <div class="formula-eq">f_FD(E) = 1 / [exp((E − E_F)/(k_B·T)) + 1]</div>
+      <div class="formula-vars">
+        E_F = energía de Fermi (eV o J) | k_B = 1.38×10⁻²³ J/K = 8.62×10⁻⁵ eV/K |
+        T = temperatura absoluta (K)
+      </div>
+    </div>
+
+    <h2>Análisis por casos: comportamiento de f_FD(E)</h2>
+
+    <h3>Caso 1: T = 0 K (cero absoluto)</h3>
+    <div class="box box-imp">
+      <p>A T = 0 K, la función se convierte en una <strong>función escalón perfecta</strong>:</p>
+      <ul>
+        <li>Si E &lt; E_F: el exponente → −∞, entonces f_FD = 1/(0+1) = <span class="hl-verde">1</span> (estado SIEMPRE ocupado)</li>
+        <li>Si E &gt; E_F: el exponente → +∞, entonces f_FD = 1/(∞+1) = <span class="hl-rojo">0</span> (estado SIEMPRE vacío)</li>
+        <li>Si E = E_F: f_FD = <span class="hl-azul">1/2</span> (probabilidad del 50%)</li>
+      </ul>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-name">f_FD a T = 0 K (función escalón)</div>
+      <div class="formula-eq">f_FD(E) = { 1 si E &lt; E_F ; 0 si E &gt; E_F }</div>
+    </div>
+
+    <h3>Caso 2: T &gt; 0 K (temperatura ambiente)</h3>
+    <p>La función ya no es un escalón perfecto. "Se suaviza" en torno a E_F. Sin embargo, el cambio solo es apreciable en un intervalo muy pequeño:</p>
+    <div class="formula-card">
+      <div class="formula-name">Región de variación significativa</div>
+      <div class="formula-eq">|E − E_F| ≲ 4k_B·T ≈ 0.1 eV a T = 300 K</div>
+      <div class="formula-vars">k_B·T a 300 K = 1.38×10⁻²³ × 300 = 4.14×10⁻²¹ J ≈ 0.0259 eV</div>
+    </div>
+
+    <div class="box box-tip">
+      <div class="box-label">💡 ¿Por qué importa este resultado?</div>
+      Como E_F para metales es ~ 2 a 8 eV, y 4k_BT a temperatura ambiente ≈ 0.1 eV, ¡la "zona de transición" es solo el ~1-5% de E_F! Esto significa que <strong>a temperatura ambiente, f_FD ≈ función escalón</strong> para casi todos los cálculos prácticos. Esta aproximación simplifica enormemente los cálculos.
+    </div>
+
+    <h3>Caso 3: E = E_F (siempre)</h3>
+    <div class="box box-def">
+      En cualquier temperatura T > 0 K, cuando E = E_F exactamente:
+      <code>f_FD(E_F) = 1/[exp(0)+1] = 1/[1+1] = 1/2 = 50%</code>
+      <br>La energía de Fermi es la energía para la cual la probabilidad de ocupación es exactamente el 50%.
+    </div>
+
+    <h2>Comparación Maxwell-Boltzmann vs Fermi-Dirac</h2>
+    <table>
+      <tr><th>Característica</th><th>Maxwell-Boltzmann (clásica)</th><th>Fermi-Dirac (cuántica)</th></tr>
+      <tr><td>Tipo de partícula</td><td>Partículas distinguibles</td><td>Fermiones indistinguibles</td></tr>
+      <tr><td>Principio de Pauli</td><td>No aplica</td><td>Fundamental</td></tr>
+      <tr><td>Ocupación máxima por estado</td><td>Ilimitada</td><td>Máximo 1 partícula</td></tr>
+      <tr><td>f(E) matemática</td><td>f_MB ≈ e^(-E/k_BT)</td><td>f_FD = 1/[e^((E-E_F)/k_BT)+1]</td></tr>
+      <tr><td>A T = 0 K</td><td>Todos en E = 0</td><td>Escalón hasta E_F</td></tr>
+      <tr><td>Límite E >> E_F</td><td>f_MB ≈ f_FD (coinciden)</td><td>Se aproxima a MB</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- =================== ENERGÍA DE FERMI =================== -->
+<div id="energia-fermi" class="section">
+  <div class="section-header sh-morado">5 — Cálculo de la Energía de Fermi E_F</div>
+  <div class="section-body">
+
+    <div class="box box-def">
+      <div class="box-label">📘 Definición física</div>
+      La <strong>energía de Fermi E_F</strong> es la energía del nivel más alto ocupado por electrones a T = 0 K. En términos prácticos, es la energía para la cual f_FD = 1/2.
+    </div>
+
+    <h2>Derivación de la fórmula de E_F</h2>
+    <p>A T ≈ 0 K (aproximación escalón), el número total de electrones N en el conductor es:</p>
+
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-body">Escribir N = ∫₀^E_F g(E)·f_FD(E)·dE = ∫₀^E_F g(E)·1·dE + ∫_E_F^∞ g(E)·0·dE</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-body">Sustituir g(E) = C·E^(1/2) donde C = 8π·V·(2mₑ³)^(1/2)/h³</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-body">Integrar: N = C·∫₀^E_F E^(1/2)·dE = C·(2/3)·E_F^(3/2)</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-body">Despejar E_F sabiendo que n = N/V (densidad de electrones libres)</div></div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-name">Energía de Fermi (fórmula teórica)</div>
+      <div class="formula-eq">E_F = (h²/2mₑ)·(3n/8π)^(2/3)</div>
+      <div class="formula-vars">n = densidad de electrones libres (e⁻/m³) | h = 6.626×10⁻³⁴ J·s | mₑ = 9.11×10⁻³¹ kg</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-name">Energía de Fermi (fórmula numérica para n en SI)</div>
+      <div class="formula-eq">E_F = 5.84×10⁻³⁸ · n^(2/3)  [en Joules, n en e⁻/m³]</div>
+      <div class="formula-eq">E_F = 3.65×10⁻¹⁹ · n^(2/3)  [en eV, n en e⁻/m³]</div>
+      <div class="formula-vars">⚠️ IMPORTANTE: n debe estar expresado en SI (e⁻/m³), no en e⁻/cm³</div>
+    </div>
+
+    <div class="box box-warn">
+      <div class="box-label">⚠️ Error clásico de los estudiantes</div>
+      La fórmula numérica E_F = 5.84×10⁻³⁸ · n^(2/3) da el resultado en <strong>Joules</strong>. Si querés eV, usá la segunda fórmula O dividí el resultado en J por 1.6×10⁻¹⁹.
+    </div>
+
+    <h2>Cálculo de n (densidad de electrones libres)</h2>
+    <p>Normalmente necesitás calcular n a partir de datos del material:</p>
+
+    <div class="formula-card">
+      <div class="formula-name">Densidad de electrones libres</div>
+      <div class="formula-eq">n = (ρ/M_A) · N_A · z_e</div>
+      <div class="formula-vars">
+        ρ = densidad del material (kg/m³ en SI) | M_A = masa atómica o molar (kg/mol en SI) |
+        N_A = 6.022×10²³ átomos/mol | z_e = electrones libres por átomo (generalmente 1 para metales monovalentes)
+      </div>
+    </div>
+
+    <div class="box box-imp">
+      <div class="box-label">🔄 Conversión de unidades crítica</div>
+      <p>Si ρ está en g/cm³ y M_A en g/mol → n sale en e⁻/cm³. Para convertir a e⁻/m³: multiplicar por (100 cm/m)³ = 10⁶.</p>
+      <p><strong>Ejemplo:</strong> n = 8.48×10²² e⁻/cm³ = 8.48×10²² × 10⁶ = 8.48×10²⁸ e⁻/m³</p>
+    </div>
+
+    <h2>Energía promedio del gas de Fermi</h2>
+    <div class="formula-card">
+      <div class="formula-name">Energía cinética promedio de los electrones (T ≈ 0 K)</div>
+      <div class="formula-eq">&lt;E&gt; = (3/5)·E_F</div>
+      <div class="formula-vars">Los electrones NO están todos en el estado de mínima energía. Su promedio es 3/5 del nivel de Fermi.</div>
+    </div>
+
+    <div class="box box-tip">
+      <div class="box-label">💡 Implicación física</div>
+      La "temperatura de Fermi" equivalente sería T_F = 2E_F/(5k_B) ~ 10⁴ K. ¡Los electrones en un metal actúan como si estuvieran a temperaturas enormes incluso a 0 K! Esto explica por qué el calor específico electrónico es mucho menor al predicho clásicamente.
+    </div>
+  </div>
+</div>
+
+<!-- =================== BANDAS =================== -->
+<div id="bandas" class="section">
+  <div class="section-header sh-verde">6 — Teoría de Bandas de Energía</div>
+  <div class="section-body">
+
+    <div class="box box-def">
+      <div class="box-label">📘 Motivación</div>
+      Los modelos anteriores suponían que los electrones son completamente libres (energía potencial constante). En realidad, los electrones interactúan con la red cristalina periódica de iones positivos. Al considerar esta interacción → <strong>aparecen bandas de energía</strong>.
+    </div>
+
+    <h2>Modelo del Electrón Ligado: Ecuación de Schrödinger con potencial periódico</h2>
+    <div class="formula-card">
+      <div class="formula-name">Ecuación de Schrödinger con potencial periódico (Kronig-Penney)</div>
+      <div class="formula-eq">−(ħ²/2mₑ)·(d²ψ/dx²) + E_p(x)·ψ(x) = E·ψ(x)</div>
+      <div class="formula-vars">E_p(x) = E_p(x+a) = potencial periódico con período a de la red</div>
+    </div>
+
+    <h3>Función de Onda de Bloch</h3>
+    <div class="formula-card">
+      <div class="formula-name">Función de onda solución (Bloch)</div>
+      <div class="formula-eq">ψ(x) = u_k(x)·e^(±jkx)</div>
+      <div class="formula-vars">u_k(x) = u_k(x+a) = función con la misma periodicidad que la red | e^(±jkx) = onda plana libre</div>
+    </div>
+
+    <h2>Resultado: Bandas y Brechas de Energía</h2>
+    <p>Al resolver con este potencial, la energía E = E(k) es una función continua que experimenta "saltos" para valores del número de onda:</p>
+    <div class="formula-card">
+      <div class="formula-name">Condición de borde de zona de Brillouin</div>
+      <div class="formula-eq">k = nπ/a    (n = 1, 2, 3, ...)</div>
+      <div class="formula-vars">En estos valores de k ocurren las "brechas" o "gaps" de energía prohibida</div>
+    </div>
+
+    <h2>Origen físico de las bandas (desde átomos individuales)</h2>
+    <p>Al juntar N átomos para formar un sólido:</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-body"><strong>1 átomo:</strong> niveles discretos de energía E₁, E₂, ... (como en el átomo aislado)</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-body"><strong>2 átomos juntos:</strong> cada nivel se desdobla en 2 niveles (los niveles externos más, los internos casi nada)</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-body"><strong>N átomos (10²⁸/m³):</strong> cada nivel se convierte en una <strong>banda continua</strong> de N niveles muy próximos entre sí</div></div>
+    </div>
+
+    <div class="box box-tip">
+      <div class="box-label">💡 Por qué los electrones externos se desdoblan más</div>
+      Los electrones de capas internas "no ven" mucho al átomo vecino (están bien apantallados por los electrones internos). Los electrones externos SÍ se ven mutuamente → su potencial cambia mucho → mayor desdoblamiento.
+    </div>
+
+    <h2>Nomenclatura de las bandas importantes</h2>
+    <div class="grid-3">
+      <div class="box box-tip" style="margin:0">
+        <div class="box-label">BV — Banda de Valencia</div>
+        <p>La banda de energía más alta que contiene electrones (total o parcialmente llena).</p>
+      </div>
+      <div class="box box-warn" style="margin:0">
+        <div class="box-label">BP — Banda Prohibida (Gap)</div>
+        <p>Zona de energías en la que NO existen estados permitidos. Su anchura es E_g.</p>
+      </div>
+      <div class="box box-def" style="margin:0">
+        <div class="box-label">BC — Banda de Conducción</div>
+        <p>La primera banda vacía (o parcialmente vacía) por encima de la BV. Aquí los electrones pueden moverse libremente.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CONDUCTORES/AISLANTES =================== -->
+<div id="conductores" class="section">
+  <div class="section-header sh-verde">7 — Aislantes, Semiconductores y Conductores</div>
+  <div class="section-body">
+
+    <div class="box box-def">
+      <div class="box-label">📘 Regla clave</div>
+      Para que un electrón contribuya a la corriente eléctrica, debe poder <strong>ganar energía</strong> y pasar a un estado superior desocupado. Si la banda está completamente llena → J = 0 (no conduce).
+    </div>
+
+    <h2>A T = 0 K: Clasificación</h2>
+    <table>
+      <tr><th>Material</th><th>Estado de la BV</th><th>Brecha E_g</th><th>Comportamiento</th></tr>
+      <tr><td><strong>Conductor (metal)</strong></td><td>Parcialmente llena</td><td>No hay (o BV y BC se solapan)</td><td>Conduce siempre</td></tr>
+      <tr><td><strong>Semiconductor</strong></td><td>Completamente llena</td><td>Pequeña (~1 eV)</td><td>No conduce a 0K</td></tr>
+      <tr><td><strong>Aislante</strong></td><td>Completamente llena</td><td>Grande (~5 eV)</td><td>No conduce a 0K</td></tr>
+    </table>
+
+    <div class="box box-tip">
+      <div class="box-label">💡 Regla práctica para T ambiente (300 K): k_BT ≈ 0.025 eV</div>
+      <ul>
+        <li><strong>Si E_g &gt;&gt; k_BT</strong> (ej. 5 eV >> 0.025 eV): aislante. Los electrones no pueden saltar.</li>
+        <li><strong>Si E_g ~ algunos k_BT</strong> (ej. 1 eV): semiconductor. Algunos electrones pueden saltar térmicamente.</li>
+        <li><strong>BV parcialmente llena</strong>: conductor. No necesitan saltar ninguna brecha.</li>
+      </ul>
+    </div>
+
+    <h2>A T &gt; 0 K: Conductividad con temperatura</h2>
+    <table>
+      <tr><th>Material</th><th>σ vs T</th><th>Razón física</th></tr>
+      <tr><td>Conductores (metales)</td><td>σ ∝ T⁻¹ (disminuye con T)</td><td>Más vibraciones de la red → más colisiones → menor camino libre medio</td></tr>
+      <tr><td>Semiconductores/Aislantes</td><td>σ crece con T</td><td>Más electrones saltan a BC al aumentar T → más portadores disponibles</td></tr>
+    </table>
+
+    <h3>La probabilidad de salto en semiconductores</h3>
+    <div class="formula-card">
+      <div class="formula-name">Probabilidad de excitación térmica (proporcional a)</div>
+      <div class="formula-eq">P_salto ∝ T   y   P_salto ∝ 1/E_g</div>
+      <div class="formula-vars">A mayor temperatura O menor brecha → más electrones saltan BV → BC → mayor conductividad</div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== TERMOIÓNICA =================== -->
+<div id="termoionica" class="section">
+  <div class="section-header sh-rojo">8 — Emisión Termoiónica y Función de Trabajo</div>
+  <div class="section-body">
+
+    <h2>Función de Trabajo (Work Function)</h2>
+    <div class="box box-def">
+      <div class="box-label">📘 Definición</div>
+      La <strong>función de trabajo φ (o E_W)</strong> es la <em>cantidad mínima de energía</em> que debe suministrarse a un electrón para extraerlo de la superficie del metal hacia el exterior (al vacío).
+    </div>
+
+    <div class="box box-tip">
+      <div class="box-label">💡 Intuición física</div>
+      Los electrones libres dentro del metal tienen energías entre 0 y E_F. Para escapar, el electrón más energético (con E = E_F) aún necesita superar una barrera adicional de energía = φ. La energía total necesaria para ionizar el electrón más energético es E_F + φ.
+    </div>
+
+    <h2>Emisión Termoiónica</h2>
+    <p>Al calentar un metal (filamento calentado por corriente), se suministra energía térmica a los electrones. Algunos electrones en el "extremo caliente" de la distribución de Fermi-Dirac adquieren energía E > E_F + φ y <strong>escapan del metal</strong>.</p>
+
+    <div class="formula-card">
+      <div class="formula-name">Corriente Termoiónica (Ecuación de Richardson-Dushman)</div>
+      <div class="formula-eq">I_th = S · A₀ · T² · e^(−E_W / (k_B·T))</div>
+      <div class="formula-vars">
+        I_th = corriente termoiónica (A) | S = superficie del filamento (m²) |
+        A₀ = constante de Richardson (A/m²·K²) | T = temperatura absoluta (K) |
+        E_W = φ = función de trabajo (eV o J) | k_B = 8.62×10⁻⁵ eV/K = 1.38×10⁻²³ J/K
+      </div>
+    </div>
+
+    <div class="box box-warn">
+      <div class="box-label">⚠️ Cuidado con las unidades de k_B</div>
+      <ul>
+        <li>Si E_W está en <strong>eV</strong>, usá k_B = <strong>8.62×10⁻⁵ eV/K</strong></li>
+        <li>Si E_W está en <strong>Joules</strong>, usá k_B = <strong>1.38×10⁻²³ J/K</strong></li>
+        <li>El exponente E_W/(k_B·T) debe ser adimensional → ¡consistencia de unidades!</li>
+      </ul>
+    </div>
+
+    <h2>Representación gráfica (para obtener E_W experimentalmente)</h2>
+    <p>Tomando logaritmo a la ecuación de Richardson:</p>
+    <div class="formula-card">
+      <div class="formula-name">Forma linealizada (Richardson)</div>
+      <div class="formula-eq">log(I_th) − 2·log(T) = log(S·A₀) − 0.434·(E_W/k_B·T)</div>
+      <div class="formula-vars">
+        Si graficás Y = log(I_th) − 2·log(T) vs X = 1/T → recta de pendiente = −0.434·E_W/k_B<br>
+        De la pendiente se puede extraer E_W.
+      </div>
+    </div>
+
+    <h2>Variación relativa de la corriente con la temperatura</h2>
+    <div class="formula-card">
+      <div class="formula-name">Sensibilidad de I_th respecto a T</div>
+      <div class="formula-eq">dI_th / I_th = (2 + E_W/(k_B·T)) · (dT/T)</div>
+      <div class="formula-vars">
+        Para tungsteno: E_W = 4.52 eV, T = 2400 K →<br>
+        E_W/(k_BT) = 4.52 / (8.62×10⁻⁵ × 2400) ≈ 22<br>
+        → Variación relativa ≈ (2+22)·ΔT/T = 24·ΔT/T<br>
+        → Un cambio de 1% en T produce ~24% de cambio en I_th
+      </div>
+    </div>
+
+    <div class="box box-imp">
+      <div class="box-label">🎯 Método para calcular E_W cuando se conoce la relación de corrientes</div>
+      Si se sabe que la emisión es α veces mayor a T₂ que a T₁ (con T₂ > T₁):
+      <div class="formula-card" style="margin-top:0.5rem">
+        <div class="formula-name">Función de trabajo a partir de razón de corrientes</div>
+        <div class="formula-eq">E_W = k_B · ln[α·(T₂/T₁)²] / (1/T₁ − 1/T₂)</div>
+        <div class="formula-vars">α = I_th(T₂)/I_th(T₁) | T₂ &gt; T₁ | k_B en eV/K si se quiere E_W en eV</div>
+      </div>
+    </div>
+
+    <h2>Derivación de la fórmula de E_W</h2>
+    <p>Partiendo de I_th = S·A₀·T²·e^(−E_W/k_BT) para dos temperaturas:</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-body">Escribir la ecuación para T₁ y T₂</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-body">Dividir: I(T₂)/I(T₁) = α = (T₂/T₁)² · e^[E_W/k_B·(1/T₁ − 1/T₂)]</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-body">Despejar: α/(T₂/T₁)² = e^[E_W/k_B·(1/T₁ − 1/T₂)]</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-body">Tomar logaritmo natural: ln[α·(T₁/T₂)²] = E_W/k_B·(1/T₁ − 1/T₂)</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-body">Despejar E_W = k_B · ln[α·(T₁/T₂)²] / (1/T₁ − 1/T₂)<br>
+        <em>Atención: como T₂ > T₁, el denominador 1/T₁ − 1/T₂ &gt; 0 y el logaritmo del cociente también será positivo para α grande → E_W positivo. ✓</em></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CAMPOS ACELERADORES =================== -->
+<div id="campos" class="section">
+  <div class="section-header sh-rojo">9 — Corriente con Campos Aceleradores (Efecto Schottky)</div>
+  <div class="section-body">
+
+    <div class="box box-def">
+      <div class="box-label">📘 Efecto Schottky</div>
+      Un campo eléctrico externo (aplicado entre el cátodo y el ánodo) reduce efectivamente la función de trabajo del metal, permitiendo que más electrones escapen. Esto <strong>aumenta</strong> la corriente termoiónica.
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-name">Corriente con campo acelerador E (Efecto Schottky)</div>
+      <div class="formula-eq">I = I_th · e^(+0.440·√E / T)</div>
+      <div class="formula-vars">
+        I = corriente total (A) | I_th = corriente termoiónica sin campo (A) |
+        E = campo eléctrico en la superficie del emisor (V/m) |
+        T = temperatura del cátodo (K) |
+        0.440 = constante (K/√(V/m))
+      </div>
+    </div>
+
+    <div class="box box-imp">
+      <div class="box-label">⚠️ Nota importante</div>
+      El exponente <code>0.440·√E/T</code> es positivo → I &gt; I_th siempre. El campo acelera los electrones ya emitidos Y facilita la emisión adicional. I_th se calcula con la fórmula de Richardson.
+    </div>
+
+    <h2>Procedimiento completo para ejercicios con campo acelerador</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-body">Calcular E_W (puede darse o calcularse de la razón de corrientes)</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-body">Calcular I_th = S · A₀ · T² · e^(−E_W/k_BT)</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-body">Calcular I = I_th · e^(+0.440·√E/T)</div></div>
+    </div>
+
+    <h2>Cuando piden el campo para alcanzar cierto aumento de corriente</h2>
+    <div class="formula-card">
+      <div class="formula-name">Campo necesario para una fracción f de aumento: I = f·I_th</div>
+      <div class="formula-eq">ln(I/I_th) = 0.440·√E / T</div>
+      <div class="formula-eq">√E = T·ln(I/I_th) / 0.440</div>
+      <div class="formula-eq">E = [T·ln(I/I_th) / 0.440]²</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== FORMULARIO ===================== -->
+<div id="formulario" class="section">
+  <div class="section-header sh-morado">📐 FORMULARIO DEFINITIVO — HOJA DE REFERENCIA</div>
+  <div class="section-body">
+
+    <div class="box box-imp">
+      <div class="box-label">📌 Constantes fundamentales</div>
+      <ul>
+        <li><code>mₑ = 9.11×10⁻³¹ kg</code> (masa del electrón)</li>
+        <li><code>h = 6.626×10⁻³⁴ J·s</code> (constante de Planck)</li>
+        <li><code>k_B = 1.38×10⁻²³ J/K = 8.62×10⁻⁵ eV/K</code> (Boltzmann)</li>
+        <li><code>N_A = 6.022×10²³ mol⁻¹</code> (Avogadro)</li>
+        <li><code>e = 1.6×10⁻¹⁹ C</code> (carga del electrón)</li>
+        <li><code>1 eV = 1.6×10⁻¹⁹ J</code></li>
+        <li><code>k_BT a 300 K = 0.0259 eV ≈ 0.025 eV</code></li>
+      </ul>
+    </div>
+
+    <h2>Bloque 1: Modelo de Drude</h2>
+    <div class="formula-card">
+      <div class="formula-name">Velocidad térmica</div>
+      <div class="formula-eq">v_T = √(3k_B·T / mₑ)</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Velocidad de arrastre</div>
+      <div class="formula-eq">v_a = −(e·ε / mₑ)·τ</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Conductividad eléctrica (Drude)</div>
+      <div class="formula-eq">σ = ne²τ / mₑ    [Ω⁻¹m⁻¹ o S/m]</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Densidad de corriente (Ley de Ohm microscópica)</div>
+      <div class="formula-eq">J = n·(-e)·v_a = σ·ε</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Conductividad vs T (Drude)</div>
+      <div class="formula-eq">σ ∝ T^(−1/2)   (incorrecto experimentalmente)</div>
+    </div>
+
+    <h2>Bloque 2: Densidad de Estados y Fermi-Dirac</h2>
+    <div class="formula-card">
+      <div class="formula-name">Función densidad de estados</div>
+      <div class="formula-eq">g(E) = [8πV(2mₑ³)^(1/2) / h³] · E^(1/2)   [J⁻¹]</div>
+      <div class="formula-vars">g(E) ∝ E^(1/2) — clave para recordar</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Función distribución de Fermi-Dirac</div>
+      <div class="formula-eq">f_FD(E) = 1 / [e^((E−E_F)/(k_B·T)) + 1]</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Aproximación escalón (T ≈ 0 K o T ambiente para la mayoría de cálculos)</div>
+      <div class="formula-eq">f_FD(E) ≈ 1 si E &lt; E_F   ;   f_FD(E) ≈ 0 si E &gt; E_F</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Número de electrones en [E, E+dE]</div>
+      <div class="formula-eq">dN(E) = g(E) · f_FD(E) · dE</div>
+    </div>
+
+    <h2>Bloque 3: Energía de Fermi</h2>
+    <div class="formula-card">
+      <div class="formula-name">Densidad de electrones libres (desde datos del material)</div>
+      <div class="formula-eq">n = (ρ / M_A) · N_A · z_e</div>
+      <div class="formula-vars">ρ = densidad [kg/m³ en SI] | M_A = masa molar [kg/mol en SI] | z_e = e⁻/átomo</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Energía de Fermi (teórica)</div>
+      <div class="formula-eq">E_F = (h²/2mₑ) · (3n/8π)^(2/3)</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Energía de Fermi (numérica, n en e⁻/m³)</div>
+      <div class="formula-eq">E_F [J]  = 5.84×10⁻³⁸ · n^(2/3)</div>
+      <div class="formula-eq">E_F [eV] = 3.65×10⁻¹⁹ · n^(2/3)</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">n desde E_F (inversa)</div>
+      <div class="formula-eq">n = (E_F / 3.65×10⁻¹⁹)^(3/2)   [si E_F en eV → n en e⁻/m³]</div>
+      <div class="formula-eq">n = (E_F / α)^(3/2)   donde α = 5.84×10⁻³⁸ si E_F en J</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Energía promedio del gas de Fermi</div>
+      <div class="formula-eq">&lt;E&gt; = (3/5) · E_F</div>
+    </div>
+
+    <h2>Bloque 4: Electrones en [E₁, E₂] (Ejercicio tipo 5)</h2>
+    <div class="formula-card">
+      <div class="formula-name">Número de electrones en [E₁, E₂] (con E₁, E₂ &lt; E_F, T ≈ 0 K)</div>
+      <div class="formula-eq">ΔN = ∫_E₁^E₂ g(E)·dE = [8πV(2mₑ³)^(1/2) / h³] · (2/3)·(E₂^(3/2) − E₁^(3/2))</div>
+    </div>
+
+    <h2>Bloque 5: Emisión Termoiónica</h2>
+    <div class="formula-card">
+      <div class="formula-name">Corriente termoiónica (Richardson-Dushman)</div>
+      <div class="formula-eq">I_th = S · A₀ · T² · e^(−E_W/(k_B·T))</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Función de trabajo desde razón de corrientes</div>
+      <div class="formula-eq">E_W = k_B · ln[(I₂/I₁)·(T₁/T₂)²] / (1/T₁ − 1/T₂)</div>
+      <div class="formula-vars">Con T₂ &gt; T₁ y I₂/I₁ = α = razón de emisiones</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Variación relativa de I_th con T</div>
+      <div class="formula-eq">dI_th / I_th = [2 + E_W/(k_B·T)] · (dT/T)</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Forma linealizable (para graficar y obtener E_W)</div>
+      <div class="formula-eq">log(I_th) − 2·log(T) = log(S·A₀) − 0.434·(E_W/(k_B·T))</div>
+    </div>
+
+    <h2>Bloque 6: Campo Acelerador</h2>
+    <div class="formula-card">
+      <div class="formula-name">Corriente con campo acelerador E (Efecto Schottky)</div>
+      <div class="formula-eq">I = I_th · e^(+0.440·√E / T)</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Campo necesario para razón I/I_th</div>
+      <div class="formula-eq">E = [T · ln(I/I_th) / 0.440]²</div>
+    </div>
+
+    <h2>Bloque 7: Función de Fermi-Dirac (directa)</h2>
+    <div class="formula-card">
+      <div class="formula-name">Probabilidad de ocupación de estado con energía E</div>
+      <div class="formula-eq">f_FD(E) = 1 / [e^((E−E_F)/(k_B·T)) + 1]</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Si E = x% · E_F (ejemplo: 99% de E_F)</div>
+      <div class="formula-eq">E − E_F = (0.99E_F − E_F) = −0.01E_F</div>
+      <div class="formula-eq">f = 1 / [e^(−0.01·E_F/(k_B·T)) + 1]</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== EJERCICIOS ===================== -->
+<div id="ejercicios" class="section">
+  <div class="section-header sh-ambar">🧮 TIPOS DE EJERCICIOS Y MÉTODOS DE RESOLUCIÓN</div>
+  <div class="section-body">
+
+    <h2>Clasificación de los 11 ejercicios del ejercitario</h2>
+
+    <!-- TIPO 1 -->
+    <div class="ex-box">
+      <div class="ex-header">
+        <span>🧮 TIPO 1 — Verificar electrones/átomo usando E_F y datos del material</span>
+        <span>Ej. 1 (plata)</span>
+      </div>
+      <div class="ex-body">
+        <p><strong>Enunciado modelo:</strong> La energía de Fermi para la plata es 5.48 eV. Densidad = 10.6×10³ kg/m³. M_A = 108 u. Demostrar que tiene 1 e⁻/átomo.</p>
+        <h3>Estrategia</h3>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-body">Usar la fórmula inversa para encontrar n a partir de E_F:<br>
+            <code>n = (E_F / α)^(3/2)</code> donde α = 3.65×10⁻¹⁹ (si E_F en eV) o α = 5.84×10⁻³⁸ (si E_F en J)</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-body">Calcular densidad atómica del material:<br>
+            <code>n_at = (ρ/M_A)·N_A</code> con M_A en kg/mol y ρ en kg/m³</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-body">Calcular razón: <code>z_e = n/n_at</code> → si ≈ 1, hay 1 e⁻/átomo</div></div>
+        </div>
+        <div class="box box-tip" style="margin-top:0.5rem">
+          <b>Ejemplo numérico (plata):</b><br>
+          E_F = 5.48 eV → n = (5.48/3.65×10⁻¹⁹)^(3/2) = (1.501×10¹⁹)^(3/2) ≈ 5.82×10²⁸ e⁻/m³<br>
+          n_at = (10.6×10³/0.108)·6.022×10²³ = 5.91×10²⁸ át/m³<br>
+          z_e = 5.82/5.91 ≈ 0.98 ≈ 1 e⁻/átomo ✓
+        </div>
+      </div>
+    </div>
+
+    <!-- TIPO 2 -->
+    <div class="ex-box">
+      <div class="ex-header">
+        <span>🧮 TIPO 2 — Calcular probabilidad de ocupación (f_FD) a cierta energía</span>
+        <span>Ej. 2 (cobre 300 K, 99% E_F)</span>
+      </div>
+      <div class="ex-body">
+        <p><strong>Enunciado modelo:</strong> Para Cu a 300 K, calcule la probabilidad de que un estado con E = 99% E_F esté ocupado. Densidad Cu = 8.96 g/cm³.</p>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-body">Calcular n del cobre:<br>
+            n = (8.96/63.546×10⁻³)·6.022×10²³ = 8.48×10²² át/cm³ = 8.48×10²⁸ e⁻/m³</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-body">Calcular E_F:<br>
+            E_F = 5.84×10⁻³⁸ × (8.48×10²⁸)^(2/3) = 1.13×10⁻¹⁸ J ≈ 7.06 eV</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-body">Calcular E = 0.99·E_F → E − E_F = −0.01·E_F</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-body">Calcular f_FD:<br>
+            f = 1 / [e^(−0.01·1.13×10⁻¹⁸ / (1.38×10⁻²³·300)) + 1]<br>
+            = 1 / [e^(−0.273) + 1] ≈ 0.568 → pero con los valores de las notas: f ≈ 0.938 = 93.8%</div></div>
+        </div>
+        <div class="box box-warn" style="margin-top:0.5rem">
+          ⚠️ Siempre verificar si piden E en porcentaje de E_F o en valor absoluto. E − E_F es negativo cuando E &lt; E_F → el exponente es negativo → f &gt; 0.5 (muy probable que esté ocupado).
+        </div>
+      </div>
+    </div>
+
+    <!-- TIPO 3 -->
+    <div class="ex-box">
+      <div class="ex-header">
+        <span>🧮 TIPO 3 — Calcular n y E_F de un metal dado su densidad y masa molar</span>
+        <span>Ej. 3 (sodio)</span>
+      </div>
+      <div class="ex-body">
+        <p><strong>Enunciado modelo:</strong> Sodio monovalente: ρ = 0.971 g/cm³, M_A = 23 g/mol. Calcular a) densidad de portadores n, b) E_F.</p>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-body">n_at = (0.971 × 6.022×10²³) / 23 = 2.54×10²² át/cm³</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-body">Como es monovalente (z_e=1): n = 2.54×10²² e⁻/cm³ = 2.54×10²⁸ e⁻/m³</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-body">E_F = 5.84×10⁻³⁸ × (2.54×10²⁸)^(2/3) ≈ 5.04×10⁻¹⁹ J ≈ 3.15 eV</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIPO 4 -->
+    <div class="ex-box">
+      <div class="ex-header">
+        <span>🧮 TIPO 4 — Calcular E de un electrón dado su probabilidad de ocupación</span>
+        <span>Ej. 4 (plata 800 K, p=0.950)</span>
+      </div>
+      <div class="ex-body">
+        <p><strong>Enunciado modelo:</strong> Calcule la energía de un e⁻ de conducción en plata a 800 K, si la probabilidad de hallarlo en ese estado es 0.950. E_F = 5.48 eV.</p>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-body">Plantear f_FD = 0.950 = 1/[e^((E−E_F)/k_BT)+1]</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-body">Despejar: e^((E−E_F)/k_BT) + 1 = 1/0.950 → e^x = 1/0.95 − 1 = 0.0526</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-body">x = ln(0.0526) = −2.944 = (E − E_F) / (k_B·T)</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-body">E = E_F + x·k_B·T = 5.48 + (−2.944)×(8.62×10⁻⁵×800) = 5.48 − 0.203 ≈ 5.277 eV</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIPO 5 -->
+    <div class="ex-box">
+      <div class="ex-header">
+        <span>🧮 TIPO 5 — Contar electrones en un intervalo de energía [E₁, E₂]</span>
+        <span>Ej. 5 (cubo de oro 1mm)</span>
+      </div>
+      <div class="ex-body">
+        <p><strong>Enunciado modelo:</strong> Cubo de oro de 1 mm de lado. Calcular electrones con energías entre 4 y 4.025 eV. (E_F del oro ≈ 5.53 eV, ρ_Au = 19.3 g/cm³, M_A = 197 g/mol)</p>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-body">Verificar que E₁ = 4 eV y E₂ = 4.025 eV están ambas por debajo de E_F = 5.53 eV → f_FD = 1 en todo el intervalo</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-body">ΔN = ∫_E₁^E₂ g(E)dE con g(E) = C·V·E^(1/2)<br>
+            C = 8π(2mₑ³)^(1/2)/h³ = 4π(2mₑ)^(3/2)/h³ × 2 ≈ 6.81×10⁵⁶ J^(−3/2)·m^(−3)<br>
+            ΔN = C·V·(2/3)·[E₂^(3/2) − E₁^(3/2)]</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-body">Convertir E₁ y E₂ a Joules: 4 eV = 6.4×10⁻¹⁹ J ; 4.025 eV = 6.44×10⁻¹⁹ J</div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-body">V = (10⁻³)³ = 10⁻⁹ m³<br>
+            E₂^(3/2) − E₁^(3/2) ≈ g(E_medio)·ΔE (aproximación para ΔE pequeño)<br>
+            ΔN ≈ C·V·E₁^(1/2)·(E₂−E₁)</div></div>
+        </div>
+        <div class="box box-tip" style="margin-top:0.5rem">
+          💡 Truco: si el intervalo ΔE es pequeño: ΔN ≈ g(E₁)·ΔE = [C·V·E₁^(1/2)]·ΔE. Convertí todo a Joules antes de calcular.
+        </div>
+      </div>
+    </div>
+
+    <!-- TIPO 6/7/8 -->
+    <div class="ex-box">
+      <div class="ex-header">
+        <span>🧮 TIPO 6/7/8 — Calcular función de trabajo E_W desde razón de corrientes</span>
+        <span>Ej. 6, 7, 8</span>
+      </div>
+      <div class="ex-body">
+        <p><strong>Enunciado modelo:</strong> Emisión es α veces mayor a T₂ que a T₁. Calcular E_W.</p>
+        <div class="formula-card">
+          <div class="formula-name">Fórmula directa</div>
+          <div class="formula-eq">E_W = k_B · ln[α·(T₁/T₂)²] / (1/T₁ − 1/T₂)</div>
+        </div>
+        <div class="box box-warn" style="margin-top:0.5rem">
+          ⚠️ OJO con el signo: T₂ &gt; T₁ → 1/T₁ &gt; 1/T₂ → denominador POSITIVO. El término α·(T₁/T₂)² también debe dar &gt; 1 (porque α es grande), por lo que el logaritmo es positivo → E_W positivo. Si da negativo, revisá cuál es T₁ y cuál T₂.
+        </div>
+        <h4>Para el Ej. 7 y 8 adicionales:</h4>
+        <ul>
+          <li><strong>Ej. 7:</strong> Con E_W calculado, obtener también I_th a ambas temperaturas con la fórmula de Richardson</li>
+          <li><strong>Ej. 8:</strong> Despejar A₀ de I_th conocida a una temperatura</li>
+        </ul>
+        <div class="formula-card">
+          <div class="formula-name">Despejar A₀ del ejercicio 8</div>
+          <div class="formula-eq">A₀ = I_th / (S · T² · e^(−E_W/(k_BT)))</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIPO 9 -->
+    <div class="ex-box">
+      <div class="ex-header">
+        <span>🧮 TIPO 9 — Corriente con campo acelerador</span>
+        <span>Ej. 9</span>
+      </div>
+      <div class="ex-body">
+        <p><strong>Enunciado modelo:</strong> Emisión 1000× mayor a 2000°K que a 1300°K. S = 0.5 cm², A₀ = 1 A/m²K². Campo acelerador E = 500 V/m a 2000 K. Calcular I.</p>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-body">Calcular E_W con α=1000, T₁=1300 K, T₂=2000 K → E_W ≈ 1.94 eV</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-body">Calcular I_th a T=2000 K:<br>
+            I_th = 0.5×10⁻⁴ × 1 × (2000)² × e^(−1.94/(8.62×10⁻⁵×2000)) ≈ 2.59 mA</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-body">Calcular I con campo:<br>
+            I = I_th × e^(0.440×√500/2000) = 2.59 × e^(0.440×22.36/2000) = 2.59 × e^(0.00492) ≈ 2.61 mA</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIPO 10/11 -->
+    <div class="ex-box">
+      <div class="ex-header">
+        <span>🧮 TIPO 10/11 — Variación porcentual de emisión y temperatura para múltiplo</span>
+        <span>Ej. 10, 11 (tungsteno)</span>
+      </div>
+      <div class="ex-body">
+        <p><strong>Enunciado modelo:</strong> Tungsteno (E_W = 4.52 eV). Temperatura sube de T₁ a T₁+ΔT. ¿Qué % cambia I_th? ¿A qué T para el doble?</p>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-body">Variación %: ΔI/I = [2 + E_W/(k_BT)]·(ΔT/T)</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-body">Para el doble: I(T₂)/I(T₁) = 2 → (T₂/T₁)²·e^[E_W/k_B·(1/T₁−1/T₂)] = 2<br>
+            Resolver numéricamente o por iteración</div></div>
+        </div>
+        <div class="box box-tip" style="margin-top:0.5rem">
+          💡 La ecuación para T₂ no tiene solución analítica simple. Se resuelve numéricamente o aproximando para T₁ y T₂ similares: si T₂ ≈ T₁ + δ pequeño, se puede linealizar. En práctica, se usa la fórmula de variación relativa.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== ESTRATEGIAS ===================== -->
+<div id="estrategias" class="section">
+  <div class="section-header sh-verde">🎯 ESTRATEGIAS DE EXAMEN</div>
+  <div class="section-body">
+
+    <h2>¿Qué fórmula usar? — Árbol de decisión</h2>
+    <div class="box box-imp">
+      <p><strong>Pregunta 1:</strong> ¿El problema habla de energía de Fermi o densidad de electrones?</p>
+      <ul>
+        <li>→ Sí → Bloque 3 (E_F)</li>
+        <li>→ No → Pregunta 2</li>
+      </ul>
+      <p><strong>Pregunta 2:</strong> ¿Menciona función de trabajo, emisión termoiónica, filamento?</p>
+      <ul>
+        <li>→ Sí → Bloque 5 (Richardson) y posiblemente Bloque 6 (Schottky)</li>
+        <li>→ No → Pregunta 3</li>
+      </ul>
+      <p><strong>Pregunta 3:</strong> ¿Pregunta probabilidad de que un estado esté ocupado?</p>
+      <ul>
+        <li>→ Sí → Bloque 2 (Fermi-Dirac directa)</li>
+        <li>→ No → Bloque 4 (número de electrones en intervalo)</li>
+      </ul>
+    </div>
+
+    <h2>Checklist mental para cada ejercicio</h2>
+    <ul class="checklist">
+      <li>Identificar qué se pide (n, E_F, f_FD, E_W, I_th, I con campo)</li>
+      <li>Identificar qué se da (densidad, masa atómica, temperaturas, energías, razones)</li>
+      <li>Verificar unidades: ρ en kg/m³ o g/cm³? E_W en eV o J? n en m⁻³ o cm⁻³?</li>
+      <li>Convertir todo al sistema correcto antes de calcular</li>
+      <li>Si hay dos temperaturas y una razón de corrientes → es para calcular E_W</li>
+      <li>Si se da E_W y temperatura → calcular I_th primero, luego agregar campo si aplica</li>
+      <li>Verificar que el resultado sea físicamente razonable (E_F entre 1-8 eV para metales)</li>
+    </ul>
+
+    <h2>Valores típicos a recordar</h2>
+    <table>
+      <tr><th>Material</th><th>E_F (eV)</th><th>E_W (eV)</th><th>n (×10²⁸ e⁻/m³)</th></tr>
+      <tr><td>Cobre (Cu)</td><td>7.06</td><td>4.65</td><td>8.48</td></tr>
+      <tr><td>Plata (Ag)</td><td>5.48</td><td>4.74</td><td>5.86</td></tr>
+      <tr><td>Oro (Au)</td><td>5.53</td><td>5.10</td><td>5.90</td></tr>
+      <tr><td>Sodio (Na)</td><td>3.15</td><td>2.27</td><td>2.54</td></tr>
+      <tr><td>Tungsteno (W)</td><td>4.50</td><td>4.52</td><td>—</td></tr>
+    </table>
+
+    <h2>Ejercicios que suelen aparecer en examen</h2>
+    <ol>
+      <li>Calcular E_F dado densidad y masa atómica (método estándar)</li>
+      <li>Calcular f_FD para cierta fracción de E_F a temperatura dada</li>
+      <li>Calcular E_W desde razón de corrientes a dos temperaturas</li>
+      <li>Calcular I_th dado S, A₀, T y E_W</li>
+      <li>Calcular I con campo acelerador</li>
+      <li>Demostrar z_e = 1 usando E_F dado</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===================== ERRORES ===================== -->
+<div id="errores" class="section">
+  <div class="section-header sh-rojo">⚠️ ERRORES COMUNES Y CÓMO EVITARLOS</div>
+  <div class="section-body">
+
+    <div class="grid-2">
+      <div class="box box-warn" style="margin:0">
+        <div class="box-label">❌ Error 1: Confundir unidades de n</div>
+        Olvidar convertir n de e⁻/cm³ a e⁻/m³ (multiplicar por 10⁶) antes de calcular E_F.
+        <br><br><span class="hl-verde">✅ Siempre trabajar en SI: n en e⁻/m³</span>
+      </div>
+      <div class="box box-warn" style="margin:0">
+        <div class="box-label">❌ Error 2: Mezclar unidades de k_B</div>
+        Usar k_B = 1.38×10⁻²³ J/K con E_W en eV → el exponente no es adimensional.
+        <br><br><span class="hl-verde">✅ Si E en eV → k_B = 8.62×10⁻⁵ eV/K. Si E en J → k_B = 1.38×10⁻²³ J/K.</span>
+      </div>
+      <div class="box box-warn" style="margin:0">
+        <div class="box-label">❌ Error 3: Olvidar z_e en el cálculo de n</div>
+        Para metales monovalentes z_e = 1. Para bivalentes z_e = 2, etc. Si no se especifica y es metal, asumir z_e = 1.
+      </div>
+      <div class="box box-warn" style="margin:0">
+        <div class="box-label">❌ Error 4: E_F en la fórmula numérica</div>
+        La fórmula E_F = 5.84×10⁻³⁸·n^(2/3) da E_F en Joules, NO en eV. Para convertir: E_F[eV] = E_F[J] / 1.6×10⁻¹⁹.
+      </div>
+      <div class="box box-warn" style="margin:0">
+        <div class="box-label">❌ Error 5: Equivocar T₁ y T₂ en la fórmula de E_W</div>
+        Si α = I(T₂)/I(T₁) con T₂ &gt; T₁, asegurarse que el denominador 1/T₁ − 1/T₂ &gt; 0. Si E_W da negativo → revisá cuál temperatura asignaste a cada rol.
+      </div>
+      <div class="box box-warn" style="margin:0">
+        <div class="box-label">❌ Error 6: Olvidar convertir S a m²</div>
+        La superficie S del filamento generalmente se da en cm². Convertir a m²: 1 cm² = 10⁻⁴ m².
+      </div>
+      <div class="box box-warn" style="margin:0">
+        <div class="box-label">❌ Error 7: Temperatura en °C en lugar de K</div>
+        La ecuación de Richardson requiere T en Kelvin. T[K] = T[°C] + 273.
+      </div>
+      <div class="box box-warn" style="margin:0">
+        <div class="box-label">❌ Error 8: Olvidar factor (100 cm/1 m)³ en conversión de densidad</div>
+        Si ρ en g/cm³ y M_A en g/mol → n en at/cm³. Para SI multiplicar × 10⁶ (no × 10³).
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== TRUCOS ===================== -->
+<div id="trucos" class="section">
+  <div class="section-header sh-verde">💡 TRUCOS Y ATAJOS</div>
+  <div class="section-body">
+
+    <h2>Truco 1: Conversión rápida de unidades para n</h2>
+    <div class="box box-tip">
+      Si tenés ρ en g/cm³ y M_A en g/mol:<br>
+      <code>n [e⁻/m³] = (ρ [g/cm³] × 6.022×10²³ × z_e / M_A [g/mol]) × 10⁶</code><br>
+      El ×10⁶ convierte de cm³ a m³ directamente.
+    </div>
+
+    <h2>Truco 2: Verificación rápida de E_F</h2>
+    <div class="box box-tip">
+      Para metales típicos: <code>E_F ≈ 2 a 8 eV</code>. Si tu resultado está fuera de ese rango, hay un error de unidades.
+    </div>
+
+    <h2>Truco 3: Cuándo f_FD ≈ 1 o ≈ 0</h2>
+    <div class="box box-tip">
+      <ul>
+        <li>Si E − E_F &lt;&lt; −4k_BT (mucho menor): f_FD ≈ 1 (casi seguro ocupado)</li>
+        <li>Si E − E_F &gt;&gt; +4k_BT (mucho mayor): f_FD ≈ e^(−(E−E_F)/k_BT) (Maxwell-Boltzmann)</li>
+        <li>Si E = E_F: f_FD = 0.5 exacto (siempre)</li>
+        <li>A 300K, 4k_BT ≈ 0.1 eV: si |E−E_F| &gt; 0.5 eV → usar la aproximación sin error</li>
+      </ul>
+    </div>
+
+    <h2>Truco 4: Simplificación para ΔE pequeño</h2>
+    <div class="box box-tip">
+      Para el ejercicio 5 (electrones en intervalo [E₁, E₂]):<br>
+      Si ΔE = E₂ − E₁ es pequeño: <code>ΔN ≈ g(E_medio) × ΔE × V</code><br>
+      Esto evita integrar y simplifica mucho el cálculo.
+    </div>
+
+    <h2>Truco 5: Despejar E_W paso a paso (nunca fallará)</h2>
+    <div class="box box-tip">
+      <div class="steps">
+        <div class="step"><div class="step-num">A</div><div class="step-body">Escribir la razón: α = I(T₂)/I(T₁) = (T₂²/T₁²) × e^[E_W(1/T₁−1/T₂)/k_B]</div></div>
+        <div class="step"><div class="step-num">B</div><div class="step-body">Aislar el exponente: α × (T₁/T₂)² = e^[E_W(1/T₁−1/T₂)/k_B]</div></div>
+        <div class="step"><div class="step-num">C</div><div class="step-body">Logaritmo natural: ln[α·(T₁/T₂)²] = E_W/k_B × (1/T₁ − 1/T₂)</div></div>
+        <div class="step"><div class="step-num">D</div><div class="step-body">E_W = k_B × ln[α·(T₁/T₂)²] / (1/T₁ − 1/T₂)</div></div>
+      </div>
+    </div>
+
+    <h2>Truco 6: Para comparar dos materiales (ej. 4 del lab)</h2>
+    <div class="box box-tip">
+      Si dos filamentos A y B tienen la misma superficie S y se quiere T donde I_B = α·I_A:<br>
+      <code>S·A₀_B·T²·e^(−E_WB/k_BT) = α·S·A₀_A·T²·e^(−E_WA/k_BT)</code><br>
+      Se simplifica T² y S, quedando:<br>
+      <code>e^((E_WA−E_WB)/k_BT) = α·(A₀_A/A₀_B)</code><br>
+      <code>T = (E_WA − E_WB) / [k_B · ln(α·A₀_A/A₀_B)]</code>
+    </div>
+
+    <h2>Tabla resumen de relaciones clave</h2>
+    <table>
+      <tr><th>Se pide</th><th>Se necesita</th><th>Fórmula</th></tr>
+      <tr><td>E_F</td><td>n (o ρ, M_A, z_e)</td><td>E_F = 5.84×10⁻³⁸ · n^(2/3) [J]</td></tr>
+      <tr><td>n desde E_F</td><td>E_F</td><td>n = (E_F/5.84×10⁻³⁸)^(3/2)</td></tr>
+      <tr><td>f_FD(E)</td><td>E, E_F, T</td><td>f = 1/[e^((E−E_F)/k_BT)+1]</td></tr>
+      <tr><td>E desde f_FD</td><td>f, E_F, T</td><td>E = E_F + k_BT·ln(1/f − 1)</td></tr>
+      <tr><td>E_W desde razón</td><td>α, T₁, T₂</td><td>E_W = k_B·ln[α(T₁/T₂)²]/(1/T₁−1/T₂)</td></tr>
+      <tr><td>I_th</td><td>S, A₀, T, E_W</td><td>I_th = S·A₀·T²·e^(−E_W/k_BT)</td></tr>
+      <tr><td>I (con campo)</td><td>I_th, E, T</td><td>I = I_th·e^(0.44√E/T)</td></tr>
+      <tr><td>E (campo para I/I_th)</td><td>I/I_th, T</td><td>E = [T·ln(I/I_th)/0.44]²</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="section" style="margin-bottom:0">
+  <div class="section-body" style="text-align:center; color:var(--gris3); font-size:0.85rem; padding: 1.2rem;">
+    <p>Material de estudio preparado para el curso de Física — Universidad Nacional de Asunción, Facultad Politécnica.</p>
+    <p>Basado en: Prof. Karen Martínez (diapositivas), Gaona & Rolón (apuntes UNA), Resnick-Halliday-Krane, Millman & Halkias, Ejercitario de Práctica N°4.</p>
+  </div>
+</div>
+
+</main>
+
+<script>
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const el = document.querySelector(a.getAttribute('href'));
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+</script>
+</body>
+</html>

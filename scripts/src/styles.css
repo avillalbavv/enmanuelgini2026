@@ -1,0 +1,442 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+ * UNIDOS POR PIRIBEBUY — Design System
+ * Paleta de campaña: rojo #c4001a, rojo oscuro #8f0012, pastel #ffe6ea
+ * Estilo: premium, institucional, emocional, móvil-first.
+ * ============================================================ */
+
+@theme inline {
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-ink: var(--ink);
+  --color-cream: var(--cream);
+  --color-gold: var(--gold);
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Brand */
+  --primary: oklch(0.55 0.22 25);              /* #c4001a */
+  --primary-dark: oklch(0.42 0.20 24);          /* #8f0012 */
+  --primary-soft: oklch(0.95 0.035 18);         /* #ffe6ea */
+  --primary-foreground: oklch(0.99 0.005 80);
+
+  /* Surfaces — blancas/crema para contrastar sobre el fondo rojo oscuro */
+  --background: oklch(0.998 0.002 60);          /* casi blanco puro */
+  --cream: oklch(0.992 0.008 50);
+  --foreground: oklch(0.18 0.025 25);
+  --ink: oklch(0.14 0.02 25);
+  --gold: oklch(0.78 0.13 75);
+
+  --card: oklch(1 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--foreground);
+
+  --secondary: oklch(0.96 0.012 30);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.96 0.008 60);
+  --muted-foreground: oklch(0.46 0.02 30);
+  --accent: var(--primary-soft);
+  --accent-foreground: var(--primary-dark);
+
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.99 0.005 80);
+
+  --border: oklch(0.91 0.012 30);
+  --input: oklch(0.93 0.012 30);
+  --ring: oklch(0.55 0.22 25 / 0.4);
+
+  /* Capa decorativa hero: completamente transparente para dejar ver el fondo global */
+  --gradient-hero: radial-gradient(100% 60% at 75% 0%, oklch(1 0 0 / 0.12) 0%, transparent 55%),
+                   radial-gradient(70% 50% at 0% 100%, oklch(0.55 0.22 25 / 0.06) 0%, transparent 50%);
+  --gradient-primary: linear-gradient(135deg, oklch(0.55 0.22 25) 0%, oklch(0.42 0.20 24) 100%);
+  --gradient-glow: radial-gradient(circle at 50% 50%, oklch(0.55 0.22 25 / 0.35), transparent 70%);
+  --gradient-text: linear-gradient(135deg, oklch(0.42 0.20 24) 0%, oklch(0.55 0.22 25) 50%, oklch(0.65 0.20 30) 100%);
+
+  --shadow-soft: 0 1px 2px oklch(0.18 0.025 25 / 0.04), 0 4px 12px oklch(0.18 0.025 25 / 0.05);
+  --shadow-elevated: 0 8px 24px oklch(0.42 0.20 24 / 0.10), 0 2px 6px oklch(0.18 0.025 25 / 0.06);
+  --shadow-glow: 0 20px 60px oklch(0.55 0.22 25 / 0.25);
+  --shadow-ring: 0 0 0 1px oklch(0.55 0.22 25 / 0.15), 0 18px 50px oklch(0.42 0.20 24 / 0.18);
+
+  --glass-bg: oklch(1 0 0 / 0.92);
+  --glass-border: oklch(1 0 0 / 0.55);
+
+  --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dark {
+  --background: oklch(0.16 0.02 25);
+  --foreground: oklch(0.97 0.01 60);
+  --card: oklch(0.20 0.025 25);
+  --card-foreground: oklch(0.97 0.01 60);
+  --popover: oklch(0.20 0.025 25);
+  --popover-foreground: oklch(0.97 0.01 60);
+  --primary: oklch(0.65 0.22 25);
+  --primary-foreground: oklch(0.14 0.02 25);
+  --secondary: oklch(0.26 0.03 25);
+  --secondary-foreground: oklch(0.97 0.01 60);
+  --muted: oklch(0.24 0.025 25);
+  --muted-foreground: oklch(0.72 0.02 30);
+  --accent: oklch(0.30 0.05 25);
+  --accent-foreground: oklch(0.97 0.01 60);
+  --border: oklch(1 0 0 / 0.10);
+  --input: oklch(1 0 0 / 0.14);
+  --ring: oklch(0.65 0.22 25 / 0.5);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  html, body {
+    min-height: 100%;
+  }
+
+  /* ============================================================
+   * GLOBAL PREMIUM RED BACKGROUND — PIRIBEBUY
+   * Sistema rehecho desde cero usando la foto de la ciudad.
+   * Tres capas apiladas: foto tratada → overlay rojo → bruma
+   * Todo fixed, continuo y sin cortes al hacer scroll.
+   * ============================================================ */
+
+  body {
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    /* Fallback de color para mientras carga la imagen */
+    background-color: #6a0010;
+    position: relative;
+    isolation: isolate;
+  }
+
+  /* ── CAPA 1: Foto de Piribebuy tratada como fondo estilizado ── */
+  body::before {
+    content: "";
+    position: fixed;
+    /* Escala ligeramente para que el blur no deje bordes blancos */
+    inset: -8%;
+    width: 116%;
+    height: 116%;
+    pointer-events: none;
+    z-index: -3;
+
+    /* Foto base + overlay rojo institucional en un solo background */
+    background-image:
+      /* Degradado rojo monocromático encima */
+      linear-gradient(
+        155deg,
+        rgba(143, 0, 18, 0.78)  0%,
+        rgba(196, 0, 26, 0.68)  35%,
+        rgba(120, 0, 14, 0.82)  70%,
+        rgba(80,  0,  9, 0.88) 100%
+      ),
+      /* Vignette edges for depth */
+      radial-gradient(ellipse 120% 100% at 50% 50%,
+        transparent 40%,
+        rgba(60, 0, 8, 0.55) 100%
+      ),
+      /* Foto de Piribebuy (iglesia / plaza con bandera) */
+      url('/piribebuy-bg.jpg');
+
+    background-size: cover, cover, cover;
+    background-position: center center, center center, center 38%;
+    background-repeat: no-repeat;
+
+    /* Tratamiento fotográfico: desenfoque elegante + monocromo rojo */
+    filter:
+      blur(7px)
+      saturate(0.15)
+      sepia(0.9)
+      brightness(0.70)
+      contrast(1.05);
+
+    /* Compensación de escala para blur edges */
+    transform: scale(1.12);
+    transform-origin: center center;
+
+    will-change: transform;
+  }
+
+  /* ── CAPA 2: Overlay de luz y profundidad animado ── */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -2;
+
+    /* Luces radiales cálidas para profundidad premium */
+    background:
+      /* Luz cálida superior-izquierda */
+      radial-gradient(ellipse 90rem 70rem at 8% 12%,
+        rgba(220, 20, 40, 0.28) 0%,
+        transparent 60%
+      ),
+      /* Sombra inferior-derecha */
+      radial-gradient(ellipse 80rem 65rem at 95% 88%,
+        rgba(80, 0, 10, 0.50) 0%,
+        transparent 60%
+      ),
+      /* Luz central suave */
+      radial-gradient(ellipse 60rem 50rem at 55% 45%,
+        rgba(200, 10, 30, 0.14) 0%,
+        transparent 65%
+      ),
+      /* Capa de bruma roja base */
+      linear-gradient(
+        180deg,
+        rgba(160, 0, 20, 0.20) 0%,
+        rgba(100, 0, 12, 0.30) 50%,
+        rgba(70,  0,  8, 0.38) 100%
+      );
+
+    filter: blur(32px);
+    animation: bg-glow-drift 32s ease-in-out infinite alternate;
+    will-change: transform, opacity;
+  }
+
+  /* ── CAPA 3: Textura sutil de grano para acabado premium ── */
+  #bg-grain {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+  }
+
+  /* Asegurar que main y demás contenido queden bien por encima */
+  main, header, footer {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+
+  ::selection {
+    background: oklch(0.55 0.22 25 / 0.20);
+    color: oklch(0.42 0.20 24);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-primary-gradient {
+    background-image: var(--gradient-primary);
+  }
+
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-dark {
+    background: oklch(0.18 0.025 25 / 0.55);
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    border: 1px solid oklch(1 0 0 / 0.08);
+  }
+
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-elevated { box-shadow: var(--shadow-elevated); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-ring { box-shadow: var(--shadow-ring); }
+
+  .ring-brand {
+    box-shadow: 0 0 0 1px oklch(0.55 0.22 25 / 0.2);
+  }
+
+  /* Lift on hover */
+  .lift {
+    transition: transform 0.4s var(--transition-smooth), box-shadow 0.4s var(--transition-smooth);
+  }
+  .lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Pulsing dot */
+  .pulse-dot::before {
+    content: "";
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background: var(--primary);
+    margin-right: 0.5rem;
+    box-shadow: 0 0 0 0 oklch(0.55 0.22 25 / 0.6);
+    animation: brand-pulse 2s infinite;
+  }
+
+  /* Animated background blobs */
+  .blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(60px);
+    opacity: 0.55;
+    pointer-events: none;
+    will-change: transform;
+  }
+  .blob-1 { background: var(--primary); animation: float 14s ease-in-out infinite; }
+  .blob-2 { background: var(--primary-dark); animation: float 18s ease-in-out infinite reverse; }
+
+  /* Marquee for trust strip */
+  .marquee {
+    display: flex;
+    gap: 3rem;
+    animation: scroll-x 30s linear infinite;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { scrollbar-width: none; -ms-overflow-style: none; }
+
+  /* Snap horizontal carousel */
+  .snap-x-mandatory { scroll-snap-type: x mandatory; }
+  .snap-start { scroll-snap-align: start; }
+
+  /* Premium link underline */
+  .link-underline {
+    position: relative;
+    display: inline-block;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -2px;
+    width: 100%; height: 2px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s var(--transition-smooth);
+  }
+  .link-underline:hover::after { transform: scaleX(1); transform-origin: left; }
+
+  /* Number capsule for countdown */
+  .countdown-cell {
+    background: var(--gradient-primary);
+    color: var(--primary-foreground);
+    box-shadow: var(--shadow-elevated), inset 0 1px 0 oklch(1 0 0 / 0.25);
+  }
+}
+
+@keyframes brand-pulse {
+  0%   { box-shadow: 0 0 0 0 oklch(0.55 0.22 25 / 0.5); }
+  70%  { box-shadow: 0 0 0 12px oklch(0.55 0.22 25 / 0); }
+  100% { box-shadow: 0 0 0 0 oklch(0.55 0.22 25 / 0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(40px, -30px) scale(1.08); }
+  66%      { transform: translate(-30px, 30px) scale(0.95); }
+}
+
+@keyframes scroll-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes shine {
+  from { background-position: -200% 0; }
+  to   { background-position: 200% 0; }
+}
+
+@keyframes bg-drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(2%, -1.5%, 0) scale(1.06); }
+  100% { transform: translate3d(-2%, 2%, 0) scale(0.98); }
+}
+
+/* Movimiento ultra suave de las luces del fondo */
+@keyframes bg-glow-drift {
+  0%   { transform: translate3d(0, 0, 0); opacity: 1; }
+  33%  { transform: translate3d(1.5%, -1%, 0); opacity: 0.88; }
+  66%  { transform: translate3d(-1%, 1.5%, 0); opacity: 0.95; }
+  100% { transform: translate3d(0.8%, 0.5%, 0); opacity: 0.9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after { animation: none !important; }
+  body::before { animation: none !important; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up { animation: fade-up 0.6s var(--transition-smooth) both; }

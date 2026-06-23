@@ -1,0 +1,86 @@
+[
+  {
+    "nombre": "Juan Cañete",
+    "foto": "03-fotos-equipo-concejales/opcion-01.jpg",
+    "cargo": "Candidato a concejal",
+    "genero": "M",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Jorge Jara",
+    "foto": "03-fotos-equipo-concejales/opcion-02.jpg",
+    "cargo": "Candidato a concejal",
+    "genero": "M",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Juancito Zalazar",
+    "foto": "03-fotos-equipo-concejales/opcion-03.jpg",
+    "cargo": "Candidato a concejal",
+    "genero": "M",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Jorge Peña",
+    "foto": "03-fotos-equipo-concejales/opcion-04.jpg",
+    "cargo": "Candidato a concejal",
+    "genero": "M",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Cecilia Rivas",
+    "foto": "03-fotos-equipo-concejales/opcion-05.jpg",
+    "cargo": "Candidata a concejal",
+    "genero": "F",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Fredy Domínguez",
+    "foto": "03-fotos-equipo-concejales/opcion-06.jpg",
+    "cargo": "Candidato a concejal",
+    "genero": "M",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Pablito Núñez",
+    "foto": "03-fotos-equipo-concejales/opcion-07.jpg",
+    "cargo": "Candidato a concejal",
+    "genero": "M",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Adán Escobar",
+    "foto": "03-fotos-equipo-concejales/opcion-08.jpg",
+    "cargo": "Candidato a concejal",
+    "genero": "M",
+    "descripcion": ""
+  },
+  {
+    "nombre": "David Bogado",
+    "foto": "03-fotos-equipo-concejales/opcion-09.jpg",
+    "cargo": "Candidato a concejal",
+    "genero": "M",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Belén Escobar",
+    "foto": "03-fotos-equipo-concejales/opcion-10.jpg",
+    "cargo": "Candidata a concejal",
+    "genero": "F",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Alex Arias",
+    "foto": "03-fotos-equipo-concejales/opcion-11.jpg",
+    "cargo": "Candidato a concejal",
+    "genero": "M",
+    "descripcion": ""
+  },
+  {
+    "nombre": "Abrahan Ovelar",
+    "foto": "03-fotos-equipo-concejales/opcion-12.jpg",
+    "cargo": "Candidato a concejal",
+    "genero": "M",
+    "descripcion": ""
+  }
+]

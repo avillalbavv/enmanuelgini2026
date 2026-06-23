@@ -1,0 +1,128 @@
+[
+ {
+  "asistida": "Edgar Torres",
+  "cargo_ejecutivo": true,
+  "clase": "Candidato",
+  "cod_categoria": "INT",
+  "cod_lista": "23",
+  "codigo": "23.20",
+  "id_candidatura": "23.20",
+  "id_umv": 15,
+  "imagenes": [
+   "23.20"
+  ],
+  "nombre": "Edgar Torres",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   23,
+   1,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "Ingeniero Richard Duarte",
+  "cargo_ejecutivo": true,
+  "clase": "Candidato",
+  "cod_categoria": "INT",
+  "cod_lista": "24",
+  "codigo": "24.21",
+  "id_candidatura": "24.21",
+  "id_umv": 16,
+  "imagenes": [
+   "24.21"
+  ],
+  "nombre": "Ing. Richard Duarte",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   24,
+   1,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "VOTO EN BLANCO",
+  "cargo_ejecutivo": true,
+  "clase": "Blanco",
+  "cod_categoria": "INT",
+  "cod_lista": "",
+  "codigo": "BLC",
+  "id_candidatura": "BLC",
+  "id_umv": 28,
+  "imagenes": [
+   "BLC"
+  ],
+  "nombre": "VOTO EN BLANCO",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   994,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "Votos NULOS",
+  "cargo_ejecutivo": true,
+  "clase": "Especial",
+  "cod_categoria": "INT",
+  "cod_lista": "",
+  "codigo": "NUL",
+  "id_candidatura": "NUL",
+  "id_umv": 41,
+  "nombre": "Votos NULOS",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   998,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ },
+ {
+  "asistida": "Votos NO COMPUTADOS",
+  "cargo_ejecutivo": true,
+  "clase": "Especial",
+  "cod_categoria": "INT",
+  "cod_lista": "",
+  "codigo": "VAC",
+  "id_candidatura": "VAC",
+  "id_umv": 54,
+  "nombre": "Votos a Computar",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   1000,
+   1
+  ],
+  "secundarios": [
+
+  ],
+  "sexo": null,
+  "suplentes": [
+
+  ]
+ }
+]

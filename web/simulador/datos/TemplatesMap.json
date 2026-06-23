@@ -1,0 +1,51 @@
+[
+    {
+        "codigo": "EJ",
+        "cod_template": "dos"
+    },
+    {
+        "codigo": "EJ.1",
+        "cod_template": "tres"
+    },
+    {
+        "codigo": "EJ.1.1",
+        "cod_template": "cinco"
+    },
+    {
+        "codigo": "EJ.2",
+        "cod_template": "tres"
+    },
+    {
+        "codigo": "EJ.2.5",
+        "cod_template": "cinco"
+    },
+    {
+        "codigo": "EJ.3",
+        "cod_template": "tres"
+    },
+    {
+        "codigo": "EJ.3.12",
+        "cod_template": "cinco_con_cp"
+    },
+    {
+        "codigo": "EJ.5.14",
+        "cod_template": "cuatro_con_cp"
+    },
+   {
+        "codigo": "EJ.1.1.2.EXT",
+        "cod_template": "dos"
+    },
+    {
+        "codigo": "EJ.2.5.1.EXT",
+        "cod_template": "dos"
+    },
+    {
+        "codigo": "EJ.3.12.4.EXT",
+        "cod_template": "dos_con_cp"
+    },
+    {
+        "codigo": "EJ.5.14.1.EXT",
+        "cod_template": "dos_con_cp"
+    }
+
+]

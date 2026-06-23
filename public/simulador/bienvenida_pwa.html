@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="google" content="notranslate" />
+        <title>Sistema de Boleta Única Electrónica</title>
+        <link rel="manifest" href="manifest.json">
+        <script src="js/helpers.js"></script>
+        <!-- <script src="js/pwa.js"></script> -->
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/boot.css">
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/bienvenida_pwa.css">
+
+        <!-- <script src="js/bienvenida_pwa.js"></script> -->
+        <link href="img/favicon.png" rel="shortcut icon" type="image/png">
+    </head>
+    <body class="vanilla">
+        <div id="contenedor">
+            <div id="ayuda">
+                <div id="contenedor-ayuda" class="container">
+                    <header>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12 col-xs-12" id="superior">
+                                    <a class="navbar-brand" href="#">Justicia Electoral<span><br /></span></a>
+                                </div>
+                                <div class="col-md-6 texto-tribunal col-xs-12">
+                                    <p class="tribunal">&nbsp;</p>
+                                    <p class="simulador">Sistema de Boleta Única Electrónica (BUE)</p>
+                                </div>
+                            </div>
+                    </header>
+
+                    <div id="seleccionar_ubicaciones">
+                        <h1 class="ubicacion">Para finalizar la instalación seleccione el departamento en donde vota:</h1>
+                        <div class="container">
+                            <ul class="departamentos col-md-12">
+                                
+                                <li class="btn btn-default btn-lg"><input name="1" type="checkbox" />&nbsp;&nbsp;&nbsp;0 - Asuncion</li>
+                                
+                                <li class="btn btn-default btn-lg"><input name="1" type="checkbox" />&nbsp;&nbsp;&nbsp;0 - Caacupe</li>
+                                
+                                <li class="btn btn-default btn-lg"><input name="1" type="checkbox" />&nbsp;&nbsp;&nbsp;0 - Caazapa</li>
+                                
+                                <li class="btn btn-default btn-lg"><input name="1" type="checkbox" />&nbsp;&nbsp;&nbsp;0 - Ciudad Del Este</li>
+                                
+                                <li class="btn btn-default btn-lg"><input name="1" type="checkbox" />&nbsp;&nbsp;&nbsp;0 - Concepcion</li>
+                                
+                                <li class="btn btn-default btn-lg"><input name="1" type="checkbox" />&nbsp;&nbsp;&nbsp;0 - Coronel Oviedo</li>
+                                
+                                <li class="btn btn-default btn-lg"><input name="1" type="checkbox" />&nbsp;&nbsp;&nbsp;0 - Encarnacion</li>
+                                
+                                <li class="btn btn-default btn-lg"><input name="1" type="checkbox" />&nbsp;&nbsp;&nbsp;0 - Paraguari</li>
+                                
+                                <li class="btn btn-default btn-lg"><input name="1" type="checkbox" />&nbsp;&nbsp;&nbsp;0 - Pedro Juan Caballero</li>
+                                
+                                <li class="btn btn-default btn-lg"><input name="1" type="checkbox" />&nbsp;&nbsp;&nbsp;0 - Pilar</li>
+                                
+                                <li class="btn btn-default btn-lg"><input name="1" type="checkbox" />&nbsp;&nbsp;&nbsp;0 - Salto Del Guaira</li>
+                                
+                                <li class="btn btn-default btn-lg"><input name="1" type="checkbox" />&nbsp;&nbsp;&nbsp;0 - San Juan Bautista</li>
+                                
+                                <li class="btn btn-default btn-lg"><input name="1" type="checkbox" />&nbsp;&nbsp;&nbsp;0 - San Pedro Del Ycuamandyyu</li>
+                                
+                                <li class="btn btn-default btn-lg"><input name="1" type="checkbox" />&nbsp;&nbsp;&nbsp;0 - Villa Hayes</li>
+                                
+                                <li class="btn btn-default btn-lg"><input name="1" type="checkbox" />&nbsp;&nbsp;&nbsp;0 - Villarica</li>
+                                
+                            </ul> 
+                            <div style="text-align: center;">
+                                <button id="btn-continuar-loading" class="btn btn-primary btn-lg">
+                                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                                </button>
+                                <button id="btn-continuar" class="btn btn-primary btn-lg" onclick="comenzar_cache_offline()">Continuar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

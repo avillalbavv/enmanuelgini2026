@@ -1,0 +1,20 @@
+[
+ {
+  "INT": 15,
+  "agrupacion_municipal": false,
+  "codigo": "23",
+  "lista_completa": true
+ },
+ {
+  "INT": 16,
+  "agrupacion_municipal": false,
+  "codigo": "24",
+  "lista_completa": true
+ },
+ {
+  "INT": 28,
+  "agrupacion_municipal": false,
+  "codigo": "BLC",
+  "lista_completa": true
+ }
+]

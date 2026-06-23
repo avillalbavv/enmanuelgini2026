@@ -1,0 +1,209 @@
+(function () {
+  const PADRON = window.PADRON_PIRIBEBUY || {};
+  const TOTAL_ELECTORES = Object.keys(PADRON).length;
+  const DEPARTAMENTO = "CORDILLERA";
+  const DISTRITO = "PIRIBEBUY";
+  const SECCION = "PIRIBEBUY";
+  const SECCIONAL_FIJA = 'Seccional Colorada N.º 218 “General Rogelio Benítez”';
+
+  const LOCALES = {
+    2181: {
+      nombre: "ESCUELA N° 46 MAESTRO FERMIN LOPEZ",
+      maps: "https://maps.app.goo.gl/JhSEqWw5eZ2LBdTSA",
+      address: "MAESTRO FERMIN LOPEZ E/ YEGROS Y PEDRO JUAN CABALLERO."
+    },
+    2182: {
+      nombre: "ESCUELA N°423 JUSTA PASTORA OJEDA - CÑIA CORDILLERA",
+      maps: "https://maps.app.goo.gl/uAcXNREwdQfsxNZU9",
+      address: "CAMINO RAMAL COMPAÑIA CORDILLERA, 500 M DEL ORATORIO SAN BLAS."
+    },
+    2183: {
+      nombre: "COL.NAC. CMDTE. BLAS SERVIN RAMIREZ-ITA MOROTI GUAZU",
+      maps: "https://maps.app.goo.gl/pfWSVY6H3FUzioCE9",
+      address: "RUTA A PARAGUARI."
+    }
+  };
+
+  const googleMapsSvg = `
+    <svg class="mapsIcon" viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="#EA4335" d="M12 2c-3.9 0-7 3.1-7 7 0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7z"/>
+      <path fill="#34A853" d="M12 22s7-7.7 7-13c0-1.1-.3-2.2-.8-3.1L12 22z" opacity=".25"/>
+      <circle fill="#4285F4" cx="12" cy="9" r="2.7"/>
+    </svg>
+  `;
+
+  const escapeHtml = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => (
+    c === "&" ? "&amp;" :
+    c === "<" ? "&lt;" :
+    c === ">" ? "&gt;" : "&quot;"
+  ));
+
+  const sanitizeCI = (v) => String(v || "").replace(/[^\d]/g, "");
+
+  window.initPadronLookup = function initPadronLookup(opts) {
+    const form = document.getElementById(opts.formId);
+    if (!form) return;
+
+    const ciInput = document.getElementById(opts.inputId);
+    const clearBtn = document.getElementById(opts.clearId);
+    const statusEl = document.getElementById(opts.statusId);
+    const resultEl = document.getElementById(opts.resultId);
+
+    const showStatus = (msg, kind = "info") => {
+      if (!statusEl) return;
+      statusEl.style.display = msg ? "block" : "none";
+      statusEl.textContent = msg || "";
+      statusEl.setAttribute("data-kind", kind);
+    };
+
+    const showResult = (html) => {
+      if (!resultEl) return;
+      if (!html) {
+        resultEl.style.display = "none";
+        resultEl.innerHTML = "";
+        return;
+      }
+      resultEl.style.display = "block";
+      resultEl.innerHTML = html;
+    };
+
+    if (ciInput) {
+      ciInput.addEventListener("input", () => {
+        const clean = sanitizeCI(ciInput.value);
+        if (ciInput.value !== clean) ciInput.value = clean;
+      });
+    }
+
+    clearBtn?.addEventListener("click", () => {
+      if (ciInput) ciInput.value = "";
+      showStatus("", "info");
+      showResult("");
+      ciInput?.focus();
+    });
+
+    let lastQueryAt = 0;
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const now = Date.now();
+      if (now - lastQueryAt < 500) return;
+      lastQueryAt = now;
+
+      const ci = sanitizeCI(ciInput?.value);
+      showResult("");
+
+      if (!ci || ci.length < 4) {
+        showStatus("Ingresá una cédula válida (solo números).", "error");
+        ciInput?.focus();
+        return;
+      }
+
+      if (!TOTAL_ELECTORES) {
+        showStatus("No se pudo cargar la base local del padrón.", "error");
+        return;
+      }
+
+      showStatus("Buscando…", "info");
+
+      const row = PADRON[ci];
+      if (!row) {
+        showStatus(
+          "No encontramos esa cédula en el padrón de Piribebuy. Verificá el número e intentá otra vez.",
+          "error"
+        );
+        return;
+      }
+
+      const [apellido, nombre, mesaRaw, ordenRaw, secLoc] = row;
+      const localInfo = LOCALES[secLoc] || null;
+      const fullName = apellido && nombre
+        ? `${escapeHtml(apellido)}, ${escapeHtml(nombre)}`
+        : escapeHtml((apellido || nombre || "").trim());
+      const mesa = escapeHtml(mesaRaw ?? "");
+      const orden = escapeHtml(ordenRaw ?? "");
+
+      showStatus("Resultado encontrado.", "ok");
+
+      const mapsBlock = (localInfo && localInfo.maps) ? `
+        <a class="mapsLink" href="${escapeHtml(localInfo.maps)}" target="_blank" rel="noopener">
+          ${googleMapsSvg}
+          <span class="mapsText">
+            ${escapeHtml(localInfo.address || "")}
+            <span class="mapsHint">Abrir en Google Maps</span>
+          </span>
+        </a>
+      ` : ``;
+
+      const html = `
+        <div class="grid padronGrid">
+          <div class="card">
+            <div class="cardBody">
+              <div class="padronSectionTitle">Identificación</div>
+
+              <div class="padronLabel">Cédula</div>
+              <div class="padronCI">${escapeHtml(ci)}</div>
+
+              <div class="padronName">${fullName}</div>
+
+              <div class="padronBadges" aria-label="Mesa y orden">
+                <span class="badge">Mesa: <strong>${mesa}</strong></span>
+                <span class="badge">Orden: <strong>${orden}</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="cardBody">
+              <div class="padronSectionTitle">Distrito</div>
+
+              <div class="padronLabel">Distrito</div>
+              <div class="padronValueStrong">${escapeHtml(DISTRITO)}</div>
+
+              <div class="padronKV">
+                <div class="padronRow">
+                  <div class="padronLabel">Departamento</div>
+                  <div class="padronValue">${escapeHtml(DEPARTAMENTO)}</div>
+                </div>
+
+                <div class="padronRow">
+                  <div class="padronLabel">Sección</div>
+                  <div class="padronValue">${escapeHtml(SECCION)}</div>
+                </div>
+
+                <div class="padronRow">
+                  <div class="padronLabel">Seccional</div>
+                  <div class="padronValue">${escapeHtml(SECCIONAL_FIJA)}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <div class="cardBody">
+            <div class="padronSectionTitle">Local de votación</div>
+
+            <div class="padronLabel">Local</div>
+            <div class="padronValueStrong">${escapeHtml((localInfo && localInfo.nombre) || "")}</div>
+
+            ${mapsBlock}
+
+            ${(localInfo && localInfo.address) ? `
+              <div class="padronRow" style="margin-top:10px;">
+                <div class="padronLabel">Referencia</div>
+                <div class="padronValue">${escapeHtml(localInfo.address)}</div>
+              </div>
+            ` : ``}
+          </div>
+        </div>
+
+        <div class="notice" style="margin-top:14px;">
+          Base local: <strong>Piribebuy</strong>. Esta consulta incluye únicamente a los <strong>${escapeHtml(TOTAL_ELECTORES)}</strong> electores del distrito.
+        </div>
+      `;
+
+      showResult(`<div class="padronUpper">${html}</div>`);
+    });
+  };
+})();

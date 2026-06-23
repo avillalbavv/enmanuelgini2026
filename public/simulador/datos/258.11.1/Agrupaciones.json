@@ -1,0 +1,48 @@
+[
+ {
+  "asistida": "1 - PARTIDO COLORADO",
+  "clase": "Lista",
+  "cod_alianza": null,
+  "cod_partido": null,
+  "codigo": "25",
+  "color": [
+   "#ff0000"
+  ],
+  "color_tipografia": [
+   "#ffffff"
+  ],
+  "id_candidatura": "25",
+  "imagenes": [
+   "default_lista"
+  ],
+  "nombre": "PARTIDO COLORADO",
+  "nombre_corto": "ANR",
+  "numero": "1",
+  "orden_absoluto": [
+   25
+  ]
+ },
+ {
+  "asistida": "2 - PARTIDO LIBERAL RADICAL AUTENTICO",
+  "clase": "Lista",
+  "cod_alianza": null,
+  "cod_partido": null,
+  "codigo": "26",
+  "color": [
+   "#002bc7"
+  ],
+  "color_tipografia": [
+   "#ffffff"
+  ],
+  "id_candidatura": "26",
+  "imagenes": [
+   "default_lista"
+  ],
+  "nombre": "PARTIDO LIBERAL RADICAL AUTENTICO",
+  "nombre_corto": "PLRA",
+  "numero": "2",
+  "orden_absoluto": [
+   26
+  ]
+ }
+]

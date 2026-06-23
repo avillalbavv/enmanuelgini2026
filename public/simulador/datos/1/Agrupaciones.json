@@ -1,0 +1,117 @@
+[
+ {
+  "asistida": "ASOCIACIÓN NACIONAL REPUBLICANA",
+  "clase": "Alianza",
+  "cod_alianza": null,
+  "cod_partido": null,
+  "codigo": "ANR",
+  "color": [
+   "#d62828"
+  ],
+  "color_tipografia": [
+   "#ffffff"
+  ],
+  "id_candidatura": "ANR",
+  "imagenes": [
+   "ANR_PARTY"
+  ],
+  "nombre": "ASOCIACIÓN NACIONAL REPUBLICANA",
+  "nombre_corto": "ANR",
+  "numero": "",
+  "orden_absoluto": [
+   1
+  ]
+ },
+ {
+  "asistida": "2 - Lista 2",
+  "clase": "Alianza",
+  "cod_alianza": null,
+  "cod_partido": null,
+  "codigo": "L2G",
+  "color": [
+   "#d62828"
+  ],
+  "color_tipografia": [
+   "#ffffff"
+  ],
+  "id_candidatura": "L2G",
+  "imagenes": [
+   "ANR_PARTY"
+  ],
+  "nombre": "Lista 2",
+  "nombre_corto": "",
+  "numero": "2",
+  "orden_absoluto": [
+   11
+  ]
+ },
+ {
+  "asistida": "2 - ASOCIACIÓN NACIONAL REPUBLICANA",
+  "clase": "Lista",
+  "cod_alianza": "ANR",
+  "cod_partido": null,
+  "codigo": "ANR_L2",
+  "color": [
+   "#d62828"
+  ],
+  "color_tipografia": [
+   "#ffffff"
+  ],
+  "id_candidatura": "ANR_L2",
+  "imagenes": [
+   "ANR_PARTY"
+  ],
+  "nombre": "ASOCIACIÓN NACIONAL REPUBLICANA",
+  "nombre_corto": "ANR",
+  "numero": "2",
+  "orden_absoluto": [
+   101
+  ]
+ },
+ {
+  "asistida": "7 - ASOCIACIÓN NACIONAL REPUBLICANA",
+  "clase": "Lista",
+  "cod_alianza": "ANR",
+  "cod_partido": null,
+  "codigo": "ANR_L7",
+  "color": [
+   "#d62828"
+  ],
+  "color_tipografia": [
+   "#ffffff"
+  ],
+  "id_candidatura": "ANR_L7",
+  "imagenes": [
+   "ANR_PARTY"
+  ],
+  "nombre": "ASOCIACIÓN NACIONAL REPUBLICANA",
+  "nombre_corto": "ANR",
+  "numero": "7",
+  "orden_absoluto": [
+   102
+  ]
+ },
+ {
+  "asistida": "2 - Lista 2",
+  "clase": "Lista",
+  "cod_alianza": "L2G",
+  "cod_partido": "ANR",
+  "codigo": "CONL2",
+  "color": [
+   "#d62828"
+  ],
+  "color_tipografia": [
+   "#ffffff"
+  ],
+  "id_candidatura": "CONL2",
+  "imagenes": [
+   "ANR_PARTY"
+  ],
+  "nombre": "Lista 2",
+  "nombre_corto": "",
+  "numero": "2",
+  "orden_absoluto": [
+   201
+  ]
+ }
+]

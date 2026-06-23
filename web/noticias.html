@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Noticias | Abog. Enmanuel Gini</title>  <style>    html,body{overflow-x:hidden;}
+</style>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" href="assets/logo-candidato.png" />
+  <link rel="apple-touch-icon" href="assets/logo-candidato.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#c4001a" />
+
+</head>
+<body>
+  <div class="pageLoader" id="pageLoader" aria-label="Cargando">
+    <div class="loaderBox"><div class="loaderRing" aria-hidden="true"></div><div class="loaderText">Cargando</div></div>
+  </div>
+
+  <header>
+    <div class="container topbar">
+      <a class="brand" href="index.html" aria-label="Inicio">
+        <img class="brandLogo" src="assets/logo-grande.png" alt="Abog. Enmanuel Gini" onerror="this.style.display='none';" />
+      </a>
+      <div class="headerRight">
+        <button class="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+        <nav aria-label="Pestañas">
+          <a href="index.html" data-page="index.html">Inicio</a>
+
+          <div class="hambDesktop">
+            <details class="drop">
+              <summary class="hambSummary" aria-label="Abrir menú">☰</summary>
+              <div class="dropMenu">
+                <a href="biografia.html" data-page="biografia.html">Biografía y Trayectoria</a>
+                <a href="simulacion.html" data-page="simulacion.html">Practicá tu voto</a>
+                <a href="propuestas.html" data-page="propuestas.html">Propuestas</a>
+                <a href="noticias.html" data-page="noticias.html">Noticias</a>
+                <a href="equipo.html" data-page="equipo.html">Mi equipo</a>
+                <a href="contacto.html" data-page="contacto.html">Contacto</a>
+                <a href="info-electoral.html" data-page="info-electoral.html">Info electoral</a>
+              </div>
+            </details>
+          </div>
+
+          <div class="navLinks">
+            <a href="biografia.html" data-page="biografia.html">Biografía y Trayectoria</a>
+            <a href="simulacion.html" data-page="simulacion.html">Practicá tu voto</a>
+            <a href="propuestas.html" data-page="propuestas.html">Propuestas</a>
+            <a href="noticias.html" data-page="noticias.html">Noticias</a>
+            <a href="equipo.html" data-page="equipo.html">Mi equipo</a>
+            <a href="contacto.html" data-page="contacto.html">Contacto</a>
+            <a href="info-electoral.html" data-page="info-electoral.html">Info electoral</a>
+          </div>
+        </nav>
+        <img class="candidateLogo" src="assets/logo-candidato.png" alt="Logo del candidato" onerror="this.style.display='none';" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section" style="border-top:none;">
+      <h2>Noticias</h2>
+      <div class="panel">
+        <p class="lead" style="margin:0;">Novedades del candidato y de Piribebuy: actividades, comunicados y actualizaciones.</p>
+        <p class="meta" style="margin-top:10px;">Podés filtrar por categoría y ver las más recientes primero.</p>
+
+        <div class="tHeader" style="justify-content:center; margin-top:12px;">
+          <button type="button" class="chip soft newsFilter active" data-cat="all">Todas</button>
+          <button type="button" class="chip soft newsFilter" data-cat="campaña">Campaña</button>
+          <button type="button" class="chip soft newsFilter" data-cat="ciudad">Ciudad</button>
+          <button type="button" class="chip soft newsFilter" data-cat="deporte">Deporte</button>
+        </div>
+      </div>
+
+      <div class="newsList" id="newsList" aria-label="Lista de noticias"></div>
+
+      <div class="actions" style="margin-top:14px;">
+        <a class="btn soft" href="index.html">Volver al inicio</a>
+        <a class="btn primary" href="contacto.html">¿Necesitás que te contactemos?</a>
+      </div>
+    </section>
+  </main>
+
+    <footer class="footer">
+    <div class="container footerStack">
+      <div class="footerFollow">Síguenos</div>
+      <div class="social" aria-label="Redes sociales">
+      <a href="https://www.instagram.com/enmanuelgini/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.25-2.25a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg></a>
+      <a href="https://www.facebook.com/EnmanuelGiniIntendente/?locale=es_LA" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 22v-8h3l1-4h-4V7.5c0-1 .3-1.5 1.7-1.5H18V2.2c-.6-.1-2-.2-3.6-.2-3.2 0-5.4 2-5.4 5.6V10H6v4h3v8h4z"/></svg></a>
+      <a href="https://www.tiktok.com/@enmanuelgini" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 2h-3v13.2a3.2 3.2 0 1 1-2.4-3.1V9a6.2 6.2 0 1 0 5.4 6.1V9.2c1.2 1 2.7 1.6 4.4 1.6V7.8c-2 0-3.8-1.6-4-3.6V2z"/></svg></a>
+      </div>
+    </div>
+    <div class="footerRights">
+  © <span id="anio"></span> Enmanuel Gini Intendente.
+  <span class="dev">Desarrollo Web: Univ. Alejandro J. Villalba. Todos los derechos reservados.</span>
+
+</div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="data.js"></script>
+  <script async src="https://www.instagram.com/embed.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

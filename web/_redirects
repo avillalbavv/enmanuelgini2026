@@ -1,0 +1,3 @@
+/api/*  https://padron-piribebuy.onrender.com/api/:splat  200
+/health https://padron-piribebuy.onrender.com/health      200
+/trayectoria   /biografia#trayectoria   301

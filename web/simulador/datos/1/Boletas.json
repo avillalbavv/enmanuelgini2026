@@ -1,0 +1,98 @@
+[
+ {
+  "codigo": "ANR_L2",
+  "lista_completa": false,
+  "agrupacion_municipal": false,
+  "INT": 1
+ },
+ {
+  "codigo": "ANR_L7",
+  "lista_completa": false,
+  "agrupacion_municipal": false,
+  "INT": 2
+ },
+ {
+  "codigo": "BLC_INT",
+  "lista_completa": false,
+  "agrupacion_municipal": false,
+  "INT": 90
+ },
+ {
+  "codigo": "CONL2",
+  "lista_completa": false,
+  "agrupacion_municipal": false,
+  "CCO": 101
+ },
+ {
+  "codigo": "CONL2",
+  "lista_completa": false,
+  "agrupacion_municipal": false,
+  "CCO": 102
+ },
+ {
+  "codigo": "CONL2",
+  "lista_completa": false,
+  "agrupacion_municipal": false,
+  "CCO": 103
+ },
+ {
+  "codigo": "CONL2",
+  "lista_completa": false,
+  "agrupacion_municipal": false,
+  "CCO": 104
+ },
+ {
+  "codigo": "CONL2",
+  "lista_completa": false,
+  "agrupacion_municipal": false,
+  "CCO": 105
+ },
+ {
+  "codigo": "CONL2",
+  "lista_completa": false,
+  "agrupacion_municipal": false,
+  "CCO": 106
+ },
+ {
+  "codigo": "CONL2",
+  "lista_completa": false,
+  "agrupacion_municipal": false,
+  "CCO": 107
+ },
+ {
+  "codigo": "CONL2",
+  "lista_completa": false,
+  "agrupacion_municipal": false,
+  "CCO": 108
+ },
+ {
+  "codigo": "CONL2",
+  "lista_completa": false,
+  "agrupacion_municipal": false,
+  "CCO": 109
+ },
+ {
+  "codigo": "CONL2",
+  "lista_completa": false,
+  "agrupacion_municipal": false,
+  "CCO": 110
+ },
+ {
+  "codigo": "CONL2",
+  "lista_completa": false,
+  "agrupacion_municipal": false,
+  "CCO": 111
+ },
+ {
+  "codigo": "CONL2",
+  "lista_completa": false,
+  "agrupacion_municipal": false,
+  "CCO": 112
+ },
+ {
+  "codigo": "BLC_CCO",
+  "lista_completa": false,
+  "agrupacion_municipal": false,
+  "CCO": 190
+ }
+]

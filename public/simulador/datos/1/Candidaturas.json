@@ -1,0 +1,396 @@
+[
+ {
+  "asistida": "Abog. Enmanuel Gini",
+  "cargo_ejecutivo": true,
+  "clase": "Candidato",
+  "cod_categoria": "INT",
+  "cod_lista": "ANR_L2",
+  "cod_alianza": "ANR",
+  "codigo": "INT_L2",
+  "id_candidatura": "INT_L2",
+  "id_umv": 1,
+  "imagenes": [
+   "INT_L2"
+  ],
+  "nombre": "Abog. Enmanuel Gini",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   1,
+   1,
+   1
+  ],
+  "secundarios": [],
+  "sexo": null,
+  "suplentes": []
+ },
+ {
+  "asistida": "Ricardo Benítez",
+  "cargo_ejecutivo": true,
+  "clase": "Candidato",
+  "cod_categoria": "INT",
+  "cod_lista": "ANR_L7",
+  "cod_alianza": "ANR",
+  "codigo": "INT_L7",
+  "id_candidatura": "INT_L7",
+  "id_umv": 2,
+  "imagenes": [
+   "default"
+  ],
+  "nombre": "Ricardo Benítez",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   2,
+   1,
+   1
+  ],
+  "secundarios": [],
+  "sexo": null,
+  "suplentes": []
+ },
+ {
+  "asistida": "VOTO EN BLANCO",
+  "cargo_ejecutivo": true,
+  "clase": "Blanco",
+  "cod_categoria": "INT",
+  "cod_lista": "",
+  "cod_alianza": "",
+  "codigo": "BLC_INT",
+  "id_candidatura": "BLC_INT",
+  "id_umv": 90,
+  "imagenes": [
+   "BLC"
+  ],
+  "nombre": "VOTO EN BLANCO",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   997,
+   1
+  ],
+  "secundarios": [],
+  "sexo": null,
+  "suplentes": []
+ },
+ {
+  "asistida": "Juan Cañete",
+  "cargo_ejecutivo": false,
+  "clase": "Candidato",
+  "cod_categoria": "CCO",
+  "cod_lista": "CONL2",
+  "cod_alianza": "L2G",
+  "codigo": "CON_01",
+  "id_candidatura": "CON_01",
+  "id_umv": 101,
+  "imagenes": [
+   "CON_01"
+  ],
+  "nombre": "Juan Cañete",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   11,
+   1,
+   1
+  ],
+  "secundarios": [],
+  "sexo": null,
+  "suplentes": [],
+  "cod_partido": "ANR"
+ },
+ {
+  "asistida": "Jorge Jara",
+  "cargo_ejecutivo": false,
+  "clase": "Candidato",
+  "cod_categoria": "CCO",
+  "cod_lista": "CONL2",
+  "cod_alianza": "L2G",
+  "codigo": "CON_02",
+  "id_candidatura": "CON_02",
+  "id_umv": 102,
+  "imagenes": [
+   "CON_02"
+  ],
+  "nombre": "Jorge Jara",
+  "nro_orden": 2,
+  "orden_absoluto": [
+   12,
+   1,
+   1
+  ],
+  "secundarios": [],
+  "sexo": null,
+  "suplentes": [],
+  "cod_partido": "ANR"
+ },
+ {
+  "asistida": "Juancito Zalazar",
+  "cargo_ejecutivo": false,
+  "clase": "Candidato",
+  "cod_categoria": "CCO",
+  "cod_lista": "CONL2",
+  "cod_alianza": "L2G",
+  "codigo": "CON_03",
+  "id_candidatura": "CON_03",
+  "id_umv": 103,
+  "imagenes": [
+   "CON_03"
+  ],
+  "nombre": "Juancito Zalazar",
+  "nro_orden": 3,
+  "orden_absoluto": [
+   13,
+   1,
+   1
+  ],
+  "secundarios": [],
+  "sexo": null,
+  "suplentes": [],
+  "cod_partido": "ANR"
+ },
+ {
+  "asistida": "Jorge Peña",
+  "cargo_ejecutivo": false,
+  "clase": "Candidato",
+  "cod_categoria": "CCO",
+  "cod_lista": "CONL2",
+  "cod_alianza": "L2G",
+  "codigo": "CON_04",
+  "id_candidatura": "CON_04",
+  "id_umv": 104,
+  "imagenes": [
+   "CON_04"
+  ],
+  "nombre": "Jorge Peña",
+  "nro_orden": 4,
+  "orden_absoluto": [
+   14,
+   1,
+   1
+  ],
+  "secundarios": [],
+  "sexo": null,
+  "suplentes": [],
+  "cod_partido": "ANR"
+ },
+ {
+  "asistida": "Cecilia Rivas",
+  "cargo_ejecutivo": false,
+  "clase": "Candidato",
+  "cod_categoria": "CCO",
+  "cod_lista": "CONL2",
+  "cod_alianza": "L2G",
+  "codigo": "CON_05",
+  "id_candidatura": "CON_05",
+  "id_umv": 105,
+  "imagenes": [
+   "CON_05"
+  ],
+  "nombre": "Cecilia Rivas",
+  "nro_orden": 5,
+  "orden_absoluto": [
+   15,
+   1,
+   1
+  ],
+  "secundarios": [],
+  "sexo": null,
+  "suplentes": [],
+  "cod_partido": "ANR"
+ },
+ {
+  "asistida": "Fredy Domínguez",
+  "cargo_ejecutivo": false,
+  "clase": "Candidato",
+  "cod_categoria": "CCO",
+  "cod_lista": "CONL2",
+  "cod_alianza": "L2G",
+  "codigo": "CON_06",
+  "id_candidatura": "CON_06",
+  "id_umv": 106,
+  "imagenes": [
+   "CON_06"
+  ],
+  "nombre": "Fredy Domínguez",
+  "nro_orden": 6,
+  "orden_absoluto": [
+   16,
+   1,
+   1
+  ],
+  "secundarios": [],
+  "sexo": null,
+  "suplentes": [],
+  "cod_partido": "ANR"
+ },
+ {
+  "asistida": "Pablito Núñez",
+  "cargo_ejecutivo": false,
+  "clase": "Candidato",
+  "cod_categoria": "CCO",
+  "cod_lista": "CONL2",
+  "cod_alianza": "L2G",
+  "codigo": "CON_07",
+  "id_candidatura": "CON_07",
+  "id_umv": 107,
+  "imagenes": [
+   "CON_07"
+  ],
+  "nombre": "Pablito Núñez",
+  "nro_orden": 7,
+  "orden_absoluto": [
+   17,
+   1,
+   1
+  ],
+  "secundarios": [],
+  "sexo": null,
+  "suplentes": [],
+  "cod_partido": "ANR"
+ },
+ {
+  "asistida": "Adán Escobar",
+  "cargo_ejecutivo": false,
+  "clase": "Candidato",
+  "cod_categoria": "CCO",
+  "cod_lista": "CONL2",
+  "cod_alianza": "L2G",
+  "codigo": "CON_08",
+  "id_candidatura": "CON_08",
+  "id_umv": 108,
+  "imagenes": [
+   "CON_08"
+  ],
+  "nombre": "Adán Escobar",
+  "nro_orden": 8,
+  "orden_absoluto": [
+   18,
+   1,
+   1
+  ],
+  "secundarios": [],
+  "sexo": null,
+  "suplentes": [],
+  "cod_partido": "ANR"
+ },
+ {
+  "asistida": "David Bogado",
+  "cargo_ejecutivo": false,
+  "clase": "Candidato",
+  "cod_categoria": "CCO",
+  "cod_lista": "CONL2",
+  "cod_alianza": "L2G",
+  "codigo": "CON_09",
+  "id_candidatura": "CON_09",
+  "id_umv": 109,
+  "imagenes": [
+   "CON_09"
+  ],
+  "nombre": "David Bogado",
+  "nro_orden": 9,
+  "orden_absoluto": [
+   19,
+   1,
+   1
+  ],
+  "secundarios": [],
+  "sexo": null,
+  "suplentes": [],
+  "cod_partido": "ANR"
+ },
+ {
+  "asistida": "Belén Escobar",
+  "cargo_ejecutivo": false,
+  "clase": "Candidato",
+  "cod_categoria": "CCO",
+  "cod_lista": "CONL2",
+  "cod_alianza": "L2G",
+  "codigo": "CON_10",
+  "id_candidatura": "CON_10",
+  "id_umv": 110,
+  "imagenes": [
+   "CON_10"
+  ],
+  "nombre": "Belén Escobar",
+  "nro_orden": 10,
+  "orden_absoluto": [
+   20,
+   1,
+   1
+  ],
+  "secundarios": [],
+  "sexo": null,
+  "suplentes": [],
+  "cod_partido": "ANR"
+ },
+ {
+  "asistida": "Alex Arias",
+  "cargo_ejecutivo": false,
+  "clase": "Candidato",
+  "cod_categoria": "CCO",
+  "cod_lista": "CONL2",
+  "cod_alianza": "L2G",
+  "codigo": "CON_11",
+  "id_candidatura": "CON_11",
+  "id_umv": 111,
+  "imagenes": [
+   "CON_11"
+  ],
+  "nombre": "Alex Arias",
+  "nro_orden": 11,
+  "orden_absoluto": [
+   21,
+   1,
+   1
+  ],
+  "secundarios": [],
+  "sexo": null,
+  "suplentes": [],
+  "cod_partido": "ANR"
+ },
+ {
+  "asistida": "Abrahan Ovelar",
+  "cargo_ejecutivo": false,
+  "clase": "Candidato",
+  "cod_categoria": "CCO",
+  "cod_lista": "CONL2",
+  "cod_alianza": "L2G",
+  "codigo": "CON_12",
+  "id_candidatura": "CON_12",
+  "id_umv": 112,
+  "imagenes": [
+   "CON_12"
+  ],
+  "nombre": "Abrahan Ovelar",
+  "nro_orden": 12,
+  "orden_absoluto": [
+   22,
+   1,
+   1
+  ],
+  "secundarios": [],
+  "sexo": null,
+  "suplentes": [],
+  "cod_partido": "ANR"
+ },
+ {
+  "asistida": "VOTO EN BLANCO",
+  "cargo_ejecutivo": false,
+  "clase": "Blanco",
+  "cod_categoria": "CCO",
+  "cod_lista": "",
+  "cod_alianza": "",
+  "codigo": "BLC_CCO",
+  "id_candidatura": "BLC_CCO",
+  "id_umv": 190,
+  "imagenes": [
+   "BLC"
+  ],
+  "nombre": "VOTO EN BLANCO",
+  "nro_orden": 1,
+  "orden_absoluto": [
+   997,
+   1
+  ],
+  "secundarios": [],
+  "sexo": null,
+  "suplentes": []
+ }
+]

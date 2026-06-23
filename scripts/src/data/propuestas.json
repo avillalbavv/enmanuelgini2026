@@ -1,0 +1,42 @@
+[
+  {
+    "categoria": "Infraestructura y movilidad",
+    "titulo": "Calles y caminos transitables",
+    "descripcion": "Planificar obras prioritarias con mantenimiento permanente."
+  },
+  {
+    "categoria": "Servicios municipales y atención al ciudadano",
+    "titulo": "Municipalidad más ágil",
+    "descripcion": "Mejor atención al ciudadano y gestión ordenada."
+  },
+  {
+    "categoria": "Ambiente, agua y saneamiento",
+    "titulo": "Ciudad limpia y sostenible",
+    "descripcion": "Ordenar servicios y cuidar los espacios públicos."
+  },
+  {
+    "categoria": "Seguridad y convivencia",
+    "titulo": "Barrios más seguros",
+    "descripcion": "Trabajo coordinado con comisiones e instituciones."
+  },
+  {
+    "categoria": "Educación, juventud y empleo",
+    "titulo": "Oportunidades para jóvenes",
+    "descripcion": "Apoyar formación, actividades y capacitación."
+  },
+  {
+    "categoria": "Turismo, cultura y patrimonio",
+    "titulo": "Piribebuy como destino",
+    "descripcion": "Impulsar patrimonio, cultura y economía local."
+  },
+  {
+    "categoria": "Deporte y recreación",
+    "titulo": "Más espacios deportivos",
+    "descripcion": "Acompañar clubes, escuelas deportivas y eventos."
+  },
+  {
+    "categoria": "Transparencia y gestión",
+    "titulo": "Gestión clara y participativa",
+    "descripcion": "Comunicación abierta y rendición de cuentas."
+  }
+]

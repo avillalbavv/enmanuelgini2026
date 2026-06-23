@@ -1,0 +1,48 @@
+[
+ {
+  "asistida": "1 - PARTIDO COLORADO",
+  "clase": "Lista",
+  "cod_alianza": null,
+  "cod_partido": null,
+  "codigo": "23",
+  "color": [
+   "#ff0000"
+  ],
+  "color_tipografia": [
+   "#ffffff"
+  ],
+  "id_candidatura": "23",
+  "imagenes": [
+   "default_lista"
+  ],
+  "nombre": "PARTIDO COLORADO",
+  "nombre_corto": "ANR",
+  "numero": "1",
+  "orden_absoluto": [
+   23
+  ]
+ },
+ {
+  "asistida": "123 - MOVIMIENTO POLITICO INDEPENDIENTE YO CREO SANTA RITA",
+  "clase": "Lista",
+  "cod_alianza": null,
+  "cod_partido": null,
+  "codigo": "24",
+  "color": [
+   "#ff7b15"
+  ],
+  "color_tipografia": [
+   "#000000"
+  ],
+  "id_candidatura": "24",
+  "imagenes": [
+   "default_lista"
+  ],
+  "nombre": "MOVIMIENTO POLITICO INDEPENDIENTE YO CREO SANTA RITA",
+  "nombre_corto": "CDN",
+  "numero": "123",
+  "orden_absoluto": [
+   24
+  ]
+ }
+]
